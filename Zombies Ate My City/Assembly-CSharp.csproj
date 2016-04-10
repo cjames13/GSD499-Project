@@ -95,8 +95,6 @@
      <Compile Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
      <Compile Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
      <Compile Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
-     <Compile Include="Assets\Resources\Skeleton\Script\Movement.cs" />
-     <Compile Include="Assets\Resources\Skeleton\Script\SimpleFollow.cs" />
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Sapporo_Props\SnowBallFightObject\Scripts\EnemyPcController.cs" />
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Sapporo_Props\SnowBallFightObject\Scripts\MoveSnowBall.cs" />
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Sapporo_Props\SnowBallFightObject\Scripts\PlayerController.cs" />
@@ -105,6 +103,9 @@
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Sapporo_Props\SnowBallFightObject\Scripts\SnowManController.cs" />
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Scripts\QuerySDController\QueryChanSapporoMecanimController.cs" />
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Scripts\SceneController\GameSceneController.cs" />
+     <Compile Include="Assets\Script\Movement.cs" />
+     <Compile Include="Assets\Script\PlayerMovement.cs" />
+     <Compile Include="Assets\Script\SimpleFollow.cs" />
      <None Include="Assets\Resources\ZRNAssets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
