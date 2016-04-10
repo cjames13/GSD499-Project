@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerMovement: MonoBehaviour {
-	public float speed = 4f;
+	public float moveSpeed = 4f;
 	public float jumpSpeed = 5f;
 
 	Vector3 moveDirection;
@@ -19,7 +19,6 @@ public class PlayerMovement: MonoBehaviour {
 	Camera cam;
 
 	void Awake(){
-		dead = false;
 		rigidBody = GetComponent<Rigidbody>();
 		rigidBodies = GetComponentsInChildren<Rigidbody> ();
 		myCollider = GetComponent<CapsuleCollider> ();
@@ -62,7 +61,7 @@ public class PlayerMovement: MonoBehaviour {
 		} else {
 			// Move
 			moveDirection = (h * right + v * forward);
-			transform.position += Vector3.ClampMagnitude (moveDirection, speed) * Time.deltaTime * speed;
+			transform.position += Vector3.ClampMagnitude (moveDirection, moveSpeed) * Time.deltaTime * moveSpeed;
 
 			// Jumping
 			bool isAerial = !IsGrounded();
