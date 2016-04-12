@@ -94,10 +94,4 @@ public class PlayerMovement: MonoBehaviour {
 	bool IsGrounded(){
 		return Physics.Raycast (transform.position, -Vector3.up, 0.1f);
 	}
-
-	void OnTriggerEnter(Collider other)
-	{
-		if (other.transform.tag == "Fire" || other.transform.tag == "Enemy")
-			dead = true;
-	}
 }

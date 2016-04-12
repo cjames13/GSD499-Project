@@ -104,6 +104,7 @@
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Scripts\QuerySDController\QueryChanSapporoMecanimController.cs" />
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Scripts\SceneController\GameSceneController.cs" />
      <Compile Include="Assets\Script\Camera\SimpleFollow.cs" />
+     <Compile Include="Assets\Script\Enemy\Spawner.cs" />
      <Compile Include="Assets\Script\Misc\Health.cs" />
      <Compile Include="Assets\Script\Misc\Projectile.cs" />
      <Compile Include="Assets\Script\Player\Movement.cs" />

@@ -3,20 +3,16 @@ using System.Collections;
 
 public class Health : MonoBehaviour {
 	public int maxHealth;
+	public int currentHealth;
 
 	// Use this for initialization
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		currentHealth = maxHealth;
 	}
 
 	public void Damage(int d) {
-		maxHealth -= d;
-		if (maxHealth <= 0)
+		currentHealth -= d;
+		if (currentHealth <= 0)
 			Debug.Log ("DEAD");
 	}
 }

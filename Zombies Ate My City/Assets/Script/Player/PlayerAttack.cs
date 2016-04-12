@@ -15,7 +15,8 @@ public class PlayerAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButtonDown ("Fire1")) {
-			Instantiate (projectileObject, firePoint.position, firePoint.transform.rotation);
+			//Instantiate (projectileObject, firePoint.position, firePoint.transform.rotation);
+			Instantiate (projectileObject, firePoint.position, Quaternion.identity);
 		}
 	}
 }

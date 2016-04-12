@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if ((other.tag == "Player" && !friendly) || (other.tag == "Enemy" && friendly)) {
 			other.GetComponent<Health> ().Damage (projectileDamage);
+			Destroy (gameObject);
 		} else if (!other.CompareTag ("Player") && !other.CompareTag ("Enemy")) {
 			Destroy (gameObject);
 		}
