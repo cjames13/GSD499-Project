@@ -5,12 +5,12 @@ public class SimpleFollow : MonoBehaviour {
 	public Transform target;
 	public float distance;
 	GameObject player;
-	Movement playerMovementScript;
+	PlayerMovement playerMovementScript;
 	// Update is called once per frame
 	void Start()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
-		playerMovementScript = player.GetComponent<Movement> ();
+		playerMovementScript = player.GetComponent<PlayerMovement> ();
 	}
 	void FixedUpdate () {
 		
