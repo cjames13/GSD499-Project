@@ -13,6 +13,6 @@ public class Health : MonoBehaviour {
 	public void Damage(int d) {
 		currentHealth -= d;
 		if (currentHealth <= 0)
-			Debug.Log ("DEAD");
+			Destroy (gameObject);
 	}
 }
