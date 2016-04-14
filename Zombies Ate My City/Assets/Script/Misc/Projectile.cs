@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Projectile : MonoBehaviour {
-	public int   	projectileDamage;
-	public float 	projectileSpeed;
-	public bool 	friendly = true;
+public class Projectile : DamageOnContact {
+	public float 	speed;
 	public float	timeToLive = 4f;
 
 	private float creationTime;
@@ -18,15 +16,6 @@ public class Projectile : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
-		transform.Translate(Vector3.forward * Time.deltaTime * projectileSpeed);
-	}
-
-	void OnTriggerEnter(Collider other) {
-		if ((other.tag == "Player" && !friendly) || (other.tag == "Enemy" && friendly)) {
-			other.GetComponent<Health> ().Damage (projectileDamage);
-			Destroy (gameObject);
-		} else if (!other.CompareTag ("Player") && !other.CompareTag ("Enemy")) {
-			Destroy (gameObject);
-		}
+		transform.Translate(Vector3.forward * Time.deltaTime * speed);
 	}
 }

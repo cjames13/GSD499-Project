@@ -7,7 +7,6 @@ using System.Collections.Generic;
 public class PlayerMovement: MonoBehaviour {
 	public float moveSpeed = 4f;
 	public float jumpSpeed = 5f;
-	public int hitPoints = 10;
 	Vector3 moveDirection;
 	Animator anim;
 	Rigidbody rigidBody;
@@ -16,7 +15,7 @@ public class PlayerMovement: MonoBehaviour {
 	CapsuleCollider myCollider;
 	List<Collider> colliders;
 
-	bool dead = false;
+	public bool dead = false;
 	GameObject cameraObject;
 	Camera cam;
 
@@ -95,22 +94,6 @@ public class PlayerMovement: MonoBehaviour {
 
 	bool IsGrounded(){
 		return Physics.Raycast (transform.position, -Vector3.up, 0.1f);
-	}
-
-	void OnTriggerEnter(Collider other)
-	{
-		if (other.transform.tag == "Fire" || other.transform.tag == "Enemy"){
-			hitPoints -= 1;
-			anim.SetLayerWeight (1, 1);
-			if (hitPoints == 0)
-				dead = true;
-		}
-	}
-	void OnTriggerExit(Collider other)
-	{
-		if (other.transform.tag == "Fire" || other.transform.tag == "Enemy") {
-			anim.SetLayerWeight (1, 0);
-		}
 	}
 }
 
