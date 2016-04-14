@@ -6,10 +6,16 @@ public class EnemyStates : MonoBehaviour, StateController {
 	Rigidbody rigidBody;
 	Rigidbody[] rigidBodies;
 	CapsuleCollider myCollider;
+	BoxCollider myBoxCollider;
+	SphereCollider mySphereCollider;
 	List<Collider> colliders;
 	Animator anim;
 	StateController stateController;
 	void Awake(){
+		if (GetComponent<BoxCollider> ())
+			myBoxCollider = GetComponent<BoxCollider> ();
+		if (GetComponent<SphereCollider> ())
+			mySphereCollider = GetComponent<SphereCollider> ();
 		anim = GetComponent<Animator> ();
 		rigidBody = GetComponent<Rigidbody>();
 		rigidBodies = GetComponentsInChildren<Rigidbody> ();
@@ -22,13 +28,9 @@ public class EnemyStates : MonoBehaviour, StateController {
 		SetAllChildCollidersTrigger (true);
 	}
 
-	void FixedUpdate() {
-
-	}
-
 	void SetAllChildCollidersTrigger(bool t) {
 		foreach (Collider c in GetComponentsInChildren<Collider>()) {
-			if (c != myCollider)
+			if (c != myCollider && c != myBoxCollider && c != mySphereCollider)
 				c.isTrigger = t;
 		}
 	}
