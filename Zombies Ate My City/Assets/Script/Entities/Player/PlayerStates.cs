@@ -4,7 +4,6 @@ using System.Collections;
 public class PlayerStates : MonoBehaviour, StateController {
 
 	private Animator anim;
-
 	void Start() {
 		anim = GetComponent<Animator> ();
 	}
@@ -24,4 +23,5 @@ public class PlayerStates : MonoBehaviour, StateController {
 		yield return new WaitForSeconds(1);
 		anim.SetLayerWeight (1, 0);
 	}
+
 }
