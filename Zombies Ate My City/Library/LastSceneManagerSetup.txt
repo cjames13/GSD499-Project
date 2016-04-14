@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Cory Prototype/Scenes/Cory_GSD499_Prototype.unity
+- path: Assets/Robbie Prototype/Robbie_GSD499_Prototype.unity
   isLoaded: 1
   isActive: 1
