@@ -17,6 +17,7 @@ public class ShootPistol : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
 		if (Input.GetButton ("Fire1")) {
 			time -= Time.deltaTime;
 			if (time <= 0) {
@@ -31,3 +32,6 @@ public class ShootPistol : MonoBehaviour {
 		}
 	}
 }
+
+
+

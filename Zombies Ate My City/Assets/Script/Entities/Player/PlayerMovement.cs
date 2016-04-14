@@ -18,8 +18,10 @@ public class PlayerMovement: MonoBehaviour {
 	public bool dead = false;
 	GameObject cameraObject;
 	Camera cam;
-
+	bool jumped = false;
+	Transform firePoint;
 	void Awake(){
+		firePoint = GameObject.FindGameObjectWithTag("FiringPoint").transform;
 		rigidBody = GetComponent<Rigidbody>();
 		rigidBodies = GetComponentsInChildren<Rigidbody> ();
 		myCollider = GetComponent<CapsuleCollider> ();
@@ -40,6 +42,17 @@ public class PlayerMovement: MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+		if (IsGrounded ()) {
+			jumped = false;
+			firePoint.rotation = transform.rotation;
+		}
+		if (Input.GetButtonDown ("Jump")) {
+			if (jumped == false) {
+				firePoint.Rotate(new Vector3 (25, 0, 0));
+				jumped = true;
+			}
+		}
+
 		Vector3 forward = cam.transform.TransformDirection (Vector3.forward).normalized;
 		forward.y = 0f;
 
