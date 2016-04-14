@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Resources\Animations\FightingUnityChan_FreeAsset\Standard Assets\Scripts\Camera Scripts\MouseOrbit.js" />
-     <Compile Include="Assets\Resources\FPS_Character Pack\Script\fps_CharacterPack_viewscript.js" />
      <Compile Include="Assets\Resources\FT_CaveWorm\Script\SampleSceneGUI.js" />
      <Compile Include="Assets\Resources\FT_CaveWorm\Script\StopCAM.js" />
      <Compile Include="Assets\Resources\FT_CaveWorm\Script\VisibleBG.js" />
