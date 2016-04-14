@@ -18,10 +18,8 @@ public class PlayerMovement: MonoBehaviour {
 	public bool dead = false;
 	GameObject cameraObject;
 	Camera cam;
-	bool jumped = false;
-	Transform firePoint;
+
 	void Awake(){
-		firePoint = GameObject.FindGameObjectWithTag("FiringPoint").transform;
 		rigidBody = GetComponent<Rigidbody>();
 		rigidBodies = GetComponentsInChildren<Rigidbody> ();
 		myCollider = GetComponent<CapsuleCollider> ();
@@ -42,17 +40,6 @@ public class PlayerMovement: MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if (IsGrounded ()) {
-			jumped = false;
-			firePoint.rotation = transform.rotation;
-		}
-		if (Input.GetButtonDown ("Jump")) {
-			if (jumped == false) {
-				firePoint.Rotate(new Vector3 (25, 0, 0));
-				jumped = true;
-			}
-		}
-
 		Vector3 forward = cam.transform.TransformDirection (Vector3.forward).normalized;
 		forward.y = 0f;
 
@@ -75,7 +62,7 @@ public class PlayerMovement: MonoBehaviour {
 		} else {
 			// Move
 			moveDirection = (h * right + v * forward);
-			transform.position += Vector3.ClampMagnitude (moveDirection, moveSpeed) * Time.deltaTime * moveSpeed;
+			transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * moveSpeed, moveSpeed) ;
 
 			// Jumping
 			bool isAerial = !IsGrounded();

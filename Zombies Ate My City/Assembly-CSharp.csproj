@@ -45,7 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Resources\FPS_Character Pack\Script\ModelChanger01.cs" />
      <Compile Include="Assets\Resources\FT_CaveWorm\Script\PlayAnimation.cs" />
      <Compile Include="Assets\Resources\FT_CaveWorm\Script\SubstanceGUI.cs" />
      <Compile Include="Assets\Resources\PyroParticles\Demo\DemoScript.cs" />
@@ -112,6 +111,8 @@
      <Compile Include="Assets\Script\Entities\Player\PlayerStates.cs" />
      <Compile Include="Assets\Script\Entities\Player\ShootPistol.cs" />
      <Compile Include="Assets\Script\Entities\StateController.cs" />
+     <Compile Include="Assets\Script\GameController\GameController.cs" />
+     <Compile Include="Assets\Script\Items\Resources.cs" />
      <Compile Include="Assets\Script\Misc\DamageOnContact.cs" />
      <Compile Include="Assets\Script\Misc\Projectile.cs" />
      <Compile Include="Assets\Script\UI\DrawRadarBlipUI.cs" />
