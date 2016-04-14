@@ -17,9 +17,6 @@ public class ShootPistol : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		print ("kasdf");
-		if (anim.GetLayerWeight (2) > 0.9f)
-			anim.speed = 3 / rapidSpeed;
 		if (Input.GetButton ("Fire1")) {
 			time -= Time.deltaTime;
 			if (time <= 0) {

@@ -104,6 +104,7 @@
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Scripts\SceneController\GameSceneController.cs" />
      <Compile Include="Assets\Script\Camera\SimpleFollow.cs" />
      <Compile Include="Assets\Script\Entities\Enemy\EnemyStates.cs" />
+     <Compile Include="Assets\Script\Entities\Enemy\FollowPlayer.cs" />
      <Compile Include="Assets\Script\Entities\Enemy\Spawner.cs" />
      <Compile Include="Assets\Script\Entities\Health.cs" />
      <Compile Include="Assets\Script\Entities\Player\PlayerAttack.cs" />
