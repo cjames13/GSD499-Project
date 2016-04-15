@@ -32,7 +32,8 @@ public class EnemyStates : MonoBehaviour, StateController {
 			anim.SetLayerWeight (3, 1);
 			if (time <= 0)
 				time = 5;
-		}
+		} else
+			anim.SetLayerWeight (3, 0);
 	}
 	void StateController.Walk(){
 		anim.SetBool ("walking", true);
