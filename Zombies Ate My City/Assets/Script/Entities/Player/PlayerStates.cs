@@ -23,5 +23,9 @@ public class PlayerStates : MonoBehaviour, StateController {
 		yield return new WaitForSeconds(1);
 		anim.SetLayerWeight (1, 0);
 	}
+	void StateController.Attack(NavMeshAgent agent){}
+	void StateController.MagicAttack(NavMeshAgent agent){}
+	void StateController.Walk(){}
+	void StateController.Run(){}
 
 }
