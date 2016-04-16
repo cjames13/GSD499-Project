@@ -4,14 +4,7 @@ using System.Collections;
 public class SimpleFollow : MonoBehaviour {
 	public Transform target;
 	public float distance;
-	GameObject player;
-	PlayerMovement playerMovementScript;
-	// Update is called once per frame
-	void Start()
-	{
-		player = GameObject.FindGameObjectWithTag ("Player");
-		playerMovementScript = player.GetComponent<PlayerMovement> ();
-	}
+
 	void FixedUpdate () {
 		
 		transform.LookAt (target);
