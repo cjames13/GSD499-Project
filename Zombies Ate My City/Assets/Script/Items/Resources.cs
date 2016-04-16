@@ -13,7 +13,6 @@ public class Resources : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Player" && !isCollected) {
-            Debug.Log("Player Colliding");
             anim.Play();
 			isCollected = true;
 			gameController.ResourceCollected ();
