@@ -20,3 +20,6 @@ C:\Users\Robbie\Documents\GitHub\GSD499-Project\Zombies Ate My City\Temp\bin\Deb
 C:\Users\Robbie\Documents\GitHub\GSD499-Project\Zombies Ate My City\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Robbie\Documents\GitHub\GSD499-Project\Zombies Ate My City\obj\Debug\Assembly-CSharp.dll
 C:\Users\Robbie\Documents\GitHub\GSD499-Project\Zombies Ate My City\obj\Debug\Assembly-CSharp.pdb
+C:\Users\User\Documents\GitHub\GSD499-Project\Zombies Ate My City\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\GSD499-Project\Zombies Ate My City\obj\Debug\Assembly-CSharp.dll
+C:\Users\User\Documents\GitHub\GSD499-Project\Zombies Ate My City\obj\Debug\Assembly-CSharp.pdb

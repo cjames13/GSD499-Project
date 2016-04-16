@@ -17,7 +17,7 @@ public class FollowPlayer : MonoBehaviour {
 	void Update () {
 		attackDistance = Vector3.Distance (agent.nextPosition, target.position);
 		agent.SetDestination (target.position);
-		enemyStates.Walk ();
+		//enemyStates.Walk ();
 		if (Vector3.Distance(agent.nextPosition, target.position) <= agent.stoppingDistance)
 			enemyStates.Attack(agent);
 		if (name == "Necromancer") {
