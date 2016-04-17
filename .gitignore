@@ -1,5 +1,10 @@
 /Zombies Ate My City/Library
 /Zombies Ate My City/Temp
 /Zombies Ate My City/obj
-/Zombies Ate My City/.vs
-*.meta
+
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+*.DS_store
