@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 public class EnemyStates : MonoBehaviour, StateController {
-	public float magicAttackDelay = 5f;
+	public float magicAttackDelay = 7f;
 
 	Transform player;
 	Animator anim;
@@ -15,6 +15,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 	}
 	void StateController.TakeDamage() {
 		// Damage taken animation here
+
 	}
 
 	void StateController.Die() {
@@ -28,24 +29,32 @@ public class EnemyStates : MonoBehaviour, StateController {
 		Destroy (gameObject);
 	}
 	void StateController.Attack(bool attacking){
-		anim.SetLayerWeight (2, 1);
+		if (attacking) {
+			anim.SetLayerWeight (2, 1);
+			if (anim.layerCount > 3)
+				anim.SetLayerWeight (3, 0);
+		} else {
+			anim.SetLayerWeight (3, 0);
+			anim.SetLayerWeight (2, 0);
+		}
+	
 	}
 
 	void StateController.RangedAttack(bool attacking){
-		magicAttackTime -= Time.deltaTime;
-		if (magicAttackTime <= 2) {
-			anim.SetLayerWeight (3, 1);
-			if (magicAttackTime <= 0)
-				magicAttackDelay = 5;
+		if (attacking) {
+			magicAttackTime -= Time.deltaTime;
+			if (magicAttackTime <= 2) {
+				anim.SetLayerWeight (3, 1);
+				if (magicAttackTime <= 0)
+					magicAttackDelay = 7;
+			} else 
+				anim.SetLayerWeight (3, 0);
 		} else
 			anim.SetLayerWeight (3, 0);
 	}
 
 	void StateController.Walk(){
-		//anim.SetBool ("walking", true);
+		anim.SetBool ("walking", true);
 	}
-
-	void StateController.Run(){
 		
-	}
 }

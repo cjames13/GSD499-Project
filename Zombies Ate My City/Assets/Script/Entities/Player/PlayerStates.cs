@@ -94,6 +94,5 @@ public class PlayerStates : MonoBehaviour, StateController {
 
 	// TODO: Move movement animation logic to states
 	void StateController.Walk(){}
-	void StateController.Run(){}
 
 }

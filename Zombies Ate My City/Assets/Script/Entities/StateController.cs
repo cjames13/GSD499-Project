@@ -7,5 +7,4 @@ public interface StateController {
 	void Attack(bool attacking);
 	void RangedAttack(bool attacking);
 	void Walk();
-	void Run();
 }

@@ -6,7 +6,7 @@ public class FollowPlayer : MonoBehaviour {
 	NavMeshAgent agent;
 	StateController enemyStates;
 
-	float magicAttackDistance = 10;
+	float magicAttackDistance = 8;
 	// Use this for initialization
 	void Start () {
 		enemyStates = GetComponent<StateController> ();
@@ -17,14 +17,21 @@ public class FollowPlayer : MonoBehaviour {
 	void Update () {
 		float attackDistance = Vector3.Distance (agent.nextPosition, target.position);
 		agent.SetDestination (target.position);
-		//enemyStates.Walk ();
-		if (Vector3.Distance(agent.nextPosition, target.position) <= agent.stoppingDistance)
-			enemyStates.Attack(true);
+		enemyStates.Walk ();
+		if (Vector3.Distance (agent.nextPosition, target.position) <= agent.stoppingDistance)
+			enemyStates.Attack (true);
+		else
+			enemyStates.Attack (false);
 		if (name == "Necromancer") {
 			if (attackDistance <= agent.stoppingDistance)
-			enemyStates.Attack (true);
-			if (attackDistance <= agent.stoppingDistance + magicAttackDistance)
-			enemyStates.RangedAttack (true);
+				enemyStates.Attack (true);
+			else
+				enemyStates.Attack (false);
+			if (attackDistance <= agent.stoppingDistance + magicAttackDistance && 
+				attackDistance >= agent.stoppingDistance)
+				enemyStates.RangedAttack (true);
+			else
+				enemyStates.RangedAttack (false);
 		}
 		
 	}

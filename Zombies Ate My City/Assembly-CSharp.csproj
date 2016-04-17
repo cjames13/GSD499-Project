@@ -220,7 +220,6 @@
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\license_en.txt" />
      <None Include="Assets\Resources\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\model_list_f.txt" />
-     <None Include="Assets\Resources\PowerUps Vol 1 Free\Readme.txt" />
      <None Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\license_jp.txt" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
