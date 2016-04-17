@@ -241,8 +241,8 @@ MonoBehaviour:
   StartTime: 0.25
   StopTime: 0.5
   Duration: 0.35
-  ForceAmount: 2500
-  ForceRadius: 10
+  ForceAmount: 250
+  ForceRadius: 5
   IsProjectile: 0
   ManualParticleSystems: []
 --- !u!114 &11450062
@@ -3249,6 +3249,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ForceAmount
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ForceRadius
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -47,7 +47,6 @@
   <ItemGroup>
      <Compile Include="Assets\Resources\FT_CaveWorm\Script\PlayAnimation.cs" />
      <Compile Include="Assets\Resources\FT_CaveWorm\Script\SubstanceGUI.cs" />
-     <Compile Include="Assets\Resources\PyroParticles\Demo\DemoScript.cs" />
      <Compile Include="Assets\Resources\PyroParticles\Prefab\Script\FireBaseScript.cs" />
      <Compile Include="Assets\Resources\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
      <Compile Include="Assets\Resources\PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />
@@ -115,8 +114,8 @@
      <Compile Include="Assets\Script\Entities\Player\WeaponController.cs" />
      <Compile Include="Assets\Script\Entities\StateController.cs" />
      <Compile Include="Assets\Script\GameController\GameController.cs" />
-     <Compile Include="Assets\Script\Items\Resources.cs" />
      <Compile Include="Assets\Script\Items\Weapon.cs" />
+     <Compile Include="Assets\Script\Items\_Resources.cs" />
      <Compile Include="Assets\Script\Misc\DamageOnContact.cs" />
      <Compile Include="Assets\Script\Misc\Projectile.cs" />
      <Compile Include="Assets\Script\UI\DrawRadarBlipUI.cs" />
