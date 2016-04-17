@@ -237,11 +237,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400100}
-  - 111: {fileID: 11143382}
   - 136: {fileID: 13644990}
   - 54: {fileID: 5464552}
   - 114: {fileID: 11480730}
   - 114: {fileID: 11429108}
+  - 195: {fileID: 19549402}
+  - 95: {fileID: 9515202}
+  - 114: {fileID: 11442686}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Enemy
@@ -1192,24 +1194,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!111 &11143382
-Animation:
+--- !u!95 &9515202
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148076}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 565d7bdee9496b847a3b218355dff0d9, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: 565d7bdee9496b847a3b218355dff0d9, type: 3}
-  - {fileID: 7400000, guid: afb1efdc6cb0a7b49aae10e6113d59a0, type: 3}
-  - {fileID: 7400000, guid: e33de6a369f8fd74b8f251ebba2f8c41, type: 3}
-  - {fileID: 7400000, guid: c40d336521144414b9c50ef0c119b9b7, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
+  m_Avatar: {fileID: 9000000, guid: 565d7bdee9496b847a3b218355dff0d9, type: 3}
+  m_Controller: {fileID: 9100000, guid: a31a59ef7d6702e479fc9e123d54698f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11429108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1223,6 +1224,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magicAttackDelay: 5
   magicAttackTime: 0
+--- !u!114 &11442686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1796ee2ee462947bcd7ce7495ab0e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!114 &11480730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1243,7 +1256,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148076}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.19
   m_Height: 7.03
@@ -1317,6 +1330,26 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.08341479, y: 0.026871324, z: 0.0014457703}
     m_Extent: {x: 3.3147113, y: 0.7781106, z: 1.5892749}
   m_DirtyAABB: 0
+--- !u!195 &19549402
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148076}
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

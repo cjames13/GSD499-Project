@@ -9,6 +9,7 @@ public class Projectile : DamageOnContact {
 
 	void Start() {
 		creationTime = Time.time;
+		base.destroySelfOnContact = true;
 	}
 
 	void Update() {

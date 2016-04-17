@@ -5,7 +5,7 @@ public class FollowPlayer : MonoBehaviour {
 	public Transform target;
 	NavMeshAgent agent;
 	StateController enemyStates;
-	float attackDistance;
+
 	float magicAttackDistance = 10;
 	// Use this for initialization
 	void Start () {
@@ -15,7 +15,7 @@ public class FollowPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		attackDistance = Vector3.Distance (agent.nextPosition, target.position);
+		float attackDistance = Vector3.Distance (agent.nextPosition, target.position);
 		agent.SetDestination (target.position);
 		//enemyStates.Walk ();
 		if (Vector3.Distance(agent.nextPosition, target.position) <= agent.stoppingDistance)

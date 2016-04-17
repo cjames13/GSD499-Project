@@ -13,7 +13,7 @@ GameObject:
   - 23: {fileID: 2395544}
   - 114: {fileID: 11409748}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Rifle Bullet
   m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,12 +75,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7515d64bebe8db44a377fb1ebed6c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 3
   damageEverything: 0
   damageObjectsWithTag:
   - Enemy
-  speed: 10
-  timeToLive: 5
+  destroySelfOnContact: 1
+  speed: 20
+  timeToLive: 2.5
 --- !u!135 &13529936
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -130,11 +131,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: PlayerAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeToLive
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: destroySelfOnContact
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
