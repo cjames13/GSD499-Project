@@ -69,7 +69,6 @@ public class EnemyStates : MonoBehaviour, StateController {
 					if (playbackTime > 0.9f)
 						playing = false;
 					if (playing == true) {
-					
 						if (shooting == true) {
 							Instantiate (rangedAttackObject,
 								new Vector3 (transform.position.x, transform.position.y + 0.5f,

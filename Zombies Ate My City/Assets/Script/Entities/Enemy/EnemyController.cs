@@ -27,13 +27,13 @@ public class EnemyController : MonoBehaviour {
 		agent.SetDestination (target.transform.position);
 		Vector3 lookPos = target.transform.position - transform.position;
 		lookPos.y = 0;
-
-		Quaternion rotation = Quaternion.LookRotation (lookPos);
-		transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotationSpeed);
-
+		if (lookPos != Vector3.zero) {
+			Quaternion rotation = Quaternion.LookRotation (lookPos);
+			transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+		}
 		enemyStates.Walk ();
 
-		if (Vector3.Distance (agent.nextPosition, target.transform.position) < agent.stoppingDistance) {
+		if (attackDistance < agent.stoppingDistance) {
 			enemyStates.Attack (true);
 		} else {
 			enemyStates.Attack (false);

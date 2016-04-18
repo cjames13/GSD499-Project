@@ -140,6 +140,10 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1324080246}
+    - target: {fileID: 11492062, guid: 5953c2ecabef8a943b9d709f772693c6, type: 2}
+      propertyPath: rangedAttackObject
+      value: 
+      objectReference: {fileID: 141530, guid: dff0d238109d47241934507686140ae2, type: 2}
     m_RemovedComponents:
     - {fileID: 11169416, guid: 5953c2ecabef8a943b9d709f772693c6, type: 2}
     - {fileID: 11482816, guid: 5953c2ecabef8a943b9d709f772693c6, type: 2}
@@ -1338,7 +1342,11 @@ Prefab:
     - target: {fileID: 11444262, guid: f3ed1664609415145ad039d1124007db, type: 2}
       propertyPath: target
       value: 
-      objectReference: {fileID: 197684, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+      objectReference: {fileID: 1324080246}
+    - target: {fileID: 6482992, guid: f3ed1664609415145ad039d1124007db, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11156402, guid: f3ed1664609415145ad039d1124007db, type: 2}
     - {fileID: 11481394, guid: f3ed1664609415145ad039d1124007db, type: 2}
