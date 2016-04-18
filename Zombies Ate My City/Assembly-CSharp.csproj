@@ -103,8 +103,8 @@
      <Compile Include="Assets\Script\Camera\CameraController.cs" />
      <Compile Include="Assets\Script\Camera\OverheadFollow.cs" />
      <Compile Include="Assets\Script\Camera\SimpleFollow.cs" />
+     <Compile Include="Assets\Script\Entities\Enemy\EnemyController.cs" />
      <Compile Include="Assets\Script\Entities\Enemy\EnemyStates.cs" />
-     <Compile Include="Assets\Script\Entities\Enemy\FollowPlayer.cs" />
      <Compile Include="Assets\Script\Entities\Enemy\Spawner.cs" />
      <Compile Include="Assets\Script\Entities\Health.cs" />
      <Compile Include="Assets\Script\Entities\Player\PlayerAttack.cs" />
@@ -114,8 +114,8 @@
      <Compile Include="Assets\Script\Entities\Player\WeaponController.cs" />
      <Compile Include="Assets\Script\Entities\StateController.cs" />
      <Compile Include="Assets\Script\GameController\GameController.cs" />
+     <Compile Include="Assets\Script\Items\ResourceCrate.cs" />
      <Compile Include="Assets\Script\Items\Weapon.cs" />
-     <Compile Include="Assets\Script\Items\_Resources.cs" />
      <Compile Include="Assets\Script\Misc\DamageOnContact.cs" />
      <Compile Include="Assets\Script\Misc\Projectile.cs" />
      <Compile Include="Assets\Script\UI\DrawRadarBlipUI.cs" />

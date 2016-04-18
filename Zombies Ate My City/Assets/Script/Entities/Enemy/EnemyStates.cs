@@ -2,16 +2,23 @@
 using System.Collections;
 using System.Collections.Generic;
 public class EnemyStates : MonoBehaviour, StateController {
+	public GameObject rangedAttackObject;
 
-	Transform player;
-	Animator anim;
-	bool playing = true;
-	bool shooting = true;
+	private Animator anim;
+	private EnemyController enemyController;
+	private GameController gameController;
+
+	private bool playing = true;
+	private bool shooting = true;
+
 	public float magicAttackDelay = 7f;
-	public float magicAttackTime;
+	private float magicAttackTime;
+
 	void Start(){
 		anim = GetComponent<Animator> ();
 		magicAttackTime = magicAttackDelay;
+		gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
+		enemyController = GetComponent<EnemyController> ();
 	}
 	void StateController.TakeDamage() {
 		// Damage taken animation here
@@ -26,6 +33,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 		}
 		anim.enabled = false;
 		SetAllChildCollidersTrigger (false);*/
+		gameController.IncreaseScore (enemyController.scoreValue);
 		Destroy (gameObject);
 	}
 	IEnumerator SetDamageLayerWeight() {
@@ -58,15 +66,15 @@ public class EnemyStates : MonoBehaviour, StateController {
 				if (playing == true) {
 					
 					if (shooting == true) {
-						GameObject fireBolt = (GameObject)Instantiate (Resources.Load ("Firebolt"),
-							                     new Vector3 (transform.position.x, transform.position.y + 0.5f,
-								transform.position.z - 0.5f), transform.rotation);
+						GameObject fireBolt = (GameObject)Instantiate (rangedAttackObject,
+							                      new Vector3 (transform.position.x, transform.position.y + 0.5f,
+								                      transform.position.z - 0.5f), transform.rotation);
 						shooting = false;
 					}
 					anim.SetLayerWeight (3, 1);
-				}
-				else
+				} else {
 					anim.SetLayerWeight (3, 0);
+				}
 				if (magicAttackTime <= 0) {
 					playing = true;
 					shooting = true;

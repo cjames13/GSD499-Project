@@ -205,6 +205,8 @@ GameObject:
   - 4: {fileID: 466400}
   - 33: {fileID: 3370770}
   - 23: {fileID: 2380770}
+  - 136: {fileID: 13683040}
+  - 114: {fileID: 11444068}
   m_Layer: 0
   m_Name: staff_skull
   m_TagString: Untagged
@@ -251,12 +253,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 490112}
   - 136: {fileID: 13651960}
+  - 54: {fileID: 5461726}
+  - 195: {fileID: 19542276}
+  - 95: {fileID: 9561722}
   - 114: {fileID: 11465526}
   - 114: {fileID: 11492062}
-  - 54: {fileID: 5485808}
-  - 195: {fileID: 19587626}
-  - 95: {fileID: 9511082}
-  - 114: {fileID: 11482816}
+  - 114: {fileID: 11408558}
   m_Layer: 0
   m_Name: Necromancer
   m_TagString: Enemy
@@ -1299,7 +1301,7 @@ Transform:
   m_GameObject: {fileID: 148012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.19576263, y: -0.17900848, z: -3.0372105}
-  m_LocalScale: {x: 0.13032779, y: 0.13032778, z: 0.13032778}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 487678}
   - {fileID: 475890}
@@ -1389,7 +1391,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144818}
   m_Mesh: {fileID: 4300002, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
---- !u!54 &5485808
+--- !u!54 &5461726
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1398,13 +1400,13 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!95 &9511082
+--- !u!95 &9561722
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -1421,6 +1423,39 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11408558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1796ee2ee462947bcd7ce7495ab0e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  rangedAttacker: 1
+  magicAttackDistance: 8
+  rotationSpeed: 3
+  attackSpeed: 1
+  scoreValue: 20
+--- !u!114 &11444068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8585ef6f4fc369344aef405ced2f5a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageEverything: 0
+  damageObjectsWithTag:
+  - Player
+  destroySelfOnContact: 0
 --- !u!114 &11465526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1434,18 +1469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   currentHealth: 0
---- !u!114 &11482816
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1796ee2ee462947bcd7ce7495ab0e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  invulnTimeAfterHit: 0
 --- !u!114 &11492062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1457,8 +1481,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6967b325003e76c4292efe5e3dce1286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangedAttackObject: {fileID: 141530, guid: dff0d238109d47241934507686140ae2, type: 2}
   magicAttackDelay: 5
-  magicAttackTime: 0
 --- !u!136 &13651960
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1469,9 +1493,22 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.49
-  m_Height: 5.28
+  m_Height: 6
   m_Direction: 1
   m_Center: {x: 0, y: 2.88, z: 0}
+--- !u!136 &13683040
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7
+  m_Height: 5.5
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.3, z: -0.7}
 --- !u!137 &13730854
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1548,7 +1585,7 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.5955113, y: -0.1046741, z: 0.08055067}
     m_Extent: {x: 2.90842, y: 3.3912659, z: 3.547049}
   m_DirtyAABB: 0
---- !u!195 &19587626
+--- !u!195 &19542276
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1557,10 +1594,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_Radius: 0.5
   m_Speed: 1
-  m_Acceleration: 8
+  m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.5
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

@@ -30,7 +30,7 @@ GameObject:
   - 82: {fileID: 8299452}
   - 82: {fileID: 8285056}
   m_Layer: 0
-  m_Name: Firebolt
+  m_Name: Firebolt_Old
   m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

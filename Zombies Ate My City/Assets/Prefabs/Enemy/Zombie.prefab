@@ -569,9 +569,11 @@ GameObject:
   - 136: {fileID: 13606904}
   - 114: {fileID: 11451904}
   - 114: {fileID: 11423618}
-  - 54: {fileID: 5461880}
-  - 195: {fileID: 19568698}
-  - 114: {fileID: 11468642}
+  - 54: {fileID: 5466720}
+  - 195: {fileID: 19502740}
+  - 114: {fileID: 11432404}
+  - 135: {fileID: 13523904}
+  - 114: {fileID: 11411200}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -974,7 +976,7 @@ Transform:
   m_GameObject: {fileID: 161926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.63661194, y: -0.12, z: 0.4507885}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 445164}
   - {fileID: 474898}
@@ -1441,7 +1443,7 @@ Transform:
   - {fileID: 428574}
   m_Father: {fileID: 421896}
   m_RootOrder: 0
---- !u!54 &5461880
+--- !u!54 &5466720
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1450,7 +1452,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1473,6 +1475,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11411200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8585ef6f4fc369344aef405ced2f5a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageEverything: 0
+  damageObjectsWithTag:
+  - Player
+  destroySelfOnContact: 0
 --- !u!114 &11423618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1484,8 +1502,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6967b325003e76c4292efe5e3dce1286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangedAttackObject: {fileID: 0}
   magicAttackDelay: 5
-  magicAttackTime: 0
+--- !u!114 &11432404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1796ee2ee462947bcd7ce7495ab0e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  rangedAttacker: 0
+  magicAttackDistance: 8
+  rotationSpeed: 3
+  attackSpeed: 1
+  scoreValue: 5
 --- !u!114 &11451904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1499,18 +1534,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
---- !u!114 &11468642
-MonoBehaviour:
+  invulnTimeAfterHit: 0
+--- !u!135 &13523904
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161926}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1796ee2ee462947bcd7ce7495ab0e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0.35, z: 0.1}
 --- !u!136 &13606904
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1692,7 +1728,7 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.034472726, y: 0, z: 0.09363417}
     m_Extent: {x: 0.19481394, y: 0.21225756, z: 0.29912585}
   m_DirtyAABB: 0
---- !u!195 &19568698
+--- !u!195 &19502740
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1701,10 +1737,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_Radius: 0.5
   m_Speed: 1
-  m_Acceleration: 8
+  m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.5
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

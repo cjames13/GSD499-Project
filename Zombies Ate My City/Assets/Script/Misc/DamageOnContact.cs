@@ -9,6 +9,14 @@ public class DamageOnContact : MonoBehaviour {
 	public bool destroySelfOnContact = false;
 
 	void OnTriggerEnter(Collider other) {
+		Damage (other);
+	}
+
+	void OnTriggerStay(Collider other) {
+		Damage (other);
+	}
+
+	void Damage(Collider other) {
 		Health health = other.GetComponent<Health> ();
 		if (health != null) {
 			if (damageEverything || damageObjectsWithTag.Contains (other.tag)) {

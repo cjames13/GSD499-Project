@@ -715,14 +715,16 @@ GameObject:
   m_Component:
   - 4: {fileID: 432612}
   - 54: {fileID: 5497936}
-  - 65: {fileID: 6556044}
   - 135: {fileID: 13560472}
   - 114: {fileID: 11413538}
   - 114: {fileID: 11413702}
-  - 195: {fileID: 19572308}
-  - 95: {fileID: 9504080}
-  - 114: {fileID: 11481394}
   - 114: {fileID: 11447430}
+  - 195: {fileID: 19568192}
+  - 95: {fileID: 9500356}
+  - 114: {fileID: 11444262}
+  - 114: {fileID: 11440592}
+  - 64: {fileID: 6482992}
+  - 114: {fileID: 11488116}
   m_Layer: 0
   m_Name: Cave Worm
   m_TagString: Enemy
@@ -1724,16 +1726,16 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182086}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6556044
-BoxCollider:
+--- !u!64 &6482992
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1742,9 +1744,9 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 1.5, z: 3}
-  m_Center: {x: 0, y: 0.8, z: 0}
---- !u!95 &9504080
+  m_Convex: 0
+  m_Mesh: {fileID: 0}
+--- !u!95 &9500356
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -1752,7 +1754,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182086}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 38104198e683eee448ffb34652ffc6c7, type: 3}
   m_Controller: {fileID: 9100000, guid: 1f09f8e17a0d9234196d250eb3b9a945, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -1774,6 +1776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
+  invulnTimeAfterHit: 0
 --- !u!114 &11413702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1790,7 +1793,7 @@ MonoBehaviour:
   damageObjectsWithTag:
   - Player
   destroySelfOnContact: 0
---- !u!114 &11447430
+--- !u!114 &11440592
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1801,9 +1804,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6967b325003e76c4292efe5e3dce1286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangedAttackObject: {fileID: 0}
   magicAttackDelay: 5
-  magicAttackTime: 0
---- !u!114 &11481394
+--- !u!114 &11444262
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1815,6 +1818,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  rangedAttacker: 0
+  magicAttackDistance: 8
+  rotationSpeed: 3
+  attackSpeed: 1
+  scoreValue: 10
+--- !u!114 &11447430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6967b325003e76c4292efe5e3dce1286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangedAttackObject: {fileID: 0}
+  magicAttackDelay: 5
+--- !u!114 &11488116
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8585ef6f4fc369344aef405ced2f5a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  damageEverything: 0
+  damageObjectsWithTag:
+  - Player
+  destroySelfOnContact: 0
 --- !u!135 &13560472
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1822,7 +1859,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182086}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2
@@ -1890,7 +1927,7 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.58666754, y: -0.020128965, z: -0.08799386}
     m_Extent: {x: 2.1752796, y: 1.8143084, z: 2.1931}
   m_DirtyAABB: 0
---- !u!195 &19572308
+--- !u!195 &19568192
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1898,11 +1935,11 @@ NavMeshAgent:
   m_GameObject: {fileID: 182086}
   m_Enabled: 1
   m_Radius: 0.5
-  m_Speed: 0.5
-  m_Acceleration: 8
+  m_Speed: 1.5
+  m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

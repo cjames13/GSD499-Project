@@ -8,9 +8,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 409728}
+  - 65: {fileID: 6587630}
+  - 135: {fileID: 13513128}
+  - 111: {fileID: 11133376}
+  - 114: {fileID: 11434928}
   m_Layer: 0
   m_Name: sci-fi crate
-  m_TagString: Untagged
+  m_TagString: Resource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,8 +173,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111018}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.25090387, z: 0, w: 0.96801203}
+  m_LocalPosition: {x: -3.1430435, y: -0.63879776, z: -0.71756744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 468154}
@@ -531,6 +535,56 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167738}
   m_Mesh: {fileID: 4300012, guid: 107eb90ff98c915418cef538390fe8ef, type: 3}
+--- !u!65 &6587630
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!111 &11133376
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111018}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: dd8e2f678fcc57540b2285d8a6355512, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: dd8e2f678fcc57540b2285d8a6355512, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &11434928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec3fb2585f431034cbc4be9e3201db23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &13513128
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.7
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

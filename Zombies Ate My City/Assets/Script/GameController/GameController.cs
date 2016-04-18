@@ -22,4 +22,8 @@ public class GameController : MonoBehaviour {
 	public void ResourceCollected() {
 		resourcesCollected++;
 	}
+
+	public void IncreaseScore(int s) {
+		score += s;
+	}
 }

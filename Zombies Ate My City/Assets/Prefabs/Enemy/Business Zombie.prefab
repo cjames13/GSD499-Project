@@ -43,8 +43,8 @@ GameObject:
   - 54: {fileID: 5449778}
   - 114: {fileID: 11414874}
   - 114: {fileID: 11488154}
-  - 195: {fileID: 19569610}
-  - 114: {fileID: 11413052}
+  - 195: {fileID: 19537910}
+  - 114: {fileID: 11433230}
   m_Layer: 0
   m_Name: Business Zombie
   m_TagString: Enemy
@@ -270,6 +270,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458928}
+  - 135: {fileID: 13576562}
+  - 114: {fileID: 11453306}
   m_Layer: 0
   m_Name: def_hand_R
   m_TagString: Untagged
@@ -672,7 +674,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4857635, y: -0.16000748, z: -0.85921097}
+  m_LocalPosition: {x: 1.4857635, y: -0.16000748, z: -0.86}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 444688}
@@ -688,7 +690,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -711,18 +713,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11413052
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1796ee2ee462947bcd7ce7495ab0e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!114 &11414874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -736,6 +726,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   currentHealth: 0
+  invulnTimeAfterHit: 0
+--- !u!114 &11433230
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1796ee2ee462947bcd7ce7495ab0e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  rangedAttacker: 0
+  magicAttackDistance: 8
+  rotationSpeed: 3
+  attackSpeed: 1
+  scoreValue: 5
+--- !u!114 &11453306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8585ef6f4fc369344aef405ced2f5a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageEverything: 0
+  damageObjectsWithTag:
+  - Player
+  destroySelfOnContact: 0
 --- !u!114 &11488154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -747,8 +771,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6967b325003e76c4292efe5e3dce1286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangedAttackObject: {fileID: 0}
   magicAttackDelay: 5
-  magicAttackTime: 0
+--- !u!135 &13576562
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: -0.25, y: 0, z: 0}
 --- !u!136 &13661878
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -820,7 +856,7 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.19107455, y: 0.0066316575, z: 0.22975066}
     m_Extent: {x: 1.0285757, y: 0.40011084, z: 0.56440866}
   m_DirtyAABB: 0
---- !u!195 &19569610
+--- !u!195 &19537910
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -829,10 +865,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_Radius: 0.5
   m_Speed: 1
-  m_Acceleration: 8
+  m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.5
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

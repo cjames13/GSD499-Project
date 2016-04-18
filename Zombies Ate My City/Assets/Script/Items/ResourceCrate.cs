@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class _Resources : MonoBehaviour {
+public class ResourceCrate : MonoBehaviour {
 	private bool isCollected = false;
 	private GameController gameController;
     private Animation anim;

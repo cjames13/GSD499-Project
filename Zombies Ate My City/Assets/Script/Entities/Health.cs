@@ -4,13 +4,16 @@ using System.Collections;
 public class Health : MonoBehaviour {
 	public int maxHealth;
 	public int currentHealth;
+	public float invulnTimeAfterHit = 0f;
 
 	private StateController animController;
+	private float lastHitTime;
 
 	// Use this for initialization
 	void Start () {
 		animController = GetComponent<StateController> ();
 		currentHealth = maxHealth;
+		lastHitTime = Time.time;
 	}
 
 	void Update() {
@@ -20,7 +23,10 @@ public class Health : MonoBehaviour {
 	}
 
 	public void Damage(int d) {
-		currentHealth -= d;
-		animController.TakeDamage ();
+		if (Time.time - lastHitTime >= invulnTimeAfterHit) {
+			currentHealth -= d;
+			animController.TakeDamage ();
+			lastHitTime = Time.time;
+		}
 	}
 }
