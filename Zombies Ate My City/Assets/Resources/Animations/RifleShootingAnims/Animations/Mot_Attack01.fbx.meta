@@ -247,7 +247,25 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Spine_2' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Chest' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'R.Arm' is
+      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R.Arm_Roll_2'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R.ForeArm_Roll_1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R.Hand'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'L.Arm'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'L.Arm_Roll_2'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'L.ForeArm_Roll_1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'L.Hand'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R.UpLeg_Roll_1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R.Leg'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R.Foot'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'L.UpLeg_Roll_1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'L.Leg'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'L.Foot'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -260,8 +278,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Attack01
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 20
+      firstFrame: 4
+      lastFrame: 18
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

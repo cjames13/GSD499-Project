@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerStates : MonoBehaviour, StateController {
 	private PlayerController playerController;
-
+	WeaponController weaponController;
 	// Movement state
 	private Rigidbody rigidBody;
 	private Rigidbody[] rigidBodies;
@@ -24,7 +24,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 	void Start() {
 		anim = GetComponent<Animator> ();
 		playerController = GetComponent<PlayerController> ();
-
+		weaponController = GetComponent<WeaponController> ();
 		rigidBody = GetComponent<Rigidbody>();
 		rigidBodies = GetComponentsInChildren<Rigidbody> ();
 		myCollider = GetComponent<CapsuleCollider> ();
@@ -89,7 +89,10 @@ public class PlayerStates : MonoBehaviour, StateController {
 		}
 
 		currentWeight = Mathf.Lerp (currentWeight, (drawingWeapon) ? 1.0f : 0.0f, drawAnimationTime / thisTime);
-		anim.SetLayerWeight(2, currentWeight);
+		//if (weaponController.weapons [weaponController.currentlyEquippedIndex].tag == "Bit Gun")
+			anim.SetLayerWeight (2, currentWeight);
+		if (weaponController.weapons [weaponController.currentlyEquippedIndex].tag == "Rifle")
+			anim.SetLayerWeight (4, currentWeight);
 	}
 
 	// TODO: Move movement animation logic to states
