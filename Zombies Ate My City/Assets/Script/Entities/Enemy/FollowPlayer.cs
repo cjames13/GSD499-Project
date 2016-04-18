@@ -17,6 +17,10 @@ public class FollowPlayer : MonoBehaviour {
 	void Update () {
 		float attackDistance = Vector3.Distance (agent.nextPosition, target.position);
 		agent.SetDestination (target.position);
+		Vector3 lookPos = target.position - transform.position;
+		lookPos.y = 0;
+		Quaternion rotation = Quaternion.LookRotation (lookPos);
+		transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * 3);
 		enemyStates.Walk ();
 		if (Vector3.Distance (agent.nextPosition, target.position) <= agent.stoppingDistance)
 			enemyStates.Attack (true);

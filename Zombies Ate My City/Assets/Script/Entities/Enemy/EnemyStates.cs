@@ -2,12 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 public class EnemyStates : MonoBehaviour, StateController {
-	public float magicAttackDelay = 7f;
 
 	Transform player;
 	Animator anim;
 	bool playing = true;
 	bool shooting = true;
+	public float magicAttackDelay = 7f;
 	public float magicAttackTime;
 	void Start(){
 		anim = GetComponent<Animator> ();
@@ -70,7 +70,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 				if (magicAttackTime <= 0) {
 					playing = true;
 					shooting = true;
-					magicAttackTime = 7;
+					magicAttackTime = magicAttackDelay;
 				}
 			} else {
 				anim.SetLayerWeight (3, 0);
