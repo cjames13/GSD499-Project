@@ -422,6 +422,10 @@ Prefab:
       propertyPath: m_AngularDrag
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5449778, guid: c6534134a4b001e42abbec40284bc6a8, type: 2}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11413052, guid: c6534134a4b001e42abbec40284bc6a8, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c6534134a4b001e42abbec40284bc6a8, type: 2}
@@ -489,7 +493,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 10
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1279,6 +1283,10 @@ Prefab:
       propertyPath: m_AngularDrag
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5497936, guid: f3ed1664609415145ad039d1124007db, type: 2}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11156402, guid: f3ed1664609415145ad039d1124007db, type: 2}
     - {fileID: 11481394, guid: f3ed1664609415145ad039d1124007db, type: 2}
@@ -1473,7 +1481,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 10
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1931,6 +1939,10 @@ Prefab:
     - target: {fileID: 5464552, guid: c3c2810a8f3b4cf4b88516cae177af9b, type: 2}
       propertyPath: m_AngularDrag
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464552, guid: c3c2810a8f3b4cf4b88516cae177af9b, type: 2}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11143382, guid: c3c2810a8f3b4cf4b88516cae177af9b, type: 2}
