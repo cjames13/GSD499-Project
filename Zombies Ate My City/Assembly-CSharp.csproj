@@ -101,7 +101,6 @@
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Scripts\QuerySDController\QueryChanSapporoMecanimController.cs" />
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Scripts\SceneController\GameSceneController.cs" />
      <Compile Include="Assets\Script\Camera\CameraController.cs" />
-     <Compile Include="Assets\Script\Camera\OverheadFollow.cs" />
      <Compile Include="Assets\Script\Camera\SimpleFollow.cs" />
      <Compile Include="Assets\Script\Entities\Enemy\EnemyController.cs" />
      <Compile Include="Assets\Script\Entities\Enemy\EnemyStates.cs" />

@@ -2,15 +2,12 @@
 using System.Collections;
 
 public class PlayerAttack : MonoBehaviour {
-	private Animator anim;
-	private float currentWeight = 0;
 	private bool draw = false;
 	private Transform firingLocation;
 	private WeaponController weaponController;
 	private StateController playerState;
 
 	void Start () {
-		anim = GetComponent<Animator> ();
 		firingLocation = GameObject.FindGameObjectWithTag ("FiringPoint").transform;
 		playerState = GetComponent<StateController> ();
 		weaponController = GetComponent<WeaponController> ();

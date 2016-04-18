@@ -66,9 +66,9 @@ public class EnemyStates : MonoBehaviour, StateController {
 				if (playing == true) {
 					
 					if (shooting == true) {
-						GameObject fireBolt = (GameObject)Instantiate (rangedAttackObject,
-							                      new Vector3 (transform.position.x, transform.position.y + 0.5f,
-								                      transform.position.z - 0.5f), transform.rotation);
+						Instantiate (rangedAttackObject,
+							new Vector3 (transform.position.x, transform.position.y + 0.5f,
+								transform.position.z - 0.5f), transform.rotation);
 						shooting = false;
 					}
 					anim.SetLayerWeight (3, 1);

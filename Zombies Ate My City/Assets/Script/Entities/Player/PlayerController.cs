@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
 	CapsuleCollider myCollider;
 	List<Collider> colliders;
 
-	bool jumped = false;
+	//bool jumped = false;
 	Camera cam;
 
 	private StateController playerStates;
