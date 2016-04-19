@@ -44,17 +44,11 @@ public class WeaponController : MonoBehaviour {
 	{
 		if (weapons [currentlyEquippedIndex].name == "Rifle") {
 			if (anim.GetLayerWeight (4) != 1) {
-				if (rotated == false) {
-					//weapons [currentlyEquippedIndex].transform.Rotate (new Vector3 (80,0,0));
-					rotated = true;
-				}
 				anim.SetLayerWeight (3, 1);
-				anim.SetLayerWeight (4, 0);
-			} else {
-				rotated = false;
+			} else 
 				anim.SetLayerWeight (4, 1);
-			}
-		} else {
+		} 
+		else {
 			anim.SetLayerWeight (3, 0);
 			anim.SetLayerWeight (4, 0);
 		}

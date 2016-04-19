@@ -797,51 +797,51 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479042, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.100159764
+      value: 0.046862777
       objectReference: {fileID: 0}
     - target: {fileID: 479042, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.074310504
+      value: -0.20433675
       objectReference: {fileID: 0}
     - target: {fileID: 479042, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.70783705
+      value: 0.57716256
       objectReference: {fileID: 0}
     - target: {fileID: 479042, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.6952789
+      value: -0.7892616
       objectReference: {fileID: 0}
     - target: {fileID: 479042, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.089
+      value: -0.078
       objectReference: {fileID: 0}
     - target: {fileID: 479042, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.052
+      value: 0.051
       objectReference: {fileID: 0}
     - target: {fileID: 479042, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.012
+      value: -0.094
       objectReference: {fileID: 0}
     - target: {fileID: 197500, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 413542, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.71437263
+      value: 0.6893409
       objectReference: {fileID: 0}
     - target: {fileID: 413542, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.04340633
+      value: 0.2564079
       objectReference: {fileID: 0}
     - target: {fileID: 413542, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.69713223
+      value: -0.6533128
       objectReference: {fileID: 0}
     - target: {fileID: 413542, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.042359423
+      value: -0.17957337
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11497130, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
@@ -1465,6 +1465,7 @@ MonoBehaviour:
   maximumSpawnTime: 60
   minimumSpawnTime: 10
   timeBetweenTries: 1
+  maxEnemiesSpawned: 0
 --- !u!135 &1707069942
 SphereCollider:
   m_ObjectHideFlags: 0
