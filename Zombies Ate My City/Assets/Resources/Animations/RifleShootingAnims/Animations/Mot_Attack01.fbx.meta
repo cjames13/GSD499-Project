@@ -279,7 +279,7 @@ ModelImporter:
       name: Attack01
       takeName: Take 001
       firstFrame: 4
-      lastFrame: 18
+      lastFrame: 4
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -1567,7 +1567,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: Char1__Hierarchy
+    rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 3

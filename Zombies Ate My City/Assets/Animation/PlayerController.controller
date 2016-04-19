@@ -114,7 +114,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Rifle Shooting Layer
     m_StateMachine: {fileID: 110781586}
-    m_Mask: {fileID: 101100000, guid: 7b097555762b1c749836b9f0baa70394, type: 2}
+    m_Mask: {fileID: 101100000, guid: 1723ceb015d97344c8deba06c0231424, type: 2}
     m_Motions:
     - serializedVersion: 2
       m_State: {fileID: 110271252}

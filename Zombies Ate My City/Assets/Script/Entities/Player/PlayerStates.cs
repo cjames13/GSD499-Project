@@ -89,9 +89,9 @@ public class PlayerStates : MonoBehaviour, StateController {
 		}
 
 		currentWeight = Mathf.Lerp (currentWeight, (drawingWeapon) ? 1.0f : 0.0f, drawAnimationTime / thisTime);
-		//if (weaponController.weapons [weaponController.currentlyEquippedIndex].tag == "Bit Gun")
+		if (weaponController.weapons [weaponController.currentlyEquippedIndex].name == "Bit Gun")
 			anim.SetLayerWeight (2, currentWeight);
-		if (weaponController.weapons [weaponController.currentlyEquippedIndex].tag == "Rifle")
+		if (weaponController.weapons [weaponController.currentlyEquippedIndex].name == "Rifle")
 			anim.SetLayerWeight (4, currentWeight);
 	}
 
