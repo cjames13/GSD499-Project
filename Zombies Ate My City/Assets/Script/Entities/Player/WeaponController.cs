@@ -51,7 +51,18 @@ public class WeaponController : MonoBehaviour {
 			anim.SetLayerWeight (3, 0);
 			anim.SetLayerWeight (4, 0);
 		}
+		if (weapons [currentlyEquippedIndex].name == "Sword") {
+			if (anim.GetLayerWeight (7) != 1) {
+				anim.SetLayerWeight (6, 1);
+			} else 
+				anim.SetLayerWeight (7, 1);
+		} 
+		else {
+			anim.SetLayerWeight (6, 0);
+			anim.SetLayerWeight (7, 0);
+		}
 	}
+		
 }
 
 

@@ -28,16 +28,15 @@ public class Weapon : MonoBehaviour {
 		PlayerController playerController = player.GetComponent<PlayerController> ();
 		hitTime += Time.deltaTime;
 		if (projectileObject) {
-			if (thrown == false && hitTime > 0.2f) {
-				if (anim.GetBool ("running") == true || anim.GetBool("jumping") == true)
+			if (thrown == false) {
+				if (anim.GetBool ("running") == true || anim.GetBool ("jumping") == true)
 					anim.speed = 1f;
 				else
 					anim.speed = 2f;
 				anim.SetLayerWeight (5, 1);
 				Instantiate (projectileObject, firingLocation.position, firingLocation.rotation);
 				thrown = true;
-			}
-			else {
+			} else {
 				if (hitTime > 0.8f) {
 					hitTime = 0f;
 					anim.speed = 1f;
@@ -46,7 +45,23 @@ public class Weapon : MonoBehaviour {
 					anim.SetLayerWeight (5, 0);
 				}
 			}
-
+		} else {
+			if (thrown == false) {
+				if (anim.GetBool ("running") == true || anim.GetBool ("jumping") == true)
+					anim.speed = 0.8f;
+				else
+					anim.speed = 1.4f;
+				anim.SetLayerWeight (7, 1);
+				thrown = true;
+			} else {
+				if (hitTime > 0.8f) {
+					hitTime = 0f;
+					anim.speed = 0.8f;
+					thrown = false;
+					playerController.swing = false;
+					anim.SetLayerWeight (7, 0);
+				}
+			}
 		}
 	}
 

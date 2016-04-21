@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
 	}
 	void Update()//So GetButtonDown will always activate
 	{
-		if (Input.GetButtonDown ("Fire1") && weaponController.weapons [weaponController.currentlyEquippedIndex].name == "Bomb") 
+		if (Input.GetButtonDown ("Fire1") && (weaponController.weapons [weaponController.currentlyEquippedIndex].tag == "CloseRange")) 
 			swing = true;
 		if (swing) {
 			Weapon currentWeapon = weaponController.weapons [weaponController.currentlyEquippedIndex].GetComponent<Weapon> ();
