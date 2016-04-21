@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 4f;
 	public float jumpSpeed = 5f;
 	public bool dead = false;
-
+	public bool swing = false;
 	Vector3 moveDirection;
 	Animator anim;
 	Rigidbody rigidBody;
@@ -30,24 +30,22 @@ public class PlayerController : MonoBehaviour {
 		weaponController = GetComponent<WeaponController> ();
 		firingLocation = GameObject.FindGameObjectWithTag ("FiringPoint").transform;
 	}
-
-	void FixedUpdate() {
-		/*if (IsGrounded ()) {
-			jumped = false;
-			firePoint.rotation = transform.rotation;
+	void Update()//So GetButtonDown will always activate
+	{
+		if (Input.GetButtonDown ("Fire1") && weaponController.weapons [weaponController.currentlyEquippedIndex].name == "Bomb") 
+			swing = true;
+		if (swing) {
+			Weapon currentWeapon = weaponController.weapons [weaponController.currentlyEquippedIndex].GetComponent<Weapon> ();
+			currentWeapon.ThrowOrHit (firingLocation);
 		}
-		if (Input.GetButtonDown ("Jump")) {
-			if (jumped == false) {
-				firePoint.Rotate (new Vector3 (15, 0, 0));
-				jumped = true;
-			}
-		}*/
-
+	}
+	void FixedUpdate() {
 		bool draw = Input.GetButton ("Fire1");
 
 		if (draw) {
 			Weapon currentWeapon = weaponController.weapons [weaponController.currentlyEquippedIndex].GetComponent<Weapon> ();
-			currentWeapon.Fire (firingLocation);
+			if (currentWeapon.tag != "CloseRange")
+				currentWeapon.Fire (firingLocation);
 		}
 
 		playerStates.RangedAttack (draw);
@@ -93,5 +91,3 @@ public class PlayerController : MonoBehaviour {
 		return Physics.Raycast (transform.position, -Vector3.up, 0.1f);
 	}
 }
-
-

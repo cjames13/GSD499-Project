@@ -6,7 +6,6 @@ public class WeaponController : MonoBehaviour {
 	public int currentlyEquippedIndex = 0;
 	GameObject player;
 	Animator anim;
-	bool rotated = false;
 	private GameObject weaponSlot;
 
 	void Start () {
@@ -23,7 +22,7 @@ public class WeaponController : MonoBehaviour {
 		// TODO: Look for weapon marked as default
 		weapons [0].SetActive (true);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		CurrentAnimation ();
@@ -54,3 +53,6 @@ public class WeaponController : MonoBehaviour {
 		}
 	}
 }
+
+
+

@@ -12,6 +12,8 @@ TagManager:
   - Damage
   - WeaponSlot
   - PlayerAttack
+  - SnowBall
+  - CloseRange
   layers:
   - Default
   - TransparentFX

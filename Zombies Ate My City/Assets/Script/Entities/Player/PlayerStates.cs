@@ -68,7 +68,9 @@ public class PlayerStates : MonoBehaviour, StateController {
 		anim.SetLayerWeight (1, 0);
 	}
 
-	void StateController.Attack(bool attacking){}
+	void StateController.Attack(bool attacking){
+
+	}
 
 	void StateController.RangedAttack(bool attacking)
 	{
