@@ -11,10 +11,13 @@ public class Explode : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider other)
 	{
-		Instantiate (explosion,
-			new Vector3 (transform.position.x, transform.position.y,
-				transform.position.z), transform.rotation);
-		Destroy (gameObject);
+		if (other.tag == "Ground" || other.tag == "Enemy") {
+			Instantiate (explosion,
+				new Vector3 (transform.position.x, transform.position.y,
+					transform.position.z), transform.rotation);
+			Destroy (gameObject);
+		}
+
 	}
 }
 	
