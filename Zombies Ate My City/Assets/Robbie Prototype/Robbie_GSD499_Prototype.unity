@@ -624,46 +624,10 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!1 &727517329 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 169714, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
-  m_PrefabInternal: {fileID: 1147004417}
 --- !u!4 &727517330 stripped
 Transform:
   m_PrefabParentObject: {fileID: 468214, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
   m_PrefabInternal: {fileID: 1147004417}
---- !u!114 &727517334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 727517329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c2c9828fec98747a1b0680f47bed80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseWith2D: 0
-  SortingLayerName: 
-  SortingOrder: 0
-  PointStart: {fileID: 521956330}
-  PointEnd: {fileID: 269190816}
-  MaxFrame: 7
-  Granularity: 100
-  Fps: 60
-  MyColor: {r: 1, g: 1, b: 1, a: 1}
-  MyMaterial: {fileID: 2100000, guid: 829d12df641534b4fb16737da833bf30, type: 2}
---- !u!114 &727517335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 727517329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbd123e6023e55f4e89d077fb3fe2abb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &775691410
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,6 +927,10 @@ Prefab:
     - target: {fileID: 468214, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445418, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+      propertyPath: attackSpeed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11497130, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
