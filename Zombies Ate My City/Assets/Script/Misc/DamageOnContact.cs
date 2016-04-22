@@ -7,13 +7,26 @@ public class DamageOnContact : MonoBehaviour {
 	public bool damageEverything = false;
 	public List<string> damageObjectsWithTag;
 	public bool destroySelfOnContact = false;
+	GameObject player;
+	Animator anim;
+	AnimatorStateInfo currentState;
+	void Awake(){
+		player = GameObject.FindGameObjectWithTag ("Player");
+		anim = player.GetComponent<Animator> ();
 
+	}
 	void OnTriggerEnter(Collider other) {
-		Damage (other);
+		currentState = anim.GetCurrentAnimatorStateInfo (4);
+		if(!currentState.IsName("Not Meleeing")) {
+			Damage (other);
+		}
 	}
 
 	void OnTriggerStay(Collider other) {
-		Damage (other);
+		currentState = anim.GetCurrentAnimatorStateInfo (4);
+		if (!currentState.IsName ("Not Meleeing")) {
+			Damage (other);
+		}
 	}
 
 	void Damage(Collider other) {
