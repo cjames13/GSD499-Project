@@ -359,17 +359,16 @@ namespace Xft {
         }
 
 
-        void UpdateFade() {
+        public void UpdateFade() {
+			
             if (!mIsFading)
                 return;
-
             mFadeElapsedime += Time.deltaTime;
 
             float t = mFadeElapsedime / mFadeTime;
 
             mFadeT = 1f - t;
-
-            if (mFadeT < 0f) {
+            if (mFadeT < 0) {
                 Deactivate();
             }
         }
@@ -393,7 +392,7 @@ namespace Xft {
 
         }
 
-        void InitOriginalElements() {
+        public void InitOriginalElements() {
             mSnapshotList.Clear();
             //at least add 2 original elements
             mSnapshotList.Add(new Element(PointStart.position, PointEnd.position));
@@ -402,7 +401,7 @@ namespace Xft {
 
 
 
-        void InitMeshObj() {
+        public void InitMeshObj() {
             //init vertexpool
             mVertexPool = new VertexPool(MyMaterial, this);
             mVertexSegment = mVertexPool.GetVertices(Granularity * 3, (Granularity - 1) * 12);

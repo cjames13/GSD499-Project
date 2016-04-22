@@ -13,8 +13,8 @@ public class WeaponTrailActivation : MonoBehaviour {
 	virtual public void Update(){
 		AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo (4);
 		if (currentState.IsName ("Not Meleeing")) {
-			trail.enabled = false;
-		} else
-			trail.enabled = true;
+			trail.StopSmoothly (1);
+			trail.Activate ();
+		} 
 	}
 }
