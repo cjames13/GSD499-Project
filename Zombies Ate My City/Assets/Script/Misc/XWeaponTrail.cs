@@ -80,8 +80,6 @@ namespace Xft {
         public Material MyMaterial;
         #endregion
 
-
-
         #region protected members
         protected float mTrailWidth = 0f;
         protected Element mHeadElem = new Element();
@@ -137,29 +135,29 @@ namespace Xft {
 
         public void Activate() {
 
-            Init();
+				Init ();
+				gameObject.SetActive (true);
 
-            gameObject.SetActive(true);
+				mFadeT = 1f;
+				mIsFading = false;
+				mFadeTime = 1f;
+				mFadeElapsedime = 0f;
+				mElapsedTime = 0f;
 
-            mFadeT = 1f;
-            mIsFading = false;
-            mFadeTime = 1f;
-            mFadeElapsedime = 0f;
-            mElapsedTime = 0f;
+				//reset all elemts to head pos.
+				for (int i = 0; i < mSnapshotList.Count; i++) {
+					mSnapshotList [i].PointStart = PointStart.position;
+					mSnapshotList [i].PointEnd = PointEnd.position;
 
-            //reset all elemts to head pos.
-            for (int i = 0; i < mSnapshotList.Count; i++) {
-                mSnapshotList[i].PointStart = PointStart.position;
-                mSnapshotList[i].PointEnd = PointEnd.position;
+					mSpline.ControlPoints [i].Position = mSnapshotList [i].Pos;
+					mSpline.ControlPoints [i].Normal = mSnapshotList [i].PointEnd - mSnapshotList [i].PointStart;
+				}
 
-                mSpline.ControlPoints[i].Position = mSnapshotList[i].Pos;
-                mSpline.ControlPoints[i].Normal = mSnapshotList[i].PointEnd - mSnapshotList[i].PointStart;
-            }
-
-            //reset vertex too.
-            RefreshSpline();
-            UpdateVertex();
-        }
+				//reset vertex too.
+				RefreshSpline ();
+				UpdateVertex ();
+		}
+   
 
         public void Deactivate() {
             gameObject.SetActive(false);

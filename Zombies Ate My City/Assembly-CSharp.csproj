@@ -96,7 +96,6 @@
      <Compile Include="Assets\Resources\XWeaponTrail\Scripts\Spline.cs" />
      <Compile Include="Assets\Resources\XWeaponTrail\Scripts\SplineControlPoint.cs" />
      <Compile Include="Assets\Resources\XWeaponTrail\Scripts\VertexPool.cs" />
-     <Compile Include="Assets\Resources\XWeaponTrail\Scripts\XWeaponTrail.cs" />
      <Compile Include="Assets\Resources\XWeaponTrail\Scripts\XWeaponTrailDemo.cs" />
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Sapporo_Props\SnowBallFightObject\Scripts\EnemyPcController.cs" />
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Sapporo_Props\SnowBallFightObject\Scripts\MoveSnowBall.cs" />
@@ -128,6 +127,8 @@
      <Compile Include="Assets\Script\Misc\Explode.cs" />
      <Compile Include="Assets\Script\Misc\Projectile.cs" />
      <Compile Include="Assets\Script\Misc\TempScript.cs" />
+     <Compile Include="Assets\Script\Misc\WeaponTrailActivation.cs" />
+     <Compile Include="Assets\Script\Misc\XWeaponTrail.cs" />
      <Compile Include="Assets\Script\UI\DrawRadarBlipUI.cs" />
      <Compile Include="Assets\Script\UI\HealthBarUI.cs" />
      <None Include="Assets\Resources\ZRNAssets\Standard Assets\Projectors\Guidelines.txt" />

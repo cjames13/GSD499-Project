@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour {
 		float v = Input.GetAxisRaw ("Vertical");
 		AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo (4);
 
-		if (dead || currentState.IsName("Meleeing")) {
+		if (dead || !currentState.IsName("Not Meleeing")) {
 			moveDirection = Vector3.zero;
 		} 
 		else {

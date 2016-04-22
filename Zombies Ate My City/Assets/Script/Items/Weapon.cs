@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using Xft;
 public abstract class Weapon : MonoBehaviour {
 	public float attackSpeed = 0.125f;
 	public Transform attackLocation;
@@ -9,4 +9,5 @@ public abstract class Weapon : MonoBehaviour {
 
 	public abstract void Attack ();
 	public abstract void PlayAnimation(StateController stateController, bool attacking);
+
 }

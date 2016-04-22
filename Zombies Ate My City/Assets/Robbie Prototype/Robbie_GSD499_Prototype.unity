@@ -648,11 +648,22 @@ MonoBehaviour:
   SortingOrder: 0
   PointStart: {fileID: 521956330}
   PointEnd: {fileID: 269190816}
-  MaxFrame: 25
-  Granularity: 60
+  MaxFrame: 7
+  Granularity: 100
   Fps: 60
   MyColor: {r: 1, g: 1, b: 1, a: 1}
   MyMaterial: {fileID: 2100000, guid: 829d12df641534b4fb16737da833bf30, type: 2}
+--- !u!114 &727517335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 727517329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd123e6023e55f4e89d077fb3fe2abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &775691410
 GameObject:
   m_ObjectHideFlags: 0
