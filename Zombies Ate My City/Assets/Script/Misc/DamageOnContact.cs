@@ -16,17 +16,11 @@ public class DamageOnContact : MonoBehaviour {
 
 	}
 	void OnTriggerEnter(Collider other) {
-		currentState = anim.GetCurrentAnimatorStateInfo (4);
-		if(!currentState.IsName("Not Meleeing")) {
 			Damage (other);
-		}
 	}
 
 	void OnTriggerStay(Collider other) {
-		currentState = anim.GetCurrentAnimatorStateInfo (4);
-		if (!currentState.IsName ("Not Meleeing")) {
 			Damage (other);
-		}
 	}
 
 	void Damage(Collider other) {
