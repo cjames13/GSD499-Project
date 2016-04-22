@@ -108,13 +108,13 @@
      <Compile Include="Assets\Script\Entities\Enemy\EnemyStates.cs" />
      <Compile Include="Assets\Script\Entities\Enemy\Spawner.cs" />
      <Compile Include="Assets\Script\Entities\Health.cs" />
-     <Compile Include="Assets\Script\Entities\Player\PlayerAttack.cs" />
      <Compile Include="Assets\Script\Entities\Player\PlayerController.cs" />
      <Compile Include="Assets\Script\Entities\Player\PlayerStates.cs" />
-     <Compile Include="Assets\Script\Entities\Player\ShootPistol.cs" />
      <Compile Include="Assets\Script\Entities\Player\WeaponController.cs" />
      <Compile Include="Assets\Script\Entities\StateController.cs" />
      <Compile Include="Assets\Script\GameController\GameController.cs" />
+     <Compile Include="Assets\Script\Items\MeleeWeapon.cs" />
+     <Compile Include="Assets\Script\Items\RangedWeapon.cs" />
      <Compile Include="Assets\Script\Items\ResourceCrate.cs" />
      <Compile Include="Assets\Script\Items\Weapon.cs" />
      <Compile Include="Assets\Script\Misc\BossWall.cs" />

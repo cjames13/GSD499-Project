@@ -4,11 +4,8 @@ using UnityEngine;
 using System.Collections;
 
 public class Explode : MonoBehaviour {
-	private GameObject explosion;
-	void Start()
-	{
-		explosion = Resources.Load ("FireExplosion") as GameObject;
-	}
+	public GameObject explosion;
+
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Ground" || other.tag == "Enemy") {

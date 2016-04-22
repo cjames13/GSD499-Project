@@ -149,7 +149,7 @@ GameObject:
   - 111: {fileID: 11116462}
   - 108: {fileID: 10882734}
   m_Layer: 0
-  m_Name: sci-fi crate
+  m_Name: ResourceCrate
   m_TagString: Resource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

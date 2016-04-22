@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour {
 
 	private StateController playerStates;
 	private WeaponController weaponController;
-	private Transform firingLocation;
 
 	void Awake(){
 		rigidBody = GetComponent<Rigidbody>();
@@ -28,28 +27,27 @@ public class PlayerController : MonoBehaviour {
 		cam =  GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera> ();
 		playerStates = GetComponent<StateController> ();
 		weaponController = GetComponent<WeaponController> ();
-		firingLocation = GameObject.FindGameObjectWithTag ("FiringPoint").transform;
 	}
-	void Update()//So GetButtonDown will always activate
-	{
-		if (Input.GetButtonDown ("Fire1") && (weaponController.weapons [weaponController.currentlyEquippedIndex].tag == "CloseRange")) 
-			swing = true;
-		if (swing) {
-			Weapon currentWeapon = weaponController.weapons [weaponController.currentlyEquippedIndex].GetComponent<Weapon> ();
-			currentWeapon.ThrowOrHit (firingLocation);
+
+	void Update() {
+		// Attacking
+		bool attacking = Input.GetButton ("Fire1");
+		Weapon currentWeapon = weaponController.weapons [weaponController.currentlyEquippedIndex].GetComponent<Weapon> ();
+
+		if (attacking) {
+			currentWeapon.Attack ();
+		}
+
+		currentWeapon.PlayAnimation(playerStates, attacking);
+
+		// Jumping
+		if (Input.GetButtonDown ("Jump") && IsGrounded()) {
+			rigidBody.velocity = new Vector3(0, jumpSpeed, 0);
 		}
 	}
+
 	void FixedUpdate() {
-		bool draw = Input.GetButton ("Fire1");
-
-		if (draw) {
-			Weapon currentWeapon = weaponController.weapons [weaponController.currentlyEquippedIndex].GetComponent<Weapon> ();
-			if (currentWeapon.tag != "CloseRange")
-				currentWeapon.Fire (firingLocation);
-		}
-
-		playerStates.RangedAttack (draw);
-
+		// Movement direction
 		Vector3 forward = cam.transform.TransformDirection (Vector3.forward).normalized;
 		forward.y = 0f;
 
@@ -65,12 +63,7 @@ public class PlayerController : MonoBehaviour {
 			moveDirection = (h * right + v * forward);
 			transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * moveSpeed, moveSpeed) ;
 
-			// Jumping
 			bool isAerial = !IsGrounded();
-			if (Input.GetButtonDown ("Jump") && !isAerial) {
-				rigidBody.velocity = new Vector3(0, jumpSpeed, 0);
-				isAerial = true;
-			}
 
 			// Animations
 			if (!isAerial) {
@@ -87,6 +80,7 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	// Is the player airborne?
 	bool IsGrounded(){
 		return Physics.Raycast (transform.position, -Vector3.up, 0.1f);
 	}

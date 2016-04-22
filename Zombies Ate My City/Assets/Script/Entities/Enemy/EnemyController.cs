@@ -34,16 +34,16 @@ public class EnemyController : MonoBehaviour {
 		enemyStates.Walk ();
 
 		if (attackDistance < agent.stoppingDistance) {
-			enemyStates.Attack (true);
+			enemyStates.MeleeAttack (true);
 		} else {
-			enemyStates.Attack (false);
+			enemyStates.MeleeAttack (false);
 		}
 
 		if (rangedAttacker) {
 			if (attackDistance <= agent.stoppingDistance)
-				enemyStates.Attack (true);
+				enemyStates.MeleeAttack (true);
 			else
-				enemyStates.Attack (false);
+				enemyStates.MeleeAttack (false);
 			if (attackDistance <= agent.stoppingDistance + magicAttackDistance && 
 				attackDistance >= agent.stoppingDistance)
 				enemyStates.RangedAttack (true);

@@ -248,7 +248,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   damageEverything: 1
-  damageObjectsWithTag: []
+  damageObjectsWithTag:
+  - Enemy
   destroySelfOnContact: 0
   speed: 10
   timeToLive: 4
@@ -263,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1018606f5a1c343b1259956aacd62d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 131164, guid: 3c5f4e32698bdb04eaed647f60310510, type: 2}
 --- !u!135 &13511158
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -281,7 +283,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: damageObjectsWithTag.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damageObjectsWithTag.Array.data[0]
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 131164, guid: 3c5f4e32698bdb04eaed647f60310510, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 196044}

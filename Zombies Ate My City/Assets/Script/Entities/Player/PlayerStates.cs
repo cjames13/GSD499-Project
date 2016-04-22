@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerStates : MonoBehaviour, StateController {
 	private PlayerController playerController;
-	WeaponController weaponController;
+
 	// Movement state
 	private Rigidbody rigidBody;
 	private Rigidbody[] rigidBodies;
@@ -12,22 +12,21 @@ public class PlayerStates : MonoBehaviour, StateController {
 	private CapsuleCollider myCollider;
 	private List<Collider> colliders;
 
-	// Attack state
-	public float weaponDrawTime = 20f;
-	public float weaponHolsterTime = 10f;
-
 	private Animator anim;
-	private bool drawingWeapon = false;
-	private float drawAnimationTime = 0f;
-	private float currentWeight = 0f;
 
 	void Start() {
 		anim = GetComponent<Animator> ();
+		anim.SetLayerWeight (1, 1f);
+		anim.SetLayerWeight (2, 1f);
+		anim.SetLayerWeight (3, 1f);
+		anim.SetLayerWeight (4, 1f);
+
 		playerController = GetComponent<PlayerController> ();
-		weaponController = GetComponent<WeaponController> ();
+
 		rigidBody = GetComponent<Rigidbody>();
 		rigidBodies = GetComponentsInChildren<Rigidbody> ();
 		myCollider = GetComponent<CapsuleCollider> ();
+
 		foreach (Rigidbody rb in rigidBodies) {
 			if (rb != rigidBody)
 				rb.isKinematic = true;
@@ -46,7 +45,13 @@ public class PlayerStates : MonoBehaviour, StateController {
 	}
 
 	void StateController.TakeDamage() {
-		StartCoroutine (SetDamageLayerWeight ());
+		StartCoroutine (TimedDamageAnimation ());
+	}
+
+	IEnumerator TimedDamageAnimation() {
+		anim.SetBool ("hurting", true);
+		yield return new WaitForSeconds(1);
+		anim.SetBool ("hurting", false);
 	}
 
 	void StateController.Die() {
@@ -62,40 +67,26 @@ public class PlayerStates : MonoBehaviour, StateController {
 		playerController.dead = true;
 	}
 
-	IEnumerator SetDamageLayerWeight() {
-		anim.SetLayerWeight (1, 1);
-		yield return new WaitForSeconds(1);
-		anim.SetLayerWeight (1, 0);
-	}
 
-	void StateController.Attack(bool attacking){
 
-	}
-
-	void StateController.RangedAttack(bool attacking)
-	{
+	void StateController.MeleeAttack(bool attacking){
 		if (attacking) {
-			if (!drawingWeapon) {
-				drawingWeapon = true;
-				drawAnimationTime = 0f;
-			}
+			anim.SetTrigger ("melee");
 		} else {
-			drawingWeapon = false;
+			anim.ResetTrigger ("melee");
 		}
+	}
 
-		drawAnimationTime += Time.deltaTime;
-		float thisTime = (drawingWeapon) ? weaponDrawTime : weaponHolsterTime;
+	void StateController.RangedAttack(bool attacking) {
+		anim.SetBool ("shooting", attacking);
+	}
 
-		if (drawAnimationTime > thisTime) {
-			drawAnimationTime = thisTime;
+	void StateController.ThrownAttack(bool attacking) {
+		if (attacking) {
+			anim.SetTrigger ("throw");
+		} else {
+			anim.ResetTrigger ("throw");
 		}
-
-		currentWeight = Mathf.Lerp (currentWeight, (drawingWeapon) ? 1.0f : 0.0f, drawAnimationTime / thisTime);
-		if (weaponController.weapons [weaponController.currentlyEquippedIndex].name == "Bit Gun")
-			anim.SetLayerWeight (2, currentWeight);
-		if (weaponController.weapons [weaponController.currentlyEquippedIndex].name == "Rifle") 
-			anim.SetLayerWeight (4, currentWeight);
-
 	}
 
 	// TODO: Move movement animation logic to states

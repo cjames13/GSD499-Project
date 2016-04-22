@@ -4,28 +4,27 @@ using System.Collections;
 public class WeaponController : MonoBehaviour {
 	public GameObject[] weapons;
 	public int currentlyEquippedIndex = 0;
-	GameObject player;
-	Animator anim;
 	private GameObject weaponSlot;
 
-	void Start () {
+	void Awake () {
 		weaponSlot = GameObject.FindGameObjectWithTag ("WeaponSlot");
-		player = GameObject.FindGameObjectWithTag ("Player");
-		anim = player.GetComponent<Animator> ();
+
 		// Get all children
 		weapons = new GameObject[weaponSlot.transform.childCount];
+		int defaultWeaponIndex = 0;
 		for (int i = 0; i < weaponSlot.transform.childCount; i++) {
 			weapons[i] = weaponSlot.transform.GetChild(i).gameObject;
 			weapons [i].SetActive (false);
+			if (weapons [i].GetComponent<Weapon> ().isDefault)
+				defaultWeaponIndex = i;
 		}
 
-		// TODO: Look for weapon marked as default
-		weapons [0].SetActive (true);
+		currentlyEquippedIndex = defaultWeaponIndex;
+		weapons [defaultWeaponIndex].SetActive (true);
 	}
 
 	// Update is called once per frame
 	void Update () {
-		CurrentAnimation ();
 		if (Input.GetButtonDown ("Weapon Switch L")) {
 			SwitchWeapon (-1);
 		} else if(Input.GetButtonDown("Weapon Switch R")) {
@@ -39,31 +38,4 @@ public class WeaponController : MonoBehaviour {
 		currentlyEquippedIndex = (currentlyEquippedIndex + direction + weapons.Length) % weapons.Length;
 		weapons [currentlyEquippedIndex].SetActive (true);
 	}
-	void CurrentAnimation()
-	{
-		if (weapons [currentlyEquippedIndex].name == "Rifle") {
-			if (anim.GetLayerWeight (4) != 1) {
-				anim.SetLayerWeight (3, 1);
-			} else 
-				anim.SetLayerWeight (4, 1);
-		} 
-		else {
-			anim.SetLayerWeight (3, 0);
-			anim.SetLayerWeight (4, 0);
-		}
-		if (weapons [currentlyEquippedIndex].name == "Sword") {
-			if (anim.GetLayerWeight (7) != 1) {
-				anim.SetLayerWeight (6, 1);
-			} else 
-				anim.SetLayerWeight (7, 1);
-		} 
-		else {
-			anim.SetLayerWeight (6, 0);
-			anim.SetLayerWeight (7, 0);
-		}
-	}
-		
 }
-
-
-

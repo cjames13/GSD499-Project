@@ -26,13 +26,6 @@ public class EnemyStates : MonoBehaviour, StateController {
 	}
 
 	void StateController.Die() {
-		/*myCollider.enabled = false;
-		rigidBody.useGravity = false;
-		foreach (Rigidbody rb in rigidBodies) {
-			rb.isKinematic = false;
-		}
-		anim.enabled = false;
-		SetAllChildCollidersTrigger (false);*/
 		gameController.IncreaseScore (enemyController.scoreValue);
 		Destroy (gameObject);
 	}
@@ -43,7 +36,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 		if (anim)
 		anim.SetLayerWeight (1, 0);
 	}
-	void StateController.Attack(bool attacking){
+	void StateController.MeleeAttack(bool attacking){
 		if (anim) {
 			if (anim.GetLayerWeight (1) == 1)
 				attacking = false;
@@ -92,6 +85,8 @@ public class EnemyStates : MonoBehaviour, StateController {
 			}
 		}
 	}
+
+	void StateController.ThrownAttack(bool attacking) {}
 
 	void StateController.Walk(){
 		if (anim)
