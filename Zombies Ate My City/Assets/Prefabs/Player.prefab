@@ -112,6 +112,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &124108
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 477154}
+  m_Layer: 0
+  m_Name: StartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &124474
 GameObject:
   m_ObjectHideFlags: 1
@@ -494,7 +509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &163748
 GameObject:
   m_ObjectHideFlags: 1
@@ -586,13 +601,15 @@ GameObject:
   - 136: {fileID: 13665732}
   - 114: {fileID: 11458200}
   - 114: {fileID: 11424302}
+  - 114: {fileID: 11437944}
+  - 114: {fileID: 11453966}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &170034
 GameObject:
   m_ObjectHideFlags: 1
@@ -679,6 +696,21 @@ GameObject:
   m_Layer: 0
   m_Name: WeaponSlot
   m_TagString: WeaponSlot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &184142
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 483968}
+  m_Layer: 0
+  m_Name: EndPoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -816,7 +848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &197684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,8 +1295,10 @@ Transform:
   - {fileID: 415222}
   - {fileID: 411024}
   - {fileID: 413840}
+  - {fileID: 477154}
+  - {fileID: 483968}
   m_Father: {fileID: 484370}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!4 &469378
 Transform:
   m_ObjectHideFlags: 1
@@ -1385,6 +1419,18 @@ Transform:
   - {fileID: 406528}
   m_Father: {fileID: 412516}
   m_RootOrder: 0
+--- !u!4 &477154
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.138, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 468214}
+  m_RootOrder: 3
 --- !u!4 &477528
 Transform:
   m_ObjectHideFlags: 1
@@ -1410,6 +1456,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 457738}
   m_RootOrder: 0
+--- !u!4 &483968
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184142}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.92, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 468214}
+  m_RootOrder: 4
 --- !u!4 &484228
 Transform:
   m_ObjectHideFlags: 1
@@ -1435,8 +1493,8 @@ Transform:
   m_Children:
   - {fileID: 413542}
   - {fileID: 445754}
-  - {fileID: 487854}
   - {fileID: 468214}
+  - {fileID: 487854}
   m_Father: {fileID: 451340}
   m_RootOrder: 2
 --- !u!4 &485456
@@ -1476,7 +1534,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 484370}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &492062
 Transform:
   m_ObjectHideFlags: 1
@@ -1981,6 +2039,27 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   invulnTimeAfterHit: 1
+--- !u!114 &11437944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c2c9828fec98747a1b0680f47bed80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseWith2D: 0
+  SortingLayerName: 
+  SortingOrder: 0
+  PointStart: {fileID: 477154}
+  PointEnd: {fileID: 483968}
+  MaxFrame: 7
+  Granularity: 100
+  Fps: 60
+  MyColor: {r: 1, g: 1, b: 1, a: 1}
+  MyMaterial: {fileID: 2100000, guid: 829d12df641534b4fb16737da833bf30, type: 2}
 --- !u!114 &11438570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2041,6 +2120,17 @@ MonoBehaviour:
   isDefault: 0
   projectileObject: {fileID: 163292, guid: 47acbd9bf0f2ae745ae7143652f1f5f9, type: 2}
   isThrownWeapon: 0
+--- !u!114 &11453966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd123e6023e55f4e89d077fb3fe2abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11458200
 MonoBehaviour:
   m_ObjectHideFlags: 1
