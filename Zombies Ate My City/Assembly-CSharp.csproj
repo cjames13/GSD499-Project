@@ -93,6 +93,11 @@
      <Compile Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
      <Compile Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
      <Compile Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+     <Compile Include="Assets\Resources\XWeaponTrail\Scripts\Spline.cs" />
+     <Compile Include="Assets\Resources\XWeaponTrail\Scripts\SplineControlPoint.cs" />
+     <Compile Include="Assets\Resources\XWeaponTrail\Scripts\VertexPool.cs" />
+     <Compile Include="Assets\Resources\XWeaponTrail\Scripts\XWeaponTrail.cs" />
+     <Compile Include="Assets\Resources\XWeaponTrail\Scripts\XWeaponTrailDemo.cs" />
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Sapporo_Props\SnowBallFightObject\Scripts\EnemyPcController.cs" />
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Sapporo_Props\SnowBallFightObject\Scripts\MoveSnowBall.cs" />
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Sapporo_Props\SnowBallFightObject\Scripts\SantaController.cs" />
@@ -177,6 +182,7 @@
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
      <None Include="Assets\Resources\ZRNAssets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
+     <None Include="Assets\Resources\XWeaponTrail\readme.txt" />
      <None Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Documents\ReadMe.txt" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
      <None Include="Assets\Resources\Toon Zombie S\TSF\Shaders\TSF.shader" />
@@ -224,6 +230,7 @@
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\license_en.txt" />
      <None Include="Assets\Resources\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\model_list_f.txt" />
+     <None Include="Assets\Resources\XWeaponTrail\Shader\xft_displacement_screen.shader" />
      <None Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\license_jp.txt" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />

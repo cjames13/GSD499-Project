@@ -58,6 +58,7 @@
      <Compile Include="Assets\Resources\Sci-Fi Crate\Demo\Editor\ImageEffects\SunShaftsEditor.cs" />
      <Compile Include="Assets\Resources\Sci-Fi Crate\Demo\Editor\ImageEffects\TonemappingEditor.cs" />
      <Compile Include="Assets\Resources\Sci-Fi Crate\Demo\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
+     <Compile Include="Assets\Resources\XWeaponTrail\Editor\XWeaponTrailEditor.cs" />
      <None Include="Assets\Resources\ZRNAssets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
@@ -110,6 +111,7 @@
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
      <None Include="Assets\Resources\ZRNAssets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
+     <None Include="Assets\Resources\XWeaponTrail\readme.txt" />
      <None Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Documents\ReadMe.txt" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
      <None Include="Assets\Resources\Toon Zombie S\TSF\Shaders\TSF.shader" />
@@ -157,6 +159,7 @@
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\license_en.txt" />
      <None Include="Assets\Resources\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\model_list_f.txt" />
+     <None Include="Assets\Resources\XWeaponTrail\Shader\xft_displacement_screen.shader" />
      <None Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\license_jp.txt" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
@@ -189,9 +192,6 @@
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.WindowsStandalone.Extensions">
- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

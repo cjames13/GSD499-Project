@@ -55,10 +55,12 @@ public class PlayerController : MonoBehaviour {
 
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
+		AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo (4);
 
-		if (dead) {
+		if (dead || currentState.IsName("Meleeing")) {
 			moveDirection = Vector3.zero;
-		} else {
+		} 
+		else {
 			// Move
 			moveDirection = (h * right + v * forward);
 			transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * moveSpeed, moveSpeed) ;
