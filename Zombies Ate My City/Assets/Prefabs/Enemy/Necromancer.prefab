@@ -260,7 +260,6 @@ GameObject:
   - 114: {fileID: 11492062}
   - 114: {fileID: 11408558}
   - 135: {fileID: 13514796}
-  - 114: {fileID: 11421708}
   m_Layer: 0
   m_Name: Necromancer
   m_TagString: Enemy
@@ -1442,24 +1441,6 @@ MonoBehaviour:
   rotationSpeed: 3
   attackSpeed: 1
   scoreValue: 20
---- !u!114 &11421708
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc0a02a31c78e340b3fb1077e0a67dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterObject: {fileID: 148076, guid: c3c2810a8f3b4cf4b88516cae177af9b, type: 2}
-  randomSpawnTime: 0
-  randomSpawnChance: 0
-  maximumSpawnTime: 5
-  minimumSpawnTime: 0
-  timeBetweenTries: 0
-  maxEnemiesSpawned: 2
 --- !u!114 &11444068
 MonoBehaviour:
   m_ObjectHideFlags: 1
