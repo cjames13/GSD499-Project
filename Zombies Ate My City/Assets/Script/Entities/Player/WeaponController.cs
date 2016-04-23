@@ -38,4 +38,23 @@ public class WeaponController : MonoBehaviour {
 		currentlyEquippedIndex = (currentlyEquippedIndex + direction + weapons.Length) % weapons.Length;
 		weapons [currentlyEquippedIndex].SetActive (true);
 	}
+
+	public int GetCurrentAmmo() {
+		RangedWeapon currentGun = weapons [currentlyEquippedIndex].GetComponent<RangedWeapon> ();
+		return (currentGun != null) ? currentGun.currentAmmo : -1;
+	}
+
+	public string GetCurrentWeaponName() {
+		return weapons [currentlyEquippedIndex].name;
+	}
+
+	public void IncreaseAmmo(string gunName, int amount) {
+		foreach (GameObject gun in weapons) {
+			RangedWeapon gunScript = gun.GetComponent<RangedWeapon> ();
+			if (gun.name == gunName && gunScript != null) {
+				gun.GetComponent<RangedWeapon> ().IncreaseAmmo (amount);
+				break;
+			}
+		}
+	}
 }

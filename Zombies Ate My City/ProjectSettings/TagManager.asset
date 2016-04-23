@@ -7,15 +7,11 @@ TagManager:
   - Enemy
   - Fire
   - Ground
-  - FiringPoint
+  - AttackLocation
   - Resource
   - Damage
   - WeaponSlot
-  - PlayerAttack
-  - SnowBall
-  - CloseRange
   - Muzzle
-  - MuzzleLight
   layers:
   - Default
   - TransparentFX

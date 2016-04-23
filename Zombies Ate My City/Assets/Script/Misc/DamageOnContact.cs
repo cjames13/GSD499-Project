@@ -7,14 +7,7 @@ public class DamageOnContact : MonoBehaviour {
 	public bool damageEverything = false;
 	public List<string> damageObjectsWithTag;
 	public bool destroySelfOnContact = false;
-	GameObject player;
-	Animator anim;
-	AnimatorStateInfo currentState;
-	void Awake(){
-		player = GameObject.FindGameObjectWithTag ("Player");
-		anim = player.GetComponent<Animator> ();
 
-	}
 	void OnTriggerEnter(Collider other) {
 			Damage (other);
 	}

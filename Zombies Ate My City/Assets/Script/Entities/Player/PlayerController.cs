@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 4f;
 	public float jumpSpeed = 5f;
 	public bool dead = false;
-	bool attack = false;
+//	bool attack = false;
 	Vector3 moveDirection;
 	Animator anim;
 	Rigidbody rigidBody;
@@ -30,24 +30,11 @@ public class PlayerController : MonoBehaviour {
 
 	void Update() {
 		// Attacking
-		bool attacking;
+		bool attacking = Input.GetButton ("Fire1");
 		Weapon currentWeapon = weaponController.weapons [weaponController.currentlyEquippedIndex].GetComponent<Weapon> ();
-		attacking = Input.GetButton ("Fire1");
-		AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(3);
-		if (Input.GetButtonDown("Fire1") && !info.IsName("Throwing") ){
-				attack = true;
-		}
-		if (currentWeapon.name != "Bomb") {
-			if (attacking) 
-				currentWeapon.Attack ();
-		} else {
-			if (attack) {
-				float elapsedTime = info.normalizedTime % 1;
-				if (elapsedTime > 0.5 && info.IsName("Throwing")){
-					currentWeapon.Attack ();
-					attack = false;
-				}
-			}
+
+		if (attacking) {
+			currentWeapon.Attack ();
 		}
 
 		currentWeapon.PlayAnimation(playerStates, attacking);

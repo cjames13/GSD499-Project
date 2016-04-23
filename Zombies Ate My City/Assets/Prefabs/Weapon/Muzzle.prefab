@@ -1,31 +1,16 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &124606
+--- !u!1 &135634
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 467650}
-  - 82: {fileID: 8215262}
-  m_Layer: 0
-  m_Name: Muzzle
-  m_TagString: Muzzle
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!1 &181948
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 485052}
-  - 198: {fileID: 19838338}
-  - 199: {fileID: 19925310}
+  - 4: {fileID: 412782}
+  - 198: {fileID: 19803156}
+  - 199: {fileID: 19906208}
+  - 82: {fileID: 8223338}
   m_Layer: 0
   m_Name: Muzzle
   m_TagString: Untagged
@@ -33,72 +18,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &189048
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 453430}
-  - 108: {fileID: 10856192}
-  - 114: {fileID: 11488752}
-  m_Layer: 0
-  m_Name: Point light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &453430
+--- !u!4 &412782
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189048}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467650}
-  m_RootOrder: 1
---- !u!4 &467650
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124606}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.28, y: 4.26, z: 0.29}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 485052}
-  - {fileID: 453430}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
---- !u!4 &485052
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181948}
+  m_GameObject: {fileID: 135634}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.000002324581}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 467650}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!82 &8215262
+--- !u!82 &8223338
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124606}
+  m_GameObject: {fileID: 135634}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0ff395c2a11195f4c8c8159ea1fa7892, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -162,56 +104,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!108 &10856192
-Light:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189048}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_Type: 2
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 2
-  m_Range: 7
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 1
-  m_BounceIntensity: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_AreaSize: {x: 1, y: 1}
---- !u!114 &11488752
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!198 &19838338
+--- !u!198 &19803156
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181948}
+  m_GameObject: {fileID: 135634}
   serializedVersion: 2
   lengthInSec: 0.1
   startDelay:
@@ -253,7 +151,7 @@ ParticleSystem:
   randomSeed: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   moveWithTransform: 0
   scalingMode: 2
   InitialModule:
@@ -401,7 +299,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4282155519
+        rgba: 4294967295
       minMaxState: 0
     startSize:
       scalar: 0.5
@@ -1675,12 +1573,12 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &19925310
+--- !u!199 &19906208
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181948}
+  m_GameObject: {fileID: 135634}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -1722,8 +1620,16 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Name
+      value: Muzzle Flare
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 124606}
+  m_RootGameObject: {fileID: 135634}
   m_IsPrefabParent: 1

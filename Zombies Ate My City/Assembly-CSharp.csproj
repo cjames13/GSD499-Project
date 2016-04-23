@@ -119,6 +119,8 @@
      <Compile Include="Assets\Script\Entities\StateController.cs" />
      <Compile Include="Assets\Script\GameController\GameController.cs" />
      <Compile Include="Assets\Script\Items\MeleeWeapon.cs" />
+     <Compile Include="Assets\Script\Items\Pickups\AmmoPickup.cs" />
+     <Compile Include="Assets\Script\Items\Pickups\HealthPickup.cs" />
      <Compile Include="Assets\Script\Items\RangedWeapon.cs" />
      <Compile Include="Assets\Script\Items\ResourceCrate.cs" />
      <Compile Include="Assets\Script\Items\Weapon.cs" />
@@ -128,9 +130,11 @@
      <Compile Include="Assets\Script\Misc\Explode.cs" />
      <Compile Include="Assets\Script\Misc\PlayerDetection.cs" />
      <Compile Include="Assets\Script\Misc\Projectile.cs" />
+     <Compile Include="Assets\Script\Misc\Rotate.cs" />
      <Compile Include="Assets\Script\Misc\TempScript.cs" />
      <Compile Include="Assets\Script\Misc\WeaponTrailActivation.cs" />
      <Compile Include="Assets\Script\Misc\XWeaponTrail.cs" />
+     <Compile Include="Assets\Script\UI\DisplayAmmoUI.cs" />
      <Compile Include="Assets\Script\UI\DrawRadarBlipUI.cs" />
      <Compile Include="Assets\Script\UI\HealthBarUI.cs" />
      <None Include="Assets\Resources\ZRNAssets\Standard Assets\Projectors\Guidelines.txt" />
