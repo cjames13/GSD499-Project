@@ -25,10 +25,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 108: {fileID: 10800000}
-  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Point light
-  m_TagString: Untagged
+  m_TagString: MuzzleLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +44,7 @@ GameObject:
   - 199: {fileID: 19900000}
   m_Layer: 0
   m_Name: Muzzle
-  m_TagString: Untagged
+  m_TagString: Muzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +97,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0ff395c2a11195f4c8c8159ea1fa7892, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -171,7 +170,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 2
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9705882, g: 0.78867674, b: 0.02854674, a: 1}
   m_Intensity: 2
   m_Range: 7
   m_SpotAngle: 30
@@ -195,36 +194,6 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9bd4d95f303acf45ad43bd62c9bc553, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Light: {fileID: 10800000}
-  ColorGradient:
-    key0: {}
-    key1: {}
-    key2: {}
-    key3: {}
-    key4: {}
-    key5: {}
-    key6: {}
-    key7: {}
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
-  FadeTime: 0.1
-  FadeOutOnEnable: 1
-  Flicker: 0
-  IntensityRange:
-    Min: 0
-    Max: 0
-  FlickerSpeed: 0
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1

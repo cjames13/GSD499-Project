@@ -106,6 +106,7 @@
      <None Include="Assets\Resources\Toon Zombie S\TSF\Shaders\TSF.shader" />
      <None Include="Assets\Resources\PyroParticles\Readme.txt" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
+     <None Include="Assets\Elementals\Readme.txt" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
      <None Include="Assets\Resources\Sci-Fi Crate\Demo\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />

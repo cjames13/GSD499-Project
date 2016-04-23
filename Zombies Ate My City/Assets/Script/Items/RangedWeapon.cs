@@ -19,17 +19,17 @@ public class RangedWeapon : Weapon {
 	}
 	public override void Attack() {
 		attackTime -= Time.deltaTime;
-		if (anim.GetBool ("shooting") == true && attackTime < 0.05)
-			muzzleLight.SetActive (true);
-		else
-			muzzleLight.SetActive (false);
+
 		if (attackTime <= 0) {
 			Instantiate (projectileObject, attackLocation.position, attackLocation.rotation);
 			attackTime = attackSpeed;
 			muzzle.SetActive (false);
 			muzzle.SetActive (true);
-
 		}
+		//		if (anim.GetBool ("shooting") == true && attackTime < 0.05)
+		//			muzzleLight.SetActive (true);
+		//		else
+		//			muzzleLight.SetActive (false);
 	}
 
 	public override void PlayAnimation(StateController stateController, bool attacking) {
