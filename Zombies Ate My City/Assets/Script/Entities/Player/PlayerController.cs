@@ -7,12 +7,10 @@ public class PlayerController : MonoBehaviour {
 	public float jumpSpeed = 5f;
 	public bool dead = false;
 	bool attack = false;
-	float attackTime = 1.25f;
 	Vector3 moveDirection;
 	Animator anim;
 	Rigidbody rigidBody;
 	Rigidbody[] rigidBodies;
-
 	CapsuleCollider myCollider;
 	List<Collider> colliders;
 
