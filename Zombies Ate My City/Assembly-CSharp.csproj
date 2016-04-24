@@ -106,6 +106,7 @@
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Scripts\QuerySDController\QueryChanSapporoMecanimController.cs" />
      <Compile Include="Assets\Resources\ZRNAssets\PQAssets\Query-Chan-SD\Scripts\SceneController\GameSceneController.cs" />
      <Compile Include="Assets\Script\Camera\CameraController.cs" />
+     <Compile Include="Assets\Script\Camera\CursorController.cs" />
      <Compile Include="Assets\Script\Camera\LookAtCamera.cs" />
      <Compile Include="Assets\Script\Camera\MouseOrbit.cs" />
      <Compile Include="Assets\Script\Camera\SimpleFollow.cs" />

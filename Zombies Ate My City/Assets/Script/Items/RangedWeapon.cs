@@ -31,10 +31,14 @@ public class RangedWeapon : Weapon {
 			Instantiate (projectileObject, attackLocation.position, attackLocation.rotation);
 			currentAmmo--;
 			attackTime = attackSpeed;
+<<<<<<< HEAD
 			pointLight.enabled = true;
 			if (muzzle != null) {
 				MuzzleFlash ();
 			}
+=======
+			MuzzleFlash ();
+>>>>>>> origin/master
 		}
 	}
 
@@ -47,8 +51,13 @@ public class RangedWeapon : Weapon {
 	}
 
 	void MuzzleFlash() {
-		muzzleFlash.Play ();
-		muzzleSound.Play ();
+		if (muzzleFlash != null) {
+			muzzleFlash.Play ();
+		}
+
+		if (muzzleSound != null) {
+			muzzleSound.Play ();
+		}
 	}
 
 	public void IncreaseAmmo(int n) {
