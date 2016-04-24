@@ -27,9 +27,6 @@ public class PlayerController : MonoBehaviour {
 		cam =  GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera> ();
 		playerStates = GetComponent<StateController> ();
 		weaponController = GetComponent<WeaponController> ();
-		lightObject = GameObject.FindGameObjectWithTag ("MuzzleLight");
-		pointLight = lightObject.GetComponent<Light> ();
-		pointLight.enabled = false;
 	}
 
 	void Update() {
@@ -39,8 +36,7 @@ public class PlayerController : MonoBehaviour {
 
 		if (attacking) {
 			currentWeapon.Attack ();
-		} else
-			pointLight.enabled = false;
+		}
 
 		currentWeapon.PlayAnimation(playerStates, attacking);
 

@@ -80,6 +80,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &121046
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 469316}
+  - 198: {fileID: 19858652}
+  - 199: {fileID: 19983762}
+  - 82: {fileID: 8291904}
+  - 108: {fileID: 10894560}
+  - 95: {fileID: 9584822}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Muzzle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &121536
 GameObject:
   m_ObjectHideFlags: 1
@@ -288,24 +308,6 @@ GameObject:
   m_Layer: 0
   m_Name: Foam Gun
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &136138
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 467868}
-  - 198: {fileID: 19869268}
-  - 199: {fileID: 19913234}
-  - 82: {fileID: 8217458}
-  m_Layer: 0
-  m_Name: Muzzle
-  m_TagString: Muzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1196,7 +1198,7 @@ Transform:
   m_LocalPosition: {x: -0.128, y: -0.017, z: -0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
-  - {fileID: 467868}
+  - {fileID: 469316}
   m_Father: {fileID: 484370}
   m_RootOrder: 1
 --- !u!4 &449056
@@ -1317,18 +1319,6 @@ Transform:
   - {fileID: 416944}
   m_Father: {fileID: 451340}
   m_RootOrder: 1
---- !u!4 &467868
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136138}
-  m_LocalRotation: {x: 0.7071066, y: 0, z: 0, w: -0.70710695}
-  m_LocalPosition: {x: 0, y: -0.25, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children: []
-  m_Father: {fileID: 445754}
-  m_RootOrder: 0
 --- !u!4 &468214
 Transform:
   m_ObjectHideFlags: 1
@@ -1346,6 +1336,18 @@ Transform:
   - {fileID: 483968}
   m_Father: {fileID: 484370}
   m_RootOrder: 3
+--- !u!4 &469316
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121046}
+  m_LocalRotation: {x: 0.05736119, y: -0.87945193, z: -0.4690262, w: 0.057344582}
+  m_LocalPosition: {x: 7.5112214, y: 34.473446, z: 20.260328}
+  m_LocalScale: {x: 0.35000014, y: 0.35000002, z: 0.3500001}
+  m_Children: []
+  m_Father: {fileID: 445754}
+  m_RootOrder: 0
 --- !u!4 &469378
 Transform:
   m_ObjectHideFlags: 1
@@ -2037,12 +2039,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.18537197, y: 0.16743587, z: 0.17431894}
   m_Center: {x: 0.09268549, y: 0.00014360994, z: -0.00000048428774}
---- !u!82 &8217458
+--- !u!82 &8291904
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136138}
+  m_GameObject: {fileID: 121046}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -2202,6 +2204,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9584822
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121046}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c5bed5af1a45e54a9a3cfcd8a3566ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &9598618
 Animator:
   serializedVersion: 3
@@ -2219,6 +2238,39 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!108 &10894560
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121046}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_AreaSize: {x: 1, y: 1}
 --- !u!114 &11424302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2345,7 +2397,7 @@ MonoBehaviour:
   isDefault: 0
   projectileObject: {fileID: 163292, guid: 47acbd9bf0f2ae745ae7143652f1f5f9, type: 2}
   isThrownWeapon: 0
-  muzzle: {fileID: 136138}
+  muzzle: {fileID: 0}
   maxAmmo: 50
   currentAmmo: 0
 --- !u!114 &11453966
@@ -3016,12 +3068,12 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
---- !u!198 &19869268
+--- !u!198 &19858652
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136138}
+  m_GameObject: {fileID: 121046}
   serializedVersion: 2
   lengthInSec: 0.1
   startDelay:
@@ -4485,12 +4537,12 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &19913234
+--- !u!199 &19983762
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136138}
+  m_GameObject: {fileID: 121046}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
