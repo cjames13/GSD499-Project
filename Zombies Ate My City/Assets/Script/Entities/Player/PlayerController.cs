@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour {
 	List<Collider> colliders;
 	private GameObject lightObject;
 	private Light pointLight;
-	//bool jumped = false;
 	Camera cam;
 
 	private StateController playerStates;

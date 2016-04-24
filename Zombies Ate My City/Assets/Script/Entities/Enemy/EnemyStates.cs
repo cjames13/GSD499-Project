@@ -26,8 +26,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 	}
 
 	void StateController.Die() {
-		gameController.IncreaseScore (enemyController.scoreValue);
-		Destroy (gameObject);
+		StartCoroutine (Dying ());
 	}
 	IEnumerator SetDamageLayerWeight() {
 		if (anim)
@@ -92,5 +91,11 @@ public class EnemyStates : MonoBehaviour, StateController {
 		if (anim)
 		anim.SetBool ("walking", true);
 	}
-		
+	IEnumerator Dying()
+	{
+		anim.SetBool ("dying", true);
+		yield return new WaitForSeconds (5);
+		Destroy (gameObject);
+		gameController.IncreaseScore (enemyController.scoreValue);
+	}
 }
