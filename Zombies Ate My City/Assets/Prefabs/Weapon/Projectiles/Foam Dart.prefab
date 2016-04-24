@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 448274}
   - 33: {fileID: 3382192}
-  - 136: {fileID: 13685440}
   - 23: {fileID: 2343496}
   m_Layer: 0
   m_Name: Foam Dart Model
@@ -118,24 +117,11 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199808}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.015
   m_Height: 0.1
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &13685440
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151944}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
@@ -145,8 +131,24 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: damageObjectsWithTag.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: speed
       value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damageObjectsWithTag.Array.data[0]
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: destroySelfOnContact
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

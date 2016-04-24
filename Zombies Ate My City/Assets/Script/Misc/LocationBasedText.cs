@@ -2,20 +2,20 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class TempScript : MonoBehaviour {
+public class LocationBasedText : MonoBehaviour {
 
-    public Text tempText;
+    public Text text;
 
     void Awake()
     {
-        tempText.enabled = true;
+        text.enabled = false;
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            tempText.enabled = true;
+            text.enabled = true;
         }
     }
 
@@ -23,7 +23,7 @@ public class TempScript : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            tempText.enabled = false;
+            text.enabled = false;
         }
     }
 }
