@@ -7,7 +7,8 @@ public class RangedWeapon : Weapon {
 	public GameObject muzzle;
 	public int maxAmmo;
 	public int currentAmmo;
-
+	private GameObject lightObject;
+	private Light pointLight;
 	private ParticleSystem muzzleFlash;
 	private AudioSource muzzleSound;
 
@@ -15,6 +16,8 @@ public class RangedWeapon : Weapon {
 		if (muzzle != null) {
 			muzzleFlash = muzzle.GetComponent<ParticleSystem> ();
 			muzzleSound = muzzle.GetComponent<AudioSource> ();
+			lightObject = GameObject.FindGameObjectWithTag ("MuzzleLight");
+			pointLight = lightObject.GetComponent<Light> ();
 		}
 
 		attackLocation = GameObject.FindGameObjectWithTag ("AttackLocation").transform;
@@ -23,11 +26,12 @@ public class RangedWeapon : Weapon {
 
 	public override void Attack() {
 		attackTime -= Time.deltaTime;
-
+		pointLight.enabled = false;
 		if (attackTime <= 0 && currentAmmo > 0) {
 			Instantiate (projectileObject, attackLocation.position, attackLocation.rotation);
 			currentAmmo--;
 			attackTime = attackSpeed;
+			pointLight.enabled = true;
 			if (muzzle != null) {
 				MuzzleFlash ();
 			}

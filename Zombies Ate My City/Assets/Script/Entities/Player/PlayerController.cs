@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour {
 	Rigidbody[] rigidBodies;
 	CapsuleCollider myCollider;
 	List<Collider> colliders;
-
+	private GameObject lightObject;
+	private Light pointLight;
 	//bool jumped = false;
 	Camera cam;
 
@@ -26,6 +27,9 @@ public class PlayerController : MonoBehaviour {
 		cam =  GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera> ();
 		playerStates = GetComponent<StateController> ();
 		weaponController = GetComponent<WeaponController> ();
+		lightObject = GameObject.FindGameObjectWithTag ("MuzzleLight");
+		pointLight = lightObject.GetComponent<Light> ();
+		pointLight.enabled = false;
 	}
 
 	void Update() {
@@ -35,7 +39,8 @@ public class PlayerController : MonoBehaviour {
 
 		if (attacking) {
 			currentWeapon.Attack ();
-		}
+		} else
+			pointLight.enabled = false;
 
 		currentWeapon.PlayAnimation(playerStates, attacking);
 
