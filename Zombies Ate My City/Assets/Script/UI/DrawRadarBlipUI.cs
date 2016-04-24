@@ -8,11 +8,13 @@ public class DrawRadarBlipUI : MonoBehaviour {
 	public string findTag = "Enemy";
 	public Transform centerAround;
 	public float mapScale = 0.3f;
-	public Vector2 mapCenter = new Vector2 (142, 97);
 
+	private Vector2 mapCenter;
 	private Texture2D blipTexture;
 
 	void Start() {
+		RectTransform parentRect = GetComponent<RectTransform> ();
+		mapCenter = new Vector2 (parentRect.sizeDelta.x / 2 + parentRect.anchoredPosition.x, parentRect.sizeDelta.y / 2 - Mathf.Abs(parentRect.anchoredPosition.y));
 		CreateBlipTexture ();
 	}
 
@@ -53,8 +55,7 @@ public class DrawRadarBlipUI : MonoBehaviour {
 			bX *= mapScale;
 			bY *= mapScale;
 
-			GUI.DrawTexture(new Rect(mapCenter.x + bX, mapCenter.y + bY, blipSize, blipSize), blipTexture);
-	
+			GUI.DrawTexture(new Rect(mapCenter.x + bX - blipSize / 2, mapCenter.y + bY + Mathf.Abs(blipSize) / 2, blipSize, blipSize), blipTexture, ScaleMode.ScaleToFit);
 		}
 	}
 }

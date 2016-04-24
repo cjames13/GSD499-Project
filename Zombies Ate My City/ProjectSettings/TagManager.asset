@@ -9,9 +9,9 @@ TagManager:
   - Ground
   - AttackLocation
   - Resource
-  - Damage
   - WeaponSlot
   - Muzzle
+  - Damage
   layers:
   - Default
   - TransparentFX
