@@ -27,6 +27,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 
 	void StateController.Die() {
 		StartCoroutine (Dying ());
+		StartCoroutine (Burning ());
 	}
 	IEnumerator SetDamageLayerWeight() {
 		if (anim)
@@ -94,8 +95,18 @@ public class EnemyStates : MonoBehaviour, StateController {
 	IEnumerator Dying()
 	{
 		anim.SetBool ("dying", true);
+		yield return new WaitForSeconds (3);
+		GameObject.Find ("RingOfFire");
+
+		transform.GetChild (2).gameObject.SetActive (true);
+		gameController.IncreaseScore (enemyController.scoreValue);
+
+
+
+	}
+	IEnumerator Burning()
+	{
 		yield return new WaitForSeconds (5);
 		Destroy (gameObject);
-		gameController.IncreaseScore (enemyController.scoreValue);
 	}
 }
