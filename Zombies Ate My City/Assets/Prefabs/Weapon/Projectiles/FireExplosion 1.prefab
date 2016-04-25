@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11490778}
   - 135: {fileID: 13537262}
   m_Layer: 8
-  m_Name: FireExplosion
+  m_Name: FireExplosion 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,7 +204,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.75, g: 1, b: 0.8551724, a: 1}
   m_Intensity: 2
   m_Range: 25
   m_SpotAngle: 30
@@ -278,7 +278,7 @@ MonoBehaviour:
   damageEverything: 1
   damageObjectsWithTag:
   - Enemy
-  destroySelfOnContact: 1
+  destroySelfOnContact: 0
 --- !u!135 &13537262
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -486,7 +486,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4293590784
       minMaxState: 0
     startSize:
       scalar: 6
@@ -838,7 +838,7 @@ ParticleSystem:
           rgba: 16777215
         key1:
           serializedVersion: 2
-          rgba: 3024639601
+          rgba: 3036630016
         key2:
           serializedVersion: 2
           rgba: 3036676095
@@ -1932,7 +1932,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
       minColor:
         serializedVersion: 2
-        rgba: 4278255601
+        rgba: 4294956288
       maxColor:
         serializedVersion: 2
         rgba: 4294967295
@@ -3310,11 +3310,35 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: destroySelfOnContact
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startColor.minColor.rgba
+      value: 4294956288
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.r
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.g
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.b
+      value: 0.8551724
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: damageEverything
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startColor.maxColor.rgba
+      value: 4293590784
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ColorModule.gradient.maxGradient.key1.rgba
+      value: 3036630016
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
