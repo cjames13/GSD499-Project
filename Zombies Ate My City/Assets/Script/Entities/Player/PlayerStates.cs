@@ -21,7 +21,6 @@ public class PlayerStates : MonoBehaviour, StateController {
 		anim.SetLayerWeight (2, 1f);
 		anim.SetLayerWeight (3, 1f);
 		anim.SetLayerWeight (4, 1f);
-
 		playerController = GetComponent<PlayerController> ();
 
 		rigidBody = GetComponent<Rigidbody>();

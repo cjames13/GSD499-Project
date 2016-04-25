@@ -46,12 +46,13 @@ public class EnemyController : MonoBehaviour {
 				else
 					enemyStates.MeleeAttack (false);
 				if (attackDistance <= agent.stoppingDistance + magicAttackDistance &&
-				   attackDistance >= agent.stoppingDistance)
+				    attackDistance >= agent.stoppingDistance)
 					enemyStates.RangedAttack (true);
 				else
 					enemyStates.RangedAttack (false);
 			}
 		
-		}
+		} else
+			agent.Stop ();
 	}
 }
