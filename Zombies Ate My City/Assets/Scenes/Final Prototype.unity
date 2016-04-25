@@ -4375,7 +4375,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13665732, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11451018, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: muzzle
@@ -4383,15 +4383,19 @@ Prefab:
       objectReference: {fileID: 189586732}
     - target: {fileID: 469316, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.017
       objectReference: {fileID: 0}
     - target: {fileID: 469316, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 469316, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 13665732, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
