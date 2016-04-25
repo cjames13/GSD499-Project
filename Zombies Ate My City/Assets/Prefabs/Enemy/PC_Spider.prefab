@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 111: {fileID: 11100000}
+  - 95: {fileID: 9566868}
   - 54: {fileID: 5422858}
   - 136: {fileID: 13633540}
   - 195: {fileID: 19565222}
@@ -1176,6 +1176,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &9566868
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d97b025b4f6d2964e929ae3f8fdc85f1, type: 3}
+  m_Controller: {fileID: 9100000, guid: d3487d635c44fa8418f1375434375864, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!108 &10863216
 Light:
   m_ObjectHideFlags: 1
@@ -1209,21 +1226,6 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!111 &11100000
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400002, guid: d97b025b4f6d2964e929ae3f8fdc85f1, type: 3}
-  m_Animations:
-  - {fileID: 7400002, guid: d97b025b4f6d2964e929ae3f8fdc85f1, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
 --- !u!114 &11441110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7483,6 +7485,14 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d3487d635c44fa8418f1375434375864, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: d97b025b4f6d2964e929ae3f8fdc85f1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
