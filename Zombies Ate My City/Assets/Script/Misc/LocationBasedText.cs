@@ -3,13 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class LocationBasedText : MonoBehaviour {
-
-    public Text text;
-
-    void Awake()
-    {
-        text.enabled = false;
-    }
+	public Text text;
 
     void OnTriggerEnter(Collider other)
     {
