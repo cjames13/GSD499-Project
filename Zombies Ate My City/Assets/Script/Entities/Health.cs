@@ -20,7 +20,6 @@ public class Health : MonoBehaviour {
 	void Update() {
 		if (currentHealth <= 0) {
 			animController.Die ();
-            StartCoroutine(RestartLevel());
 		}
 	}
 
@@ -31,10 +30,4 @@ public class Health : MonoBehaviour {
 			lastHitTime = Time.time;
 		}
 	}
-
-    IEnumerator RestartLevel()
-    {
-        yield return new WaitForSeconds(4);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 }

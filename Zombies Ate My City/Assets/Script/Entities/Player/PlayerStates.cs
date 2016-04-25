@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -65,9 +66,15 @@ public class PlayerStates : MonoBehaviour, StateController {
 		anim.enabled = false;
 
 		playerController.dead = true;
+		StartCoroutine (RestartLevel ());
 	}
 
 
+	IEnumerator RestartLevel()
+	{
+		yield return new WaitForSeconds(4);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
 
 	void StateController.MeleeAttack(bool attacking){
 		if (attacking) {

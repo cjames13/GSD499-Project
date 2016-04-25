@@ -16,6 +16,7 @@ public class ResourceCrate : MonoBehaviour {
             anim.Play();
 			isCollected = true;
 			gameController.ResourceCollected ();
+			gameObject.tag = "Untagged";
 		}
 	}
 }
