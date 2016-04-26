@@ -29,6 +29,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 		StartCoroutine (Dying ());
 		StartCoroutine (Burning ());
 	}
+
 	IEnumerator SetDamageLayerWeight() {
 		if (anim)
 		anim.SetLayerWeight (1, 1);
@@ -36,6 +37,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 		if (anim)
 		anim.SetLayerWeight (1, 0);
 	}
+
 	void StateController.MeleeAttack(bool attacking){
 		if (anim) {
 			if (anim.GetLayerWeight (1) == 1)

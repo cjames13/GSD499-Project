@@ -246,13 +246,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7515d64bebe8db44a377fb1ebed6c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
-  damageEverything: 1
+  damage: 10
+  damageEverything: 0
   damageObjectsWithTag:
   - Enemy
   destroySelfOnContact: 0
   speed: 10
   timeToLive: 4
+  explosive: 0
 --- !u!114 &11410526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -296,6 +297,14 @@ Prefab:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 131164, guid: 3c5f4e32698bdb04eaed647f60310510, type: 2}
+    - target: {fileID: 0}
+      propertyPath: damageEverything
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 196044}
