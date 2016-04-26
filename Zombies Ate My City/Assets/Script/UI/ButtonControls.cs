@@ -7,7 +7,7 @@ public class ButtonControls : MonoBehaviour {
 	public string sceneName = "Final Prototype";
     public RawImage titleBackground, blankBackground, creditImage1, creditImage2;
     public GameObject backButton, exitButton, creditsButton, howButton, startButton;
-    public GameObject creditsText;
+    public GameObject creditsText, howToText;
     public AudioClip selectionClip;
     public AudioClip backClip;
     public AudioClip laughClip;
@@ -22,7 +22,8 @@ public class ButtonControls : MonoBehaviour {
         backButton.SetActive(false);
         creditImage1.enabled = false;
         creditImage2.enabled = false;
-        creditsText.SetActive(false);
+		creditsText.SetActive(false);
+		howToText.SetActive(false);
         buttonSound = GetComponent<AudioSource>();
     }
 
@@ -57,6 +58,8 @@ public class ButtonControls : MonoBehaviour {
         creditImage1.enabled = false;
         creditImage2.enabled = false;
         creditsText.SetActive(false);
+
+		howToText.SetActive (true);
     }
 
     public void Credits() {
@@ -95,6 +98,9 @@ public class ButtonControls : MonoBehaviour {
         creditImage1.enabled = false;
         creditImage2.enabled = false;
         creditsText.SetActive(false);
+
+		howToText.SetActive (false);
+
         if (crawling)
         {
             crawling = false;
