@@ -52,7 +52,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 		}
 	}
 
-	void StateController.RangedAttack(bool attacking){
+	void StateController.RangedAttack(bool attacking, bool isRifle){
 		if (anim) {
 			if (anim.GetLayerWeight (1) == 1)
 				attacking = false;

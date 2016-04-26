@@ -7,6 +7,7 @@ public class RangedWeapon : Weapon {
 	public GameObject muzzle;
 	public int maxAmmo;
 	public int currentAmmo;
+	public bool isRifle = false;
 
 	private ParticleSystem muzzleFlash;
 	private AudioSource muzzleSound;
@@ -37,7 +38,7 @@ public class RangedWeapon : Weapon {
 		if (isThrownWeapon) {
 			stateController.ThrownAttack (attacking);
 		} else {
-			stateController.RangedAttack (attacking);
+			stateController.RangedAttack (attacking, isRifle);
 		}
 	}
 

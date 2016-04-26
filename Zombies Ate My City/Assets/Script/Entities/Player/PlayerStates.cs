@@ -85,17 +85,9 @@ public class PlayerStates : MonoBehaviour, StateController {
 		}
 	}
 
-	void StateController.RangedAttack(bool attacking) {
+	void StateController.RangedAttack(bool attacking, bool isRifle) {
 		anim.SetBool ("shooting", attacking);
-		if ((weapons [weaponController.currentlyEquippedIndex].name == "Rifle" ||
-		    weapons [weaponController.currentlyEquippedIndex].name == "hellwailer")
-		    && attacking) {
-			if (anim.GetBool ("running") == true || anim.GetBool ("walking") == true)
-				anim.SetBool ("rifle", true);
-			else
-				anim.SetBool ("rifle", false);
-		} else
-			anim.SetBool ("rifle", false);
+		anim.SetBool("rifle", ((anim.GetBool("walking") || anim.GetBool("running")) && isRifle));
 	}
 
 	void StateController.ThrownAttack(bool attacking) {
