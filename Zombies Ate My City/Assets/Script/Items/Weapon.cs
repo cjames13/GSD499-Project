@@ -11,6 +11,10 @@ public abstract class Weapon : MonoBehaviour {
 		attackLocation = GameObject.FindGameObjectWithTag ("AttackLocation").transform;
 	}
 
+	protected bool OnCooldown() {
+		return attackTime <= 0f;
+	}
+
 	public abstract void Attack ();
 	public abstract void PlayAnimation(StateController stateController, bool attacking);
 

@@ -3,7 +3,6 @@ using System.Collections;
 
 public class RangedWeapon : Weapon {
 	public GameObject projectileObject;
-	public bool isThrownWeapon = false;
 	public GameObject muzzle;
 	public int maxAmmo;
 	public int currentAmmo;
@@ -35,11 +34,7 @@ public class RangedWeapon : Weapon {
 	}
 
 	public override void PlayAnimation(StateController stateController, bool attacking) {
-		if (isThrownWeapon) {
-			stateController.ThrownAttack (attacking);
-		} else {
-			stateController.RangedAttack (attacking, isRifle);
-		}
+		stateController.RangedAttack (attacking, isRifle);
 	}
 
 	void MuzzleFlash() {

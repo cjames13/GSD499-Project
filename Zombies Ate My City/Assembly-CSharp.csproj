@@ -124,6 +124,7 @@
      <Compile Include="Assets\Script\Items\Pickups\HealthPickup.cs" />
      <Compile Include="Assets\Script\Items\RangedWeapon.cs" />
      <Compile Include="Assets\Script\Items\ResourceCrate.cs" />
+     <Compile Include="Assets\Script\Items\ThrownWeapon.cs" />
      <Compile Include="Assets\Script\Items\Weapon.cs" />
      <Compile Include="Assets\Script\Misc\DamageOnContact.cs" />
      <Compile Include="Assets\Script\Misc\Explode.cs" />
