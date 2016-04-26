@@ -11,7 +11,7 @@ TagManager:
   - Resource
   - WeaponSlot
   - Muzzle
-  - Damage
+  - Exit
   layers:
   - Default
   - TransparentFX

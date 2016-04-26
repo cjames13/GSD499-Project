@@ -29,7 +29,6 @@ public class EnemyStates : MonoBehaviour, StateController {
 		StartCoroutine (Dying ());
 		StartCoroutine (Burning ());
 	}
-
 	IEnumerator SetDamageLayerWeight() {
 		if (anim)
 		anim.SetLayerWeight (1, 1);
