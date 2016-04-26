@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 	public GameObject player;
@@ -12,6 +13,7 @@ public class GameController : MonoBehaviour {
 
 	private int resourcesAvailable, resourcesCollected, score;
 	private bool levelClear = false;
+    private string sceneName = "Start Screen";
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +31,11 @@ public class GameController : MonoBehaviour {
 		if (resourcesCollected >= resourcesAvailable && !exitDoor.open) {
 			exitDoor.Open ();
 		}
+
+        if (levelClear && Input.GetKey(KeyCode.M))
+        {
+            SceneManager.LoadScene(sceneName);
+        }
 	}
 
 	public void ResourceCollected() {
@@ -54,6 +61,6 @@ public class GameController : MonoBehaviour {
 		levelClearText.enabled = true;
 		radar.SetActive (false);
 
-		levelClearText.text = "You survived.\n\nScore: " + score + "\nResources Collected: " + resourcesCollected;
+		levelClearText.text = "You survived.\n\nScore: " + score + "\nResources Collected: " + resourcesCollected + "\n\nPress 'M' to return to the Main Menu.";
 	}
 }
