@@ -12,10 +12,12 @@ public class PlayerStates : MonoBehaviour, StateController {
 
 	private CapsuleCollider myCollider;
 	private List<Collider> colliders;
-
 	private Animator anim;
-
+	private GameObject[] weapons;
+	WeaponController weaponController;
 	void Start() {
+		weaponController = GetComponent<WeaponController> ();
+		weapons = weaponController.weapons;
 		anim = GetComponent<Animator> ();
 		anim.SetLayerWeight (1, 1f);
 		anim.SetLayerWeight (2, 1f);
@@ -85,6 +87,15 @@ public class PlayerStates : MonoBehaviour, StateController {
 
 	void StateController.RangedAttack(bool attacking) {
 		anim.SetBool ("shooting", attacking);
+		if ((weapons [weaponController.currentlyEquippedIndex].name == "Rifle" ||
+		    weapons [weaponController.currentlyEquippedIndex].name == "hellwailer")
+		    && attacking) {
+			if (anim.GetBool ("running") == true || anim.GetBool ("walking") == true)
+				anim.SetBool ("rifle", true);
+			else
+				anim.SetBool ("rifle", false);
+		} else
+			anim.SetBool ("rifle", false);
 	}
 
 	void StateController.ThrownAttack(bool attacking) {

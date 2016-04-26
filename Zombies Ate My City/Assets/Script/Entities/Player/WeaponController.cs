@@ -8,7 +8,6 @@ public class WeaponController : MonoBehaviour {
 
 	void Awake () {
 		weaponSlot = GameObject.FindGameObjectWithTag ("WeaponSlot");
-
 		// Get all children
 		weapons = new GameObject[weaponSlot.transform.childCount];
 		int defaultWeaponIndex = 0;
