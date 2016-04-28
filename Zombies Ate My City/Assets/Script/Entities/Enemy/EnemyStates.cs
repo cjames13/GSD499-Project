@@ -20,12 +20,13 @@ public class EnemyStates : MonoBehaviour, StateController {
 	private Rigidbody[] rigidBodies;
 	private CapsuleCollider myCollider;
 	private List<Collider> colliders;
-
+	private SphereCollider sphereCollider;
 	void Start(){
 		gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 		anim = GetComponent<Animator> ();
 		magicAttackTime = magicAttackDelay;
 		enemyController = GetComponent<EnemyController> ();
+		sphereCollider = GetComponent<SphereCollider> ();
 
 		//Ragdoll
 		if (gameObject.name == "Skeleton" || gameObject.name == "Business Zombie") {
@@ -64,8 +65,12 @@ public class EnemyStates : MonoBehaviour, StateController {
 
 			SetAllChildCollidersTrigger (false);
 			anim.enabled = false;
-		} else
+		} else {
+			sphereCollider.enabled = false;
+			enemyController.enabled = false;
+			this.enabled = false;
 			Dying ();
+		}
 		StartCoroutine (Burning ());
 	}
 	IEnumerator SetDamageLayerWeight() {

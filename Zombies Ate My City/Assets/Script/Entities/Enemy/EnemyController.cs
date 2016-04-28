@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour {
 	
 
 	void Update () {
+
 		if (anim.GetBool ("dying") != true && enemyState.dead != true) {
 			float attackDistance = Vector3.Distance (agent.nextPosition, target.transform.position);
 			agent.SetDestination (target.transform.position);
@@ -57,7 +58,6 @@ public class EnemyController : MonoBehaviour {
 			agent.velocity = Vector3.zero;
 			agent.Stop ();
 			Debug.Log ("stopped");
-
 		}
 	}
 }
