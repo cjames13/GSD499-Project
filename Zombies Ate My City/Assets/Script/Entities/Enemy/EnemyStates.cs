@@ -28,6 +28,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 		enemyController = GetComponent<EnemyController> ();
 		sphereCollider = GetComponent<SphereCollider> ();
 
+		rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 		//Ragdoll
 		if (gameObject.name == "Skeleton" || gameObject.name == "Business Zombie") {
 			rigidBody = GetComponent<Rigidbody> ();
@@ -37,7 +38,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 				if (rb != rigidBody)
 					rb.isKinematic = true;
 			}
-			rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+
 			SetAllChildCollidersTrigger (true);
 		}
 	}
@@ -67,8 +68,6 @@ public class EnemyStates : MonoBehaviour, StateController {
 			anim.enabled = false;
 		} else {
 			sphereCollider.enabled = false;
-			enemyController.enabled = false;
-			this.enabled = false;
 			Dying ();
 		}
 		StartCoroutine (Burning ());
@@ -145,6 +144,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 	IEnumerator Burning()
 	{
 		yield return new WaitForSeconds (3);
+		SetAllChildCollidersTrigger (true);
 		GameObject.Find ("RingOfFire");
 		transform.GetChild (2).gameObject.SetActive (true);
 		yield return new WaitForSeconds (5);
