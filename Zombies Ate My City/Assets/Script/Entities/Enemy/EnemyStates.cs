@@ -27,18 +27,16 @@ public class EnemyStates : MonoBehaviour, StateController {
 		magicAttackTime = magicAttackDelay;
 		enemyController = GetComponent<EnemyController> ();
 		sphereCollider = GetComponent<SphereCollider> ();
-
+		rigidBody = GetComponent<Rigidbody> ();
+		rigidBodies = GetComponentsInChildren<Rigidbody> ();
+		myCollider = GetComponent<CapsuleCollider> ();
 		rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 		//Ragdoll
 		if (gameObject.name == "Skeleton" || gameObject.name == "Business Zombie") {
-			rigidBody = GetComponent<Rigidbody> ();
-			rigidBodies = GetComponentsInChildren<Rigidbody> ();
-			myCollider = GetComponent<CapsuleCollider> ();
 			foreach (Rigidbody rb in rigidBodies) {
 				if (rb != rigidBody)
 					rb.isKinematic = true;
 			}
-
 			SetAllChildCollidersTrigger (true);
 		}
 	}
@@ -57,7 +55,10 @@ public class EnemyStates : MonoBehaviour, StateController {
 	void StateController.Die() {
 		//ragdoll
 		dead = true;
+		if (sphereCollider)
+			sphereCollider.enabled = false;
 		if (gameObject.name == "Skeleton" || gameObject.name == "Business Zombie") {
+			Debug.Log ("dead");
 			myCollider.enabled = false;
 			rigidBody.useGravity = false;
 			foreach (Rigidbody rb in rigidBodies) {
@@ -67,9 +68,9 @@ public class EnemyStates : MonoBehaviour, StateController {
 			SetAllChildCollidersTrigger (false);
 			anim.enabled = false;
 		} else {
-			sphereCollider.enabled = false;
 			Dying ();
 		}
+
 		StartCoroutine (Burning ());
 	}
 	IEnumerator SetDamageLayerWeight() {
@@ -144,9 +145,11 @@ public class EnemyStates : MonoBehaviour, StateController {
 	IEnumerator Burning()
 	{
 		yield return new WaitForSeconds (3);
+		myCollider.isTrigger = true;
 		SetAllChildCollidersTrigger (true);
 		GameObject.Find ("RingOfFire");
 		transform.GetChild (2).gameObject.SetActive (true);
+		transform.GetChild (3).gameObject.SetActive (true);
 		yield return new WaitForSeconds (5);
 		Destroy (gameObject);
 	}

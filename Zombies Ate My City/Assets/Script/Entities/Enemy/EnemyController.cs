@@ -56,7 +56,6 @@ public class EnemyController : MonoBehaviour {
 		
 		} else {
 			agent.velocity = Vector3.zero;
-			agent.Stop ();
 			gameObject.GetComponent<NavMeshAgent> ().enabled = false;
 		}
 	}
