@@ -310,6 +310,7 @@ GameObject:
   - 114: {fileID: 11492062}
   - 114: {fileID: 11408558}
   - 135: {fileID: 13514796}
+  - 114: {fileID: 11435304}
   m_Layer: 0
   m_Name: Necromancer
   m_TagString: Enemy
@@ -1508,7 +1509,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 87.2832, y: -51.691776, z: 15.229584}
+  m_LocalPosition: {x: 98.01642, y: -51.83348, z: 12.94}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 487678}
@@ -1821,6 +1822,22 @@ MonoBehaviour:
   IntensityMaxRange:
     Minimum: 0
     Maximum: 8
+--- !u!114 &11435304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8585ef6f4fc369344aef405ced2f5a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageEverything: 0
+  damageObjectsWithTag:
+  - Player
+  destroySelfOnContact: 0
 --- !u!114 &11444068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1864,6 +1881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangedAttackObject: {fileID: 141530, guid: dff0d238109d47241934507686140ae2, type: 2}
   magicAttackDelay: 5
+  dead: 0
 --- !u!135 &13514796
 SphereCollider:
   m_ObjectHideFlags: 1

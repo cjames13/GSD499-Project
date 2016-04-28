@@ -53,7 +53,11 @@ public class EnemyController : MonoBehaviour {
 					enemyStates.RangedAttack (false, false);
 			}
 		
-		} else
+		} else {
+			agent.velocity = Vector3.zero;
 			agent.Stop ();
+			Debug.Log ("stopped");
+
+		}
 	}
 }

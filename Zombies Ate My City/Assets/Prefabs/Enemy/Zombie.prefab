@@ -1104,7 +1104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 88.619446, y: -51.71335, z: 15.6482315}
+  m_LocalPosition: {x: 98.25729, y: -51.83348, z: 14.550308}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 445164}
@@ -1865,6 +1865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangedAttackObject: {fileID: 0}
   magicAttackDelay: 5
+  dead: 0
 --- !u!114 &11432404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2120,7 +2121,7 @@ NavMeshAgent:
   m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
