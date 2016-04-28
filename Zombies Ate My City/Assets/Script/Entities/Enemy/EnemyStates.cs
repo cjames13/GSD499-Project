@@ -14,11 +14,38 @@ public class EnemyStates : MonoBehaviour, StateController {
 	public float magicAttackDelay = 7f;
 	private float magicAttackTime;
 
+	//Ragdoll
+	public bool dead = false;
+	private Rigidbody rigidBody;
+	private Rigidbody[] rigidBodies;
+	private CapsuleCollider myCollider;
+	private List<Collider> colliders;
+
 	void Start(){
 		gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 		anim = GetComponent<Animator> ();
 		magicAttackTime = magicAttackDelay;
 		enemyController = GetComponent<EnemyController> ();
+
+		//Ragdoll
+		if (gameObject.name == "Skeleton" || gameObject.name == "Business Zombie") {
+			rigidBody = GetComponent<Rigidbody> ();
+			rigidBodies = GetComponentsInChildren<Rigidbody> ();
+			myCollider = GetComponent<CapsuleCollider> ();
+			foreach (Rigidbody rb in rigidBodies) {
+				if (rb != rigidBody)
+					rb.isKinematic = true;
+			}
+			rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+			SetAllChildCollidersTrigger (true);
+		}
+	}
+	//ragdoll
+	void SetAllChildCollidersTrigger(bool t) {
+		foreach (Collider c in GetComponentsInChildren<Collider>()) {
+			if (c != myCollider)
+				c.isTrigger = t;
+		}
 	}
 	void StateController.TakeDamage() {
 		// Damage taken animation here
@@ -26,7 +53,19 @@ public class EnemyStates : MonoBehaviour, StateController {
 	}
 
 	void StateController.Die() {
-		StartCoroutine (Dying ());
+		//ragdoll
+		dead = true;
+		if (gameObject.name == "Skeleton" || gameObject.name == "Business Zombie") {
+			myCollider.enabled = false;
+			rigidBody.useGravity = false;
+			foreach (Rigidbody rb in rigidBodies) {
+				rb.isKinematic = false;
+			}
+
+			SetAllChildCollidersTrigger (false);
+			anim.enabled = false;
+		} else
+			Dying ();
 		StartCoroutine (Burning ());
 	}
 	IEnumerator SetDamageLayerWeight() {
@@ -93,20 +132,16 @@ public class EnemyStates : MonoBehaviour, StateController {
 		if (anim)
 		anim.SetBool ("walking", true);
 	}
-	IEnumerator Dying()
+	void Dying()
 	{
 		anim.SetBool ("dying", true);
-		yield return new WaitForSeconds (3);
-		GameObject.Find ("RingOfFire");
-
-		transform.GetChild (2).gameObject.SetActive (true);
 		gameController.IncreaseScore (enemyController.scoreValue);
-
-
-
 	}
 	IEnumerator Burning()
 	{
+		yield return new WaitForSeconds (3);
+		GameObject.Find ("RingOfFire");
+		transform.GetChild (2).gameObject.SetActive (true);
 		yield return new WaitForSeconds (5);
 		Destroy (gameObject);
 	}

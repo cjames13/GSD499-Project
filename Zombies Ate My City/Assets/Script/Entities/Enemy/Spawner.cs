@@ -56,6 +56,9 @@ public class Spawner : MonoBehaviour {
 		float z = Random.Range (spawnRadius.transform.position.z - spawnRadius.radius / 2, 
 			spawnRadius.transform.position.z + spawnRadius.radius / 2);
 		Vector3 spawnLocation = new Vector3(x, spawnRadius.transform.position.y, z);
-		spawnedMonsters.Add((GameObject)Instantiate (monsterObject, spawnLocation, Quaternion.identity));
+		GameObject newEnemy = (GameObject)Instantiate (monsterObject, spawnLocation, Quaternion.identity);
+		newEnemy.name = newEnemy.name.Replace("(Clone)", ""); 
+		spawnedMonsters.Add(newEnemy);
+
 	}
 }

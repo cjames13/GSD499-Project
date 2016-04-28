@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 0dc5e69150e35074f960d9750a6b00c2
+timeCreated: 1461798265
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -501,7 +503,7 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: CartoonyBuisnessZombie5(Clone)
+    - name: CartoonBusinessZombie(Clone)
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -526,14 +528,24 @@ ModelImporter:
       rotation: {x: -0.00000023156137, y: 0.14322905, z: 0.00000029742378, w: 0.9896896}
       scale: {x: 0.99999994, y: 1, z: 0.99999994}
       transformModified: 1
+    - name: def_neck
+      position: {x: -0.26993418, y: 0.000000020379455, z: 0.000000037252878}
+      rotation: {x: 0.00000019297893, y: 0.008763756, z: -0.0000005462198, w: 0.9999616}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+      transformModified: 1
+    - name: def_head
+      position: {x: -0.107656226, y: 0.000000008127861, z: 0.00000005215406}
+      rotation: {x: 0.000000102484215, y: -0.050549306, z: 0.00000026905116, w: 0.9987216}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+      transformModified: 1
     - name: def_shoulder_L
       position: {x: -0.24749354, y: -0.09205002, z: -0.005884331}
-      rotation: {x: 0.54422724, y: 0.67621917, z: -0.43227518, w: -0.24430005}
+      rotation: {x: 0.5442273, y: 0.6762192, z: -0.4322752, w: -0.24430007}
       scale: {x: 0.99999964, y: 0.9999998, z: 0.99999976}
       transformModified: 1
     - name: def_upperArmCloth_L
       position: {x: -0.12124667, y: 0.000000041909516, z: 0.000000049592927}
-      rotation: {x: 0.96893215, y: 0.055624712, z: -0.14001384, w: 0.19614387}
+      rotation: {x: 0.9689322, y: 0.055624716, z: -0.14001386, w: 0.19614388}
       scale: {x: 0.99999964, y: 1.0000002, z: 1}
       transformModified: 1
     - name: defM_forearm_L
@@ -565,16 +577,6 @@ ModelImporter:
       position: {x: -0.28789896, y: -0.000000029802322, z: -0.00000010058284}
       rotation: {x: 0.9748752, y: -0.08085731, z: 0.12637457, w: -0.16465083}
       scale: {x: 0.9999999, y: 1, z: 1.0000001}
-      transformModified: 1
-    - name: def_neck
-      position: {x: -0.26993418, y: 0.000000020379455, z: 0.000000037252878}
-      rotation: {x: 0.00000019297893, y: 0.008763756, z: -0.0000005462198, w: 0.9999616}
-      scale: {x: 0.9999999, y: 1, z: 0.9999999}
-      transformModified: 1
-    - name: def_head
-      position: {x: -0.107656226, y: 0.000000008127861, z: 0.00000005215406}
-      rotation: {x: 0.000000102484215, y: -0.050549306, z: 0.00000026905116, w: 0.9987216}
-      scale: {x: 0.9999999, y: 1, z: 0.9999999}
       transformModified: 1
     - name: defM_thigh_L
       position: {x: -0.087496914, y: -0.095447086, z: 0.004745545}
