@@ -8,13 +8,15 @@ public class EnemyController : MonoBehaviour {
 	public float rotationSpeed = 3f;
 	public float attackSpeed = 1f;
 	public int scoreValue;
+
 	private Animator anim;
 	private NavMeshAgent agent;
 	private StateController enemyStates;
-	private EnemyStates enemyState;
+	private Health health;
+
 	void Start () {
 		enemyStates = GetComponent<StateController> ();
-		enemyState = GetComponent<EnemyStates> ();
+		health = GetComponent<Health> ();
 		agent = GetComponent<NavMeshAgent> ();
 		anim = GetComponent<Animator> ();
 		if (target == null) {
@@ -24,8 +26,7 @@ public class EnemyController : MonoBehaviour {
 	
 
 	void Update () {
-
-		if (anim.GetBool ("dying") != true && enemyState.dead != true) {
+		if (!anim.GetBool ("dying") && health.alive) {
 			float attackDistance = Vector3.Distance (agent.nextPosition, target.transform.position);
 			agent.SetDestination (target.transform.position);
 			Vector3 lookPos = target.transform.position - transform.position;

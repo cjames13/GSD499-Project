@@ -5,9 +5,9 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 4f;
 	public float jumpSpeed = 5f;
-	public bool dead = false;
+	public bool alive = true;
 //	bool attack = false;
-	Vector3 moveDirection;
+
 	Animator anim;
 	Rigidbody rigidBody;
 	Rigidbody[] rigidBodies;
@@ -55,11 +55,9 @@ public class PlayerController : MonoBehaviour {
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
 
+		Vector3 moveDirection = Vector3.zero;
 
-		if (dead) {
-			moveDirection = Vector3.zero;
-		} 
-		else {
+		if(alive) {
 			// Move
 			moveDirection = (h * right + v * forward);
 			transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * moveSpeed, moveSpeed) ;

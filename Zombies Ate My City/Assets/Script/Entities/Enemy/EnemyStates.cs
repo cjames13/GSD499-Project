@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 public class EnemyStates : MonoBehaviour, StateController {
 	public GameObject rangedAttackObject;
+	public bool ragdollOnDeath = false;
+	public float deathTime = 3f;
 
 	private Animator anim;
 	private EnemyController enemyController;
@@ -15,12 +17,12 @@ public class EnemyStates : MonoBehaviour, StateController {
 	private float magicAttackTime;
 
 	//Ragdoll
-	public bool dead = false;
 	private Rigidbody rigidBody;
 	private Rigidbody[] rigidBodies;
 	private CapsuleCollider myCollider;
 	private List<Collider> colliders;
 	private SphereCollider sphereCollider;
+
 	void Start(){
 		gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 		anim = GetComponent<Animator> ();
@@ -31,8 +33,9 @@ public class EnemyStates : MonoBehaviour, StateController {
 		rigidBodies = GetComponentsInChildren<Rigidbody> ();
 		myCollider = GetComponent<CapsuleCollider> ();
 		rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+
 		//Ragdoll
-		if (gameObject.name == "Skeleton" || gameObject.name == "Business Zombie") {
+		if (ragdollOnDeath) {
 			foreach (Rigidbody rb in rigidBodies) {
 				if (rb != rigidBody)
 					rb.isKinematic = true;
@@ -53,12 +56,11 @@ public class EnemyStates : MonoBehaviour, StateController {
 	}
 
 	void StateController.Die() {
-		//ragdoll
-		dead = true;
-		if (sphereCollider)
+		if (sphereCollider) {
 			sphereCollider.enabled = false;
-		if (gameObject.name == "Skeleton" || gameObject.name == "Business Zombie") {
-			Debug.Log ("dead");
+		}
+
+		if (ragdollOnDeath) {
 			myCollider.enabled = false;
 			rigidBody.useGravity = false;
 			foreach (Rigidbody rb in rigidBodies) {
@@ -68,9 +70,10 @@ public class EnemyStates : MonoBehaviour, StateController {
 			SetAllChildCollidersTrigger (false);
 			anim.enabled = false;
 		} else {
-			Dying ();
+			anim.SetBool ("dying", true);
 		}
 
+		gameController.IncreaseScore (enemyController.scoreValue);
 		StartCoroutine (Burning ());
 	}
 	IEnumerator SetDamageLayerWeight() {
@@ -134,23 +137,18 @@ public class EnemyStates : MonoBehaviour, StateController {
 	void StateController.ThrownAttack(bool attacking) {}
 
 	void StateController.Walk(){
-		if (anim)
-		anim.SetBool ("walking", true);
+		if (anim) {
+			anim.SetBool ("walking", true);
+		}
 	}
-	void Dying()
-	{
-		anim.SetBool ("dying", true);
-		gameController.IncreaseScore (enemyController.scoreValue);
-	}
+
 	IEnumerator Burning()
 	{
 		yield return new WaitForSeconds (3);
 		myCollider.isTrigger = true;
 		SetAllChildCollidersTrigger (true);
-		GameObject.Find ("RingOfFire");
-		transform.GetChild (2).gameObject.SetActive (true);
-		transform.GetChild (3).gameObject.SetActive (true);
-		yield return new WaitForSeconds (5);
+		transform.Find ("RingOfFire").gameObject.SetActive (true);
+		yield return new WaitForSeconds (deathTime);
 		Destroy (gameObject);
 	}
 }

@@ -1293,6 +1293,7 @@ MonoBehaviour:
   maxHealth: 2
   currentHealth: 0
   invulnTimeAfterHit: 0
+  alive: 1
 --- !u!114 &11423190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1373,8 +1374,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangedAttackObject: {fileID: 0}
+  ragdollOnDeath: 1
+  deathTime: 3
   magicAttackDelay: 5
-  dead: 0
 --- !u!135 &13517268
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -8047,6 +8049,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ragdollOnDeath
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

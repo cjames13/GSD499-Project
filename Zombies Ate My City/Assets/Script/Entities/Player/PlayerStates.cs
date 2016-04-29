@@ -63,7 +63,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 		SetAllChildCollidersTrigger (false);
 		anim.enabled = false;
 
-		playerController.dead = true;
+		playerController.alive = false;
 		StartCoroutine (RestartLevel ());
 	}
 

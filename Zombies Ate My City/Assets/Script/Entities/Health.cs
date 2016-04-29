@@ -6,6 +6,7 @@ public class Health : MonoBehaviour {
 	public int maxHealth;
 	public int currentHealth;
 	public float invulnTimeAfterHit = 0f;
+	public bool alive = true;
 
 	private StateController animController;
 	private float lastHitTime;
@@ -18,7 +19,8 @@ public class Health : MonoBehaviour {
 	}
 
 	void Update() {
-		if (currentHealth <= 0) {
+		if (currentHealth <= 0 && alive) {
+			alive = false;
 			animController.Die ();
 		}
 	}

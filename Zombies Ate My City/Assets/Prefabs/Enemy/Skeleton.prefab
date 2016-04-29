@@ -242,6 +242,7 @@ GameObject:
   - 33: {fileID: 3355270}
   - 23: {fileID: 2314502}
   - 114: {fileID: 11484318}
+  - 136: {fileID: 13662940}
   m_Layer: 0
   m_Name: SWORD
   m_TagString: Untagged
@@ -1551,7 +1552,7 @@ Rigidbody:
   m_Drag: 3
   m_AngularDrag: 10
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1823,8 +1824,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangedAttackObject: {fileID: 0}
+  ragdollOnDeath: 1
+  deathTime: 3
   magicAttackDelay: 5
-  dead: 0
 --- !u!114 &11455338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1858,6 +1860,7 @@ MonoBehaviour:
   maxHealth: 2
   currentHealth: 0
   invulnTimeAfterHit: 0
+  alive: 1
 --- !u!114 &11484318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1977,6 +1980,19 @@ CapsuleCollider:
   m_Height: 1.7641625
   m_Direction: 0
   m_Center: {x: -0.8820813, y: 0, z: 0}
+--- !u!136 &13662940
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 3.4
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 2.2}
 --- !u!136 &13688868
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -8540,7 +8556,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: maxHealth
-      value: 2
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ragdollOnDeath
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

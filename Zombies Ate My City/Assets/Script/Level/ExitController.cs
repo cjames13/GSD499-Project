@@ -7,7 +7,7 @@ public class ExitController : MonoBehaviour {
 	private Animator anim;
 	private GameController gameController;
 
-	void Start() {
+	void Awake() {
 		anim = GetComponent<Animator> ();
 		gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 	}
