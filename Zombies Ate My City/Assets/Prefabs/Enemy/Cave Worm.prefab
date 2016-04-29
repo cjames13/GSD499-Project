@@ -1254,7 +1254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182086}
   m_LocalRotation: {x: 0, y: -0.9327484, z: 0, w: 0.36052805}
-  m_LocalPosition: {x: 96.74036, y: -51.82555, z: 13.547096}
+  m_LocalPosition: {x: 95.83314, y: -51.797123, z: 7.0138016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 476180}
@@ -2119,9 +2119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c9b1d4c3e12be4aab99a254bba9544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 100
   currentHealth: 0
-  invulnTimeAfterHit: 0
+  invulnTimeAfterHit: 0.1
   alive: 1
 --- !u!114 &11413702
 MonoBehaviour:
