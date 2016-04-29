@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 public class EnemyStates : MonoBehaviour, StateController {
-	public GameObject rangedAttackObject;
 	public bool ragdollOnDeath = false;
 	public float deathTime = 3f;
 
@@ -100,5 +99,9 @@ public class EnemyStates : MonoBehaviour, StateController {
 		transform.Find ("RingOfFire").gameObject.SetActive (true);
 		yield return new WaitForSeconds (deathTime);
 		Destroy (gameObject);
+	}
+
+	bool StateController.IsAnimationPlaying(string layerName, string animationName) {
+		return anim.GetCurrentAnimatorStateInfo (anim.GetLayerIndex (layerName)).IsName (animationName);
 	}
 }

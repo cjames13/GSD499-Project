@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour {
 	public Text levelClearText;
 	public GameObject radar;
 
-	private int resourcesAvailable, resourcesCollected, score;
+	private int resourcesAvailable, resourcesCollected, score, enemiesKilled;
 	private bool levelClear = false;
     private string sceneName = "Start Screen";
 
@@ -44,6 +44,10 @@ public class GameController : MonoBehaviour {
 
 	public void IncreaseScore(int s) {
 		score += s;
+	}
+
+	public void IncreaseKills(int n) {
+		enemiesKilled += n;
 	}
 
 	public void WinLevel() {

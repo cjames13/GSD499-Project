@@ -8,4 +8,5 @@ public interface StateController {
 	void ThrownAttack(bool attacking);
 	void Walk();
 	void Die();
+	bool IsAnimationPlaying (string layerName, string animationName);
 }

@@ -4,6 +4,16 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerStates : MonoBehaviour, StateController {
+	// Layer name constants
+	public const string DAMAGE_LAYER = "Damage";
+	public const string SHOOT_LAYER  = "Shooting";
+	public const string SHOOT_ANIM   = "Shooting Pistol";
+	public const string RIFLE_ANIM   = "Shooting Rifle";
+	public const string THROW_LAYER  = "Throwing";
+	public const string THROW_ANIM   = "Throwing";
+	public const string MELEE_LAYER  = "Meleeing";
+	public const string MELEE_ANIM   = "Meleeing";
+
 	private PlayerController playerController;
 
 	// Movement state
@@ -16,10 +26,12 @@ public class PlayerStates : MonoBehaviour, StateController {
 
 	void Start() {
 		anim = GetComponent<Animator> ();
+		// All layers need to have their weight set via code for whatever reason
 		anim.SetLayerWeight (1, 1f);
 		anim.SetLayerWeight (2, 1f);
 		anim.SetLayerWeight (3, 1f);
 		anim.SetLayerWeight (4, 1f);
+
 		playerController = GetComponent<PlayerController> ();
 
 		rigidBody = GetComponent<Rigidbody>();
@@ -98,4 +110,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 	// TODO: Move movement animation logic to states
 	void StateController.Walk(){}
 
+	bool StateController.IsAnimationPlaying(string layerName, string animationName) {
+		return anim.GetCurrentAnimatorStateInfo (anim.GetLayerIndex (layerName)).IsName (animationName);
+	}
 }
