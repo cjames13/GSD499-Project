@@ -1254,7 +1254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182086}
   m_LocalRotation: {x: 0, y: -0.9327484, z: 0, w: 0.36052805}
-  m_LocalPosition: {x: 95.726295, y: -51.817356, z: 15.414154}
+  m_LocalPosition: {x: 96.74036, y: -51.82555, z: 13.547096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 476180}
@@ -2122,6 +2122,7 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   invulnTimeAfterHit: 0
+  alive: 1
 --- !u!114 &11413702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2169,7 +2170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangedAttackObject: {fileID: 0}
-  magicAttackDelay: 5
+  ragdollOnDeath: 0
+  deathTime: 3
 --- !u!114 &11444262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2183,7 +2185,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   rangedAttacker: 0
+  projectileObject: {fileID: 0}
   magicAttackDistance: 8
+  magicAttackDelay: 2
   rotationSpeed: 3
   attackSpeed: 1
   scoreValue: 10
@@ -2199,7 +2203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangedAttackObject: {fileID: 0}
-  magicAttackDelay: 5
+  ragdollOnDeath: 0
+  deathTime: 3
 --- !u!114 &11475188
 MonoBehaviour:
   m_ObjectHideFlags: 1
