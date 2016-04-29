@@ -914,10 +914,14 @@ Transform:
   m_GameObject: {fileID: 115938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 97.99699, y: -51.83348, z: 14.417191}
 =======
   m_LocalPosition: {x: 94.782074, y: -51.797714, z: 13.021866}
 >>>>>>> 0796eee58958925de9fa3ad2bb7c96ed362eb513
+=======
+  m_LocalPosition: {x: 106.86607, y: -51.80339, z: 13.286842}
+>>>>>>> parent of 79409d9... Huge EnemyState/EnemyController clean up. Complete enemy animation overhaul.
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 444688}
@@ -1294,7 +1298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c9b1d4c3e12be4aab99a254bba9544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 2
   currentHealth: 0
   invulnTimeAfterHit: 0
   alive: 1

@@ -1105,12 +1105,17 @@ Transform:
   m_GameObject: {fileID: 161926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 99.260574, y: -51.83348, z: 13.531143}
   m_LocalScale: {x: 2.5, y: 2, z: 2}
 =======
   m_LocalPosition: {x: 95.275795, y: -51.802776, z: 12.616585}
   m_LocalScale: {x: 2, y: 2, z: 2}
 >>>>>>> 0796eee58958925de9fa3ad2bb7c96ed362eb513
+=======
+  m_LocalPosition: {x: 98.25729, y: -51.83348, z: 14.550308}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+>>>>>>> parent of 79409d9... Huge EnemyState/EnemyController clean up. Complete enemy animation overhaul.
   m_Children:
   - {fileID: 445164}
   - {fileID: 474898}
@@ -1869,9 +1874,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangedAttackObject: {fileID: 0}
-  ragdollOnDeath: 0
-  deathTime: 3
   magicAttackDelay: 5
+  dead: 0
 --- !u!114 &11432404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1900,10 +1904,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c9b1d4c3e12be4aab99a254bba9544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 1
   currentHealth: 0
   invulnTimeAfterHit: 0
-  alive: 1
 --- !u!114 &11485646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2123,8 +2126,8 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161926}
   m_Enabled: 1
-  m_Radius: 0.1
-  m_Speed: 1.5
+  m_Radius: 0.5
+  m_Speed: 1
   m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -8165,7 +8168,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: maxHealth
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
