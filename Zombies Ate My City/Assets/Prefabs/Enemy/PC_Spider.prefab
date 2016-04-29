@@ -19,7 +19,7 @@ GameObject:
   - 114: {fileID: 11485922}
   m_Layer: 0
   m_Name: PC_Spider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -584,7 +584,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.73834, y: -51.83348, z: 16.086395}
+  m_LocalPosition: {x: 96.77741, y: -51.82225, z: 12.504517}
   m_LocalScale: {x: 1.5, y: 3.5, z: 1.5}
   m_Children:
   - {fileID: 400058}
@@ -1239,7 +1239,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   rangedAttacker: 0
+  projectileObject: {fileID: 0}
   magicAttackDistance: 8
+  magicAttackDelay: 2
   rotationSpeed: 3
   attackSpeed: 1
   scoreValue: 5
@@ -1274,8 +1276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangedAttackObject: {fileID: 141530, guid: 369eee557c4d41c479225bf744fa6a5f, type: 2}
-  magicAttackDelay: 7
-  dead: 0
+  ragdollOnDeath: 0
+  deathTime: 3
 --- !u!114 &11479132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1290,6 +1292,7 @@ MonoBehaviour:
   maxHealth: 1
   currentHealth: 0
   invulnTimeAfterHit: 0
+  alive: 1
 --- !u!114 &11485922
 MonoBehaviour:
   m_ObjectHideFlags: 1
