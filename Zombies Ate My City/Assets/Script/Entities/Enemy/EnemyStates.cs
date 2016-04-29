@@ -58,7 +58,6 @@ public class EnemyStates : MonoBehaviour, StateController {
 		if (sphereCollider)
 			sphereCollider.enabled = false;
 		if (gameObject.name == "Skeleton" || gameObject.name == "Business Zombie") {
-			Debug.Log ("dead");
 			myCollider.enabled = false;
 			rigidBody.useGravity = false;
 			foreach (Rigidbody rb in rigidBodies) {
@@ -82,7 +81,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 	}
 
 	void StateController.MeleeAttack(bool attacking){
-		if (anim) {
+		if (anim ) {
 			if (anim.GetLayerWeight (1) == 1)
 				attacking = false;
 			if (attacking) {
@@ -148,7 +147,9 @@ public class EnemyStates : MonoBehaviour, StateController {
 		myCollider.isTrigger = true;
 		SetAllChildCollidersTrigger (true);
 		GameObject.Find ("RingOfFire");
+		if (transform.GetChild(2))
 		transform.GetChild (2).gameObject.SetActive (true);
+		if (transform.GetChild(3))
 		transform.GetChild (3).gameObject.SetActive (true);
 		yield return new WaitForSeconds (5);
 		Destroy (gameObject);
