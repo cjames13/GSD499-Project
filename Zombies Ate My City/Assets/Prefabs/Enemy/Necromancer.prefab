@@ -1509,7 +1509,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 98.01642, y: -51.83348, z: 12.94}
+  m_LocalPosition: {x: 97.47085, y: -51.83348, z: 14.623024}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 487678}
@@ -1783,7 +1783,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   rangedAttacker: 1
+  projectileObject: {fileID: 141530, guid: dff0d238109d47241934507686140ae2, type: 2}
   magicAttackDistance: 8
+  magicAttackDelay: 2
   rotationSpeed: 3
   attackSpeed: 1
   scoreValue: 20
@@ -1799,8 +1801,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangedAttackObject: {fileID: 141530, guid: dff0d238109d47241934507686140ae2, type: 2}
-  magicAttackDelay: 5
-  dead: 0
+  ragdollOnDeath: 0
+  deathTime: 3
 --- !u!114 &11427172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1882,6 +1884,7 @@ MonoBehaviour:
   maxHealth: 2
   currentHealth: 0
   invulnTimeAfterHit: 0
+  alive: 1
 --- !u!135 &13514796
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1914,7 +1917,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144818}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.7
   m_Height: 5.5

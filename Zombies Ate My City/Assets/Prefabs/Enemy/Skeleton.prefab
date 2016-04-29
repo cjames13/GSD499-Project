@@ -742,7 +742,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 97.0341, y: -51.827892, z: 13.121056}
+  m_LocalPosition: {x: 98.64972, y: -51.83348, z: 13.617165}
   m_LocalScale: {x: 0.14183545, y: 0.1418355, z: 0.1418355}
   m_Children:
   - {fileID: 460496}
@@ -1857,7 +1857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c9b1d4c3e12be4aab99a254bba9544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 5
   currentHealth: 0
   invulnTimeAfterHit: 0
   alive: 1
@@ -2515,7 +2515,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 148076}
   m_Enabled: 1
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -8565,6 +8565,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: ragdollOnDeath
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Speed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
