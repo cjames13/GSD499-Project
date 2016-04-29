@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 474234}
-  - 114: {fileID: 11435564}
+  - 114: {fileID: 11433750}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -1431,8 +1431,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169714}
   m_LocalRotation: {x: 0.2925179, y: -0.6776849, z: 0.59004223, w: 0.32714942}
-  m_LocalPosition: {x: 0.18800518, y: -0.075996235, z: 0.12200007}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.166, y: -0.072, z: 0.105}
+  m_LocalScale: {x: 1, y: 1.4, z: 1}
   m_Children:
   - {fileID: 415222}
   - {fileID: 411024}
@@ -2577,7 +2577,6 @@ MonoBehaviour:
   attackSpeed: 0.2
   isDefault: 0
   projectileObject: {fileID: 163292, guid: c41aa98f2e163b543a279e60a4801436, type: 2}
-  isThrownWeapon: 0
   muzzle: {fileID: 176396}
   maxAmmo: 25
   currentAmmo: 25
@@ -2596,7 +2595,6 @@ MonoBehaviour:
   attackSpeed: 0.3
   isDefault: 1
   projectileObject: {fileID: 199808, guid: 9131cf4614622e74d894bc9bbc68dd88, type: 2}
-  isThrownWeapon: 0
   muzzle: {fileID: 113230}
   maxAmmo: 25
   currentAmmo: 0
@@ -2615,7 +2613,7 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   invulnTimeAfterHit: 1
---- !u!114 &11435564
+--- !u!114 &11433750
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2623,17 +2621,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 101610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f074c916f19a1449bafbcf0901b9cc0, type: 3}
+  m_Script: {fileID: 11500000, guid: ef1635d695016834dac2696d4ed651d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 1.7
   isDefault: 0
   projectileObject: {fileID: 196044, guid: 067a068d703804446bd03dc571c538bb, type: 2}
-  isThrownWeapon: 1
   muzzle: {fileID: 0}
-  maxAmmo: 2
+  maxAmmo: 5
   currentAmmo: 0
   isRifle: 0
+  throwDelay: 0.8
 --- !u!114 &11437944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2696,7 +2694,6 @@ MonoBehaviour:
   attackSpeed: 0.5
   isDefault: 0
   projectileObject: {fileID: 163292, guid: 47acbd9bf0f2ae745ae7143652f1f5f9, type: 2}
-  isThrownWeapon: 0
   muzzle: {fileID: 121046}
   maxAmmo: 50
   currentAmmo: 0
@@ -2877,7 +2874,7 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.1
-  m_Height: 0.6
+  m_Height: 0.75
   m_Direction: 1
   m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!136 &13675032
