@@ -4,9 +4,11 @@ using System.Collections;
 public class ThrownWeapon : RangedWeapon {
 	public float throwDelay = 0.8f;
 
+	private bool hasThrown = false;
+
 	public override void Attack() {
-		attackTime -= Time.deltaTime;
-		if (attackTime <= 0f && currentAmmo > 0) {
+		if (!OnCooldown() && currentAmmo > 0) {
+			hasThrown = false;
 			StartCoroutine (ThrowDelayedProjectile ());
 			currentAmmo--;
 			attackTime = attackSpeed;
@@ -19,6 +21,9 @@ public class ThrownWeapon : RangedWeapon {
 	}
 
 	public override void PlayAnimation(StateController stateController, bool attacking) {
-		if(!OnCooldown()) stateController.ThrownAttack (attacking);
+		if (!hasThrown) {
+			stateController.ThrownAttack (attacking);
+			hasThrown = true;
+		}
 	}
 }

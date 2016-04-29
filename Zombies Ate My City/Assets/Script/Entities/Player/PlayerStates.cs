@@ -55,7 +55,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 		}
 	}
 
-	void StateController.TakeDamage() {
+	public void TakeDamage() {
 		StartCoroutine (TimedDamageAnimation ());
 	}
 
@@ -65,7 +65,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 		anim.SetBool ("hurting", false);
 	}
 
-	void StateController.Die() {
+	public void Die() {
 		myCollider.enabled = false;
 		rigidBody.useGravity = false;
 		foreach (Rigidbody rb in rigidBodies) {
@@ -86,31 +86,27 @@ public class PlayerStates : MonoBehaviour, StateController {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
-	void StateController.MeleeAttack(bool attacking){
-		if (attacking) {
+	public void MeleeAttack(bool attacking){
+		if (!IsAnimationPlaying (MELEE_LAYER, MELEE_ANIM) && attacking) {
 			anim.SetTrigger ("melee");
-		} else {
-			anim.ResetTrigger ("melee");
 		}
 	}
 
-	void StateController.RangedAttack(bool attacking, bool isRifle) {
+	public void RangedAttack(bool attacking, bool isRifle) {
 		anim.SetBool ("shooting", attacking);
 		anim.SetBool("rifle", ((anim.GetBool("walking") || anim.GetBool("running")) && isRifle));
 	}
 
-	void StateController.ThrownAttack(bool attacking) {
-		if (attacking) {
+	public void ThrownAttack(bool attacking) {
+		if (!anim.GetBool("throw") && attacking) {
 			anim.SetTrigger ("throw");
-		} else {
-			anim.ResetTrigger ("throw");
 		}
 	}
 
 	// TODO: Move movement animation logic to states
-	void StateController.Walk(){}
+	public void Walk(){}
 
-	bool StateController.IsAnimationPlaying(string layerName, string animationName) {
+	public bool IsAnimationPlaying(string layerName, string animationName) {
 		return anim.GetCurrentAnimatorStateInfo (anim.GetLayerIndex (layerName)).IsName (animationName);
 	}
 }

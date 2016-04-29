@@ -24,7 +24,6 @@ public class RangedWeapon : Weapon {
 	}
 
 	public override void Attack() {
-		attackTime -= Time.deltaTime;
 		if (attackTime <= 0 && currentAmmo > 0) {
 			Instantiate (projectileObject, attackLocation.position, attackLocation.rotation);
 			MuzzleFlash ();

@@ -11,8 +11,12 @@ public abstract class Weapon : MonoBehaviour {
 		attackLocation = GameObject.FindGameObjectWithTag ("AttackLocation").transform;
 	}
 
+	void Update() {
+		attackTime -= Time.deltaTime;
+	}
+
 	protected bool OnCooldown() {
-		return attackTime <= 0f;
+		return attackTime > 0f;
 	}
 
 	public abstract void Attack ();

@@ -39,18 +39,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f074c916f19a1449bafbcf0901b9cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 1.7
-  attackLocation: {fileID: 0}
+  attackSpeed: 3
   isDefault: 0
   projectileObject: {fileID: 196044, guid: 067a068d703804446bd03dc571c538bb, type: 2}
-  isThrownWeapon: 1
+  muzzle: {fileID: 0}
+  maxAmmo: 0
+  currentAmmo: 0
+  isRifle: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: attackSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 155882}
