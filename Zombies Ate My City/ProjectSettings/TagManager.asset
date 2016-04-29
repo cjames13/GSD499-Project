@@ -6,12 +6,14 @@ TagManager:
   tags:
   - Enemy
   - Fire
-  - Ground
   - AttackLocation
   - Resource
   - WeaponSlot
   - Muzzle
   - Exit
+  - Damage
+  - PlayerAttack
+  - Prop
   layers:
   - Default
   - TransparentFX

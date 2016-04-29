@@ -2564,6 +2564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpeed: 0.125
   isDefault: 0
+  attackTimeLength: 3
 --- !u!114 &11424800
 MonoBehaviour:
   m_ObjectHideFlags: 1

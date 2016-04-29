@@ -3310,7 +3310,7 @@ GameObject:
   - 114: {fileID: 950030613}
   m_Layer: 0
   m_Name: W2
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7330,11 +7330,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100054, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
       propertyPath: m_TagString
-      value: Ground
+      value: Prop
       objectReference: {fileID: 0}
     - target: {fileID: 100024, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
       propertyPath: m_TagString
-      value: Ground
+      value: Prop
       objectReference: {fileID: 0}
     - target: {fileID: 400054, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
       propertyPath: m_LocalScale.x
@@ -7515,6 +7515,46 @@ Prefab:
     - target: {fileID: 2300012, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
+      propertyPath: m_TagString
+      value: Prop
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
+      propertyPath: m_TagString
+      value: Prop
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
+      propertyPath: m_TagString
+      value: Prop
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
+      propertyPath: m_TagString
+      value: Prop
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
+      propertyPath: m_TagString
+      value: Prop
+      objectReference: {fileID: 0}
+    - target: {fileID: 100028, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
+      propertyPath: m_TagString
+      value: Prop
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
+      propertyPath: m_TagString
+      value: Prop
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
+      propertyPath: m_TagString
+      value: Prop
+      objectReference: {fileID: 0}
+    - target: {fileID: 100032, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
+      propertyPath: m_TagString
+      value: Prop
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}

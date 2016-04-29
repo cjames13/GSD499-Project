@@ -8,7 +8,7 @@ public class Explode : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Ground" || other.tag == "Enemy") {
+		if (other.transform.tag == "Prop" || other.transform.tag == "Enemy") {
 			Instantiate (explosion,
 				new Vector3 (transform.position.x, transform.position.y,
 					transform.position.z), transform.rotation);
