@@ -79,9 +79,10 @@ MonoBehaviour:
   damageEverything: 0
   damageObjectsWithTag:
   - Enemy
-  destroySelfOnContact: 1
-  speed: 20
+  destroySelfOnContact: 0
+  speed: 50
   timeToLive: 2.5
+  explosive: 0
 --- !u!135 &13529936
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -131,7 +132,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
@@ -147,7 +148,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: destroySelfOnContact
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
