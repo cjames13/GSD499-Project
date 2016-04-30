@@ -119,6 +119,7 @@
      <Compile Include="Assets\Script\Entities\Player\WeaponController.cs" />
      <Compile Include="Assets\Script\Entities\StateController.cs" />
      <Compile Include="Assets\Script\GameController\GameController.cs" />
+     <Compile Include="Assets\Script\Items\DropItem.cs" />
      <Compile Include="Assets\Script\Items\MeleeWeapon.cs" />
      <Compile Include="Assets\Script\Items\Pickups\AmmoPickup.cs" />
      <Compile Include="Assets\Script\Items\Pickups\HealthPickup.cs" />

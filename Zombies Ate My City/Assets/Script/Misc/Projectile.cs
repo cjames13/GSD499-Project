@@ -4,13 +4,10 @@ using System.Collections;
 public class Projectile : DamageOnContact {
 	public float 	speed;
 	public float	timeToLive = 4f;
-	public bool explosive = false;
 	private float creationTime;
 
 	void Start() {
 		creationTime = Time.time;
-		if (explosive == false)
-		base.destroySelfOnContact = true;
 	}
 
 	void Update() {
