@@ -66,16 +66,27 @@ public class PlayerController : MonoBehaviour {
 
 			// Animations
 			if (!isAerial) {
-				anim.SetBool ("walking", (h != 0f || v != 0f));
-				anim.SetBool ("running", (Mathf.Abs (h) >= 0.7f || Mathf.Abs (v) >= 0.7f));
+				if (anim.GetBool ("shooting") == false) {
+					anim.SetBool ("walking", (h != 0f || v != 0f));
+					anim.SetBool ("running", (Mathf.Abs (h) >= 0.7f || Mathf.Abs (v) >= 0.7f));
+
+				} else {
+					
+					anim.SetFloat ("ForwardBackward", Input.GetAxis ("Horizontal"));
+					anim.SetFloat ("LeftRight", Input.GetAxis ("Vertical"));
+					Debug.Log ("Horizontal" + anim.GetFloat ("LeftRight"));
+					Debug.Log ("Vertical" + anim.GetFloat ("ForwardBackward"));
+				}
 			}
 
 			anim.SetBool ("jumping",   isAerial);
 
 			if (moveDirection != Vector3.zero) {
-				transform.rotation = Quaternion.LookRotation (moveDirection);
+				if (anim.GetBool ("shooting") != true)
+					transform.rotation = Quaternion.LookRotation (moveDirection);
+				else
+					transform.rotation = Quaternion.Euler (0, cam.transform.eulerAngles.y, 0);
 			}
-
 		}
 	}
 
