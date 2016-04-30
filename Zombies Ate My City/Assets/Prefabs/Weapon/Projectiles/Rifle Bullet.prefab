@@ -9,9 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 412260}
   - 33: {fileID: 3328088}
-  - 135: {fileID: 13529936}
   - 23: {fileID: 2395544}
   - 114: {fileID: 11409748}
+  - 136: {fileID: 13683934}
   m_Layer: 0
   m_Name: Rifle Bullet
   m_TagString: PlayerAttack
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 86.90066, y: -51.32884, z: 13.146253}
+  m_LocalPosition: {x: 96.55696, y: -51.82213, z: 13.273689}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,8 +83,8 @@ MonoBehaviour:
   speed: 50
   timeToLive: 2.5
   explosive: 0
---- !u!135 &13529936
-SphereCollider:
+--- !u!136 &13683934
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -92,8 +92,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.5
+  m_Height: 15
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
