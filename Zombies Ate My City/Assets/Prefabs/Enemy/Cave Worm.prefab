@@ -810,6 +810,7 @@ GameObject:
   - 114: {fileID: 11440592}
   - 64: {fileID: 6482992}
   - 114: {fileID: 11488116}
+  - 82: {fileID: 8264748}
   m_Layer: 0
   m_Name: Cave Worm
   m_TagString: Enemy
@@ -2058,6 +2059,80 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &8264748
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182086}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &9500356
 Animator:
   serializedVersion: 3
@@ -2123,6 +2198,8 @@ MonoBehaviour:
   currentHealth: 0
   invulnTimeAfterHit: 0.1
   alive: 1
+  entityHurt: {fileID: 8300000, guid: 3278a9a47de844c4ab0136176a2c4319, type: 3}
+  entityDeath: {fileID: 8300000, guid: 88f8a5a195583584a9c17e985aaf8165, type: 3}
 --- !u!114 &11413702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2169,7 +2246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6967b325003e76c4292efe5e3dce1286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangedAttackObject: {fileID: 0}
   ragdollOnDeath: 0
   deathTime: 3
 --- !u!114 &11444262
@@ -2202,7 +2278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6967b325003e76c4292efe5e3dce1286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangedAttackObject: {fileID: 0}
   ragdollOnDeath: 0
   deathTime: 3
 --- !u!114 &11475188
@@ -8366,6 +8441,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Radius
       value: 1.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: entityDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 88f8a5a195583584a9c17e985aaf8165, type: 3}
+    - target: {fileID: 0}
+      propertyPath: entityHurt
+      value: 
+      objectReference: {fileID: 8300000, guid: 3278a9a47de844c4ab0136176a2c4319, type: 3}
+    - target: {fileID: 0}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -6,6 +6,9 @@ public class WeaponController : MonoBehaviour {
 	public int currentlyEquippedIndex = 0;
 	private GameObject weaponSlot;
 
+    public AudioClip weaponChange;
+    private AudioSource weaponAudio;
+
 	void Awake () {
 		weaponSlot = GameObject.FindGameObjectWithTag ("WeaponSlot");
 		// Get all children
@@ -20,6 +23,8 @@ public class WeaponController : MonoBehaviour {
 
 		currentlyEquippedIndex = defaultWeaponIndex;
 		weapons [defaultWeaponIndex].SetActive (true);
+
+        weaponAudio = GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
@@ -36,6 +41,7 @@ public class WeaponController : MonoBehaviour {
 		weapons [currentlyEquippedIndex].SetActive (false);
 		currentlyEquippedIndex = (currentlyEquippedIndex + direction + weapons.Length) % weapons.Length;
 		weapons [currentlyEquippedIndex].SetActive (true);
+        weaponAudio.PlayOneShot(weaponChange);
 	}
 
 	public int GetCurrentAmmo() {
