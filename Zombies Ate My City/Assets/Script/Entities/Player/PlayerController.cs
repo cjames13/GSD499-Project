@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 4f;
 	public float jumpSpeed = 5f;
 	public bool alive = true;
+	private float threeFourthsSpeed = 0;
 //	bool attack = false;
 
 	Animator anim;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour {
 	private WeaponController weaponController;
 
 	void Awake(){
+		threeFourthsSpeed = moveSpeed / 1.5f;
 		rigidBody = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
 		cam =  GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera> ();
@@ -60,18 +62,18 @@ public class PlayerController : MonoBehaviour {
 		if(alive) {
 			// Move
 			moveDirection = (h * right + v * forward);
-			transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * moveSpeed, moveSpeed) ;
 
 			bool isAerial = !IsGrounded();
 
 			// Animations
 			if (!isAerial) {
 				if (anim.GetBool ("shooting") == false) {
+					transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * moveSpeed, moveSpeed) ;
 					anim.SetBool ("walking", (h != 0f || v != 0f));
 					anim.SetBool ("running", (Mathf.Abs (h) >= 0.7f || Mathf.Abs (v) >= 0.7f));
 
 				} else {
-					
+					transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * threeFourthsSpeed, moveSpeed) ;
 					anim.SetFloat ("ForwardBackward", Input.GetAxis ("Horizontal"));
 					anim.SetFloat ("LeftRight", Input.GetAxis ("Vertical"));
 					Debug.Log ("Horizontal" + anim.GetFloat ("LeftRight"));

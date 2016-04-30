@@ -31,7 +31,8 @@ public class MouseOrbit : MonoBehaviour
         {
             x += (float)(Input.GetAxis("Mouse X") * xSpeed * 0.02f);
             y -= (float)(Input.GetAxis("Mouse Y") * ySpeed * 0.02f);
-
+			//XBox Controller
+			x += (float)(Input.GetAxis ("XBox360_Triggers") * xSpeed / 2 * 0.02f);
             y = ClampAngle(y, yMinLimit, yMaxLimit);
 
             Quaternion rotation = Quaternion.Euler(y, x, 0);
