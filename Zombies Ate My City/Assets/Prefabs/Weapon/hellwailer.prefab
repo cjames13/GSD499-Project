@@ -106,7 +106,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0ff395c2a11195f4c8c8159ea1fa7892, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6f1df8fc23c649d49ae554f1213c693b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -232,11 +232,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f074c916f19a1449bafbcf0901b9cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 0.2
+  attackSpeed: 0.8
   isDefault: 0
   projectileObject: {fileID: 163292, guid: c41aa98f2e163b543a279e60a4801436, type: 2}
   muzzle: {fileID: 106460}
-  maxAmmo: 25
+  maxAmmo: 10
   currentAmmo: 25
   isRifle: 1
 --- !u!198 &19820902

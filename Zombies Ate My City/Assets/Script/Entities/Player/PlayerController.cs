@@ -21,6 +21,11 @@ public class PlayerController : MonoBehaviour {
 	private StateController playerStates;
 	private WeaponController weaponController;
 
+    public AudioClip playerJump;
+    public AudioClip playerLeftStep;
+    public AudioClip playerRightStep;
+    private AudioSource playerAudio;
+
 	void Awake(){
 		threeFourthsSpeed = moveSpeed / 1.5f;
 		rigidBody = GetComponent<Rigidbody>();
@@ -28,6 +33,7 @@ public class PlayerController : MonoBehaviour {
 		cam =  GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera> ();
 		playerStates = GetComponent<StateController> ();
 		weaponController = GetComponent<WeaponController> ();
+        playerAudio = GetComponent<AudioSource>();
 	}
 
 	void Update() {
@@ -44,6 +50,7 @@ public class PlayerController : MonoBehaviour {
 		// Jumping
 		if (Input.GetButtonDown ("Jump") && IsGrounded()) {
 			rigidBody.velocity = new Vector3(0, jumpSpeed, 0);
+            playerAudio.PlayOneShot(playerJump, 1.2f);
 		}
 	}
 
@@ -96,4 +103,14 @@ public class PlayerController : MonoBehaviour {
 	bool IsGrounded(){
 		return Physics.Raycast (transform.position, -Vector3.up, 0.1f);
 	}
+
+    void PlayerLeftFootStep()
+    {
+        playerAudio.PlayOneShot(playerLeftStep, 0.8f);
+    }
+
+    void PlayerRightFootStep()
+    {
+        playerAudio.PlayOneShot(playerRightStep, 0.8f);
+    }
 }
