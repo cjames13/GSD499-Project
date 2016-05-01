@@ -34,22 +34,6 @@ public class EnemyController : MonoBehaviour {
 	
 
 	void Update () {
-		AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(1);
-		if (info.IsName ("Damage")) {
-			foreach (Transform child in transform) {
-				if (child.name == "DamageEffectBlack" || child.name == "DamageEffectGreen" ||
-					child.name == "DamageEffectWhite" || child.name == "DamageEffectRed" ||
-					child.name == "DamageEffectYellow")
-					child.gameObject.SetActive (true);
-			}
-		} else {
-			foreach (Transform child in transform) {
-				if (child.name == "DamageEffectBlack" || child.name == "DamageEffectGreen" ||
-					child.name == "DamageEffectWhite" || child.name == "DamageEffectRed" ||
-					child.name == "DamageEffectYellow")
-					child.gameObject.SetActive (false);
-			}
-		}
 		if (!anim.GetBool ("dying") && health.alive) {
 			float attackDistance = Vector3.Distance (agent.nextPosition, target.transform.position);
 			agent.SetDestination (target.transform.position);
