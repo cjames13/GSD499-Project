@@ -4,11 +4,11 @@ using System.Collections.Generic;
 public class EnemyStates : MonoBehaviour, StateController {
 	public bool ragdollOnDeath = false;
 	public float deathTime = 3f;
-
+	private const float sinkSpeed = 0.2f;
 	private Animator anim;
 	private EnemyController enemyController;
 	private GameController gameController;
-
+	public bool isSinking = false;
 	//Ragdoll
 	private Rigidbody rigidBody;
 	private Rigidbody[] rigidBodies;
@@ -94,14 +94,22 @@ public class EnemyStates : MonoBehaviour, StateController {
 
 	IEnumerator Burning()
 	{
+		
 		yield return new WaitForSeconds (2);
+		rigidBody.useGravity = false;
+		isSinking = true;
 		myCollider.isTrigger = true;
 		SetAllChildCollidersTrigger (true);
 		transform.Find ("RingOfFire").gameObject.SetActive (true);
+
 		yield return new WaitForSeconds (deathTime);
 		Destroy (gameObject);
 	}
-
+	void Update(){
+		if (isSinking == true) 
+			transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
+		Debug.Log (sinkSpeed * Time.deltaTime);
+	}
 	bool StateController.IsAnimationPlaying(string layerName, string animationName) {
 		return anim.GetCurrentAnimatorStateInfo (anim.GetLayerIndex (layerName)).IsName (animationName);
 	}

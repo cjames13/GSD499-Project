@@ -10,19 +10,16 @@ public class EnemyController : MonoBehaviour {
 	public float rotationSpeed = 3f;
 	public float attackSpeed = 1f;
 	public int scoreValue;
-
 	private Animator anim;
 	private NavMeshAgent agent;
 	private StateController enemyStates;
 	private Health health;
 	private float magicAttackTime;
-
 	void Start () {
 		enemyStates = GetComponent<StateController> ();
 		health = GetComponent<Health> ();
 		agent = GetComponent<NavMeshAgent> ();
 		anim = GetComponent<Animator> ();
-
 		if (rangedAttacker) {
 			magicAttackTime = Time.time;
 		}
