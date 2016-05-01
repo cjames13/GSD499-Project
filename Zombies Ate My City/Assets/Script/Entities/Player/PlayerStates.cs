@@ -94,7 +94,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 
 	public void RangedAttack(bool attacking, bool isRifle) {
 		anim.SetBool ("shooting", attacking);
-		anim.SetBool("rifle", ((anim.GetBool("walking") || anim.GetBool("running")) && isRifle));
+		anim.SetBool("rifle", (attacking && isRifle));
 	}
 
 	public void ThrownAttack(bool attacking) {
