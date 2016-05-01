@@ -9,10 +9,7 @@ TagManager:
   - AttackLocation
   - Resource
   - WeaponSlot
-  - Muzzle
   - Exit
-  - Damage
-  - PlayerAttack
   - Prop
   layers:
   - Default

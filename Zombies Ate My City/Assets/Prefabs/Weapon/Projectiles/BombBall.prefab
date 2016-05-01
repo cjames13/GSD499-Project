@@ -253,7 +253,6 @@ MonoBehaviour:
   destroySelfOnContact: 0
   speed: 10
   timeToLive: 4
-  explosive: 0
 --- !u!114 &11410526
 MonoBehaviour:
   m_ObjectHideFlags: 1
