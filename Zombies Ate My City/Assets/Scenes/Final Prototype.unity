@@ -1797,7 +1797,7 @@ GameObject:
   - 114: {fileID: 333769087}
   m_Layer: 0
   m_Name: W3
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9466,7 +9466,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Prop
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
+      propertyPath: m_TagString
+      value: Prop
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
+      propertyPath: m_TagString
+      value: Prop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
@@ -9625,6 +9633,10 @@ Prefab:
     - target: {fileID: 400000, guid: 13873ac74f56c1f4fada6f0c76bcc0c7, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 100086, guid: 13873ac74f56c1f4fada6f0c76bcc0c7, type: 3}
+      propertyPath: m_TagString
+      value: Prop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13873ac74f56c1f4fada6f0c76bcc0c7, type: 3}
@@ -10082,6 +10094,10 @@ Prefab:
     - target: {fileID: 11432352, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: maxAmmo
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11438570, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+      propertyPath: moveSpeed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}

@@ -106,9 +106,9 @@ public class EnemyStates : MonoBehaviour, StateController {
 		Destroy (gameObject);
 	}
 	void Update(){
-		if (isSinking == true) 
+		if (isSinking == true) {
 			transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
-		Debug.Log (sinkSpeed * Time.deltaTime);
+		}
 	}
 	bool StateController.IsAnimationPlaying(string layerName, string animationName) {
 		return anim.GetCurrentAnimatorStateInfo (anim.GetLayerIndex (layerName)).IsName (animationName);
