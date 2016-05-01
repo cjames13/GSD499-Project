@@ -11,11 +11,11 @@ public class DisplayAmmoUI : MonoBehaviour {
     public RawImage hellwailer;
     public RawImage bomb;*/
 
-    string currentWeapon;
+//    string currentWeapon;
 
 	void Update () {
 		int ammo = player.GetCurrentAmmo ();
-        currentWeapon = player.GetCurrentWeaponName();
+        //currentWeapon = player.GetCurrentWeaponName();
         ammoText.text = ((ammo >= 0) ? ammo.ToString() : "");
 		gunDisplay.texture = player.GetCurrentDisplayImage ().texture;
 		//DisplayCurrentWeaponImage();
