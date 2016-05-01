@@ -93,7 +93,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 
 	IEnumerator Burning()
 	{
-		yield return new WaitForSeconds (3);
+		yield return new WaitForSeconds (2);
 		myCollider.isTrigger = true;
 		SetAllChildCollidersTrigger (true);
 		transform.Find ("RingOfFire").gameObject.SetActive (true);
