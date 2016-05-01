@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3368830}
   - 23: {fileID: 2340004}
   - 114: {fileID: 11489832}
+  - 135: {fileID: 13547378}
   m_Layer: 0
   m_Name: Rifle Ammo
   m_TagString: Untagged
@@ -77,6 +78,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Rifle
   amount: 7
+--- !u!135 &13547378
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108282}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0.041844487, z: 0.398575}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

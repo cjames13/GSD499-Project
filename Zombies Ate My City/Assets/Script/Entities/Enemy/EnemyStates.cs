@@ -4,11 +4,13 @@ using System.Collections.Generic;
 public class EnemyStates : MonoBehaviour, StateController {
 	public bool ragdollOnDeath = false;
 	public float deathTime = 3f;
-	private const float sinkSpeed = 0.2f;
+
 	private Animator anim;
 	private EnemyController enemyController;
 	private GameController gameController;
-	public bool isSinking = false;
+	private bool isSinking = false;
+	private const float sinkSpeed = 0.2f;
+
 	//Ragdoll
 	private Rigidbody rigidBody;
 	private Rigidbody[] rigidBodies;
@@ -41,6 +43,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 			SetAllChildCollidersTrigger (true);
 		}
 	}
+
 	//ragdoll
 	void SetAllChildCollidersTrigger(bool t) {
 		foreach (Collider c in GetComponentsInChildren<Collider>()) {
@@ -48,6 +51,13 @@ public class EnemyStates : MonoBehaviour, StateController {
 				c.isTrigger = t;
 		}
 	}
+
+	void Update(){
+		if (isSinking) {
+			transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
+		}
+	}
+
 	void StateController.TakeDamage() {
 		// Damage taken animation here
 		anim.SetTrigger("hurt");
@@ -70,10 +80,17 @@ public class EnemyStates : MonoBehaviour, StateController {
 		} else {
 			anim.SetBool ("dying", true);
 		}
-
+		DropItems ();
 		gameController.IncreaseScore (enemyController.scoreValue);
 		gameController.IncreaseKills (1);
 		StartCoroutine (Burning ());
+	}
+
+	void DropItems() {
+		if (enemyController.itemDrops.Length > 0 && Random.Range(0F, 1F) <= enemyController.dropChance) {
+			GameObject item = enemyController.itemDrops [Random.Range (0, enemyController.itemDrops.Length - 1)];
+			Instantiate (item, transform.position, item.transform.rotation);
+		}
 	}
 
 	void StateController.MeleeAttack(bool attacking){
@@ -105,11 +122,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 		yield return new WaitForSeconds (deathTime);
 		Destroy (gameObject);
 	}
-	void Update(){
-		if (isSinking == true) {
-			transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
-		}
-	}
+
 	bool StateController.IsAnimationPlaying(string layerName, string animationName) {
 		return anim.GetCurrentAnimatorStateInfo (anim.GetLayerIndex (layerName)).IsName (animationName);
 	}
