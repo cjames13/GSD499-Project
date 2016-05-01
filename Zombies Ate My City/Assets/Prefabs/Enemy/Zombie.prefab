@@ -1952,6 +1952,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  itemDrops:
+  - {fileID: 175000, guid: f0ddba9f6336ea444992b669d00dd97d, type: 2}
+  - {fileID: 196044, guid: 55aa916dd15a8014584d493d4ea60d12, type: 2}
+  - {fileID: 101752, guid: 3d1c2e9cb322e194982a693c80064e0f, type: 2}
+  - {fileID: 108282, guid: 561394fe3d88b4d4b8bc914e11c91c93, type: 2}
+  dropChance: 0.25
   rangedAttacker: 0
   projectileObject: {fileID: 0}
   magicAttackDistance: 8
@@ -8236,6 +8242,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: itemDrops.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: maxHealth
       value: 5
       objectReference: {fileID: 0}
@@ -8263,6 +8273,30 @@ Prefab:
       propertyPath: enemyAttack
       value: 
       objectReference: {fileID: 8300000, guid: 42af57220235dc14a8ec0dcdef7bed36, type: 3}
+    - target: {fileID: 0}
+      propertyPath: rangedAttacker
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: dropChance
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: itemDrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 175000, guid: f0ddba9f6336ea444992b669d00dd97d, type: 2}
+    - target: {fileID: 0}
+      propertyPath: itemDrops.Array.data[1]
+      value: 
+      objectReference: {fileID: 196044, guid: 55aa916dd15a8014584d493d4ea60d12, type: 2}
+    - target: {fileID: 0}
+      propertyPath: itemDrops.Array.data[2]
+      value: 
+      objectReference: {fileID: 101752, guid: 3d1c2e9cb322e194982a693c80064e0f, type: 2}
+    - target: {fileID: 0}
+      propertyPath: itemDrops.Array.data[3]
+      value: 
+      objectReference: {fileID: 108282, guid: 561394fe3d88b4d4b8bc914e11c91c93, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 161926}

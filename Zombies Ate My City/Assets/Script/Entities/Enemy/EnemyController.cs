@@ -3,6 +3,9 @@ using System.Collections;
 
 public class EnemyController : MonoBehaviour {
 	public GameObject target;
+	public GameObject[] itemDrops;
+	[Range(0F, 1F)]
+	public float dropChance = 0.25f;
 	public bool rangedAttacker = false;
 	public GameObject projectileObject;
 	public float magicAttackDistance = 8f;
@@ -10,11 +13,13 @@ public class EnemyController : MonoBehaviour {
 	public float rotationSpeed = 3f;
 	public float attackSpeed = 1f;
 	public int scoreValue;
+
 	private Animator anim;
 	private NavMeshAgent agent;
 	private StateController enemyStates;
 	private Health health;
 	private float magicAttackTime;
+
 	void Start () {
 		enemyStates = GetComponent<StateController> ();
 		health = GetComponent<Health> ();
@@ -36,10 +41,12 @@ public class EnemyController : MonoBehaviour {
 			agent.SetDestination (target.transform.position);
 			Vector3 lookPos = target.transform.position - transform.position;
 			lookPos.y = 0;
+
 			if (lookPos != Vector3.zero) {
 				Quaternion rotation = Quaternion.LookRotation (lookPos);
 				transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotationSpeed);
 			}
+
 			enemyStates.Walk ();
 
 			if (attackDistance < agent.stoppingDistance) {

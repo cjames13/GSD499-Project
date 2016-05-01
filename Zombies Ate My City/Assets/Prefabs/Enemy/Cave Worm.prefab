@@ -802,7 +802,6 @@ GameObject:
   - 54: {fileID: 5497936}
   - 135: {fileID: 13560472}
   - 114: {fileID: 11413538}
-  - 114: {fileID: 11413702}
   - 114: {fileID: 11447430}
   - 195: {fileID: 19568192}
   - 95: {fileID: 9500356}
@@ -2200,22 +2199,6 @@ MonoBehaviour:
   alive: 1
   entityHurt: {fileID: 8300000, guid: 3278a9a47de844c4ab0136176a2c4319, type: 3}
   entityDeath: {fileID: 8300000, guid: 88f8a5a195583584a9c17e985aaf8165, type: 3}
---- !u!114 &11413702
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8585ef6f4fc369344aef405ced2f5a47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  damageEverything: 0
-  damageObjectsWithTag:
-  - Player
-  destroySelfOnContact: 0
 --- !u!114 &11413834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2260,6 +2243,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  itemDrops:
+  - {fileID: 196044, guid: 55aa916dd15a8014584d493d4ea60d12, type: 2}
+  - {fileID: 175000, guid: f0ddba9f6336ea444992b669d00dd97d, type: 2}
+  - {fileID: 101752, guid: 3d1c2e9cb322e194982a693c80064e0f, type: 2}
+  - {fileID: 108282, guid: 561394fe3d88b4d4b8bc914e11c91c93, type: 2}
+  dropChance: 0.5
   rangedAttacker: 0
   projectileObject: {fileID: 0}
   magicAttackDistance: 8
@@ -2307,7 +2296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8585ef6f4fc369344aef405ced2f5a47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 4
   damageEverything: 0
   damageObjectsWithTag:
   - Player
@@ -8435,6 +8424,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: itemDrops.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: maxHealth
       value: 5
       objectReference: {fileID: 0}
@@ -8461,6 +8454,30 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: itemDrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 196044, guid: 55aa916dd15a8014584d493d4ea60d12, type: 2}
+    - target: {fileID: 0}
+      propertyPath: itemDrops.Array.data[1]
+      value: 
+      objectReference: {fileID: 175000, guid: f0ddba9f6336ea444992b669d00dd97d, type: 2}
+    - target: {fileID: 0}
+      propertyPath: itemDrops.Array.data[2]
+      value: 
+      objectReference: {fileID: 101752, guid: 3d1c2e9cb322e194982a693c80064e0f, type: 2}
+    - target: {fileID: 0}
+      propertyPath: itemDrops.Array.data[3]
+      value: 
+      objectReference: {fileID: 108282, guid: 561394fe3d88b4d4b8bc914e11c91c93, type: 2}
+    - target: {fileID: 0}
+      propertyPath: dropChance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
