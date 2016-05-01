@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class WeaponController : MonoBehaviour {
@@ -51,6 +52,10 @@ public class WeaponController : MonoBehaviour {
 
 	public string GetCurrentWeaponName() {
 		return weapons [currentlyEquippedIndex].name;
+	}
+
+	public RawImage GetCurrentDisplayImage() {
+		return weapons [currentlyEquippedIndex].GetComponent<Weapon>().displayImage;
 	}
 
 	public void IncreaseAmmo(string gunName, int amount) {

@@ -65,6 +65,9 @@ public class GameController : MonoBehaviour {
 		levelClearText.enabled = true;
 		radar.SetActive (false);
 
-		levelClearText.text = "You survived.\n\nScore: " + score + "\nResources Collected: " + resourcesCollected + "\n\nPress 'M' to return to the Main Menu.";
+		levelClearText.text = "You survived.\n\nScore: " + score +
+								"\nResources Collected: " + resourcesCollected +
+								"\nKills: " + enemiesKilled +
+								"\n\nPress 'M' to return to the Main Menu.";
 	}
 }

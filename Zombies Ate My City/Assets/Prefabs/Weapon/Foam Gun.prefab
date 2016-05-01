@@ -199,11 +199,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpeed: 0.5
   isDefault: 1
+  displayImage: {fileID: 11408944, guid: 08901a9ffdbabf140a9c71167b6ec668, type: 2}
   projectileObject: {fileID: 199808, guid: 9131cf4614622e74d894bc9bbc68dd88, type: 2}
-  isThrownWeapon: 0
   muzzle: {fileID: 164370}
   maxAmmo: 25
   currentAmmo: 0
+  isRifle: 0
 --- !u!198 &19865392
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1733,6 +1734,11 @@ Prefab:
       propertyPath: attackSpeed
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: displayImage
+      value: 
+      objectReference: {fileID: 11408944, guid: 08901a9ffdbabf140a9c71167b6ec668,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 129766}

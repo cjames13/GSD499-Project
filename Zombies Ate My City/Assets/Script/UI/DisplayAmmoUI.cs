@@ -5,11 +5,11 @@ using System.Collections;
 public class DisplayAmmoUI : MonoBehaviour {
 	public Text ammoText;
 	public WeaponController player;
-    public RawImage foamGun;
-    public RawImage rifle;
+    public RawImage gunDisplay;
+    /*public RawImage rifle;
     public RawImage sword;
     public RawImage hellwailer;
-    public RawImage bomb;
+    public RawImage bomb;*/
 
     string currentWeapon;
 
@@ -17,10 +17,11 @@ public class DisplayAmmoUI : MonoBehaviour {
 		int ammo = player.GetCurrentAmmo ();
         currentWeapon = player.GetCurrentWeaponName();
         ammoText.text = ((ammo >= 0) ? ammo.ToString() : "");
-        DisplayCurrentWeaponImage();
+		gunDisplay.texture = player.GetCurrentDisplayImage ().texture;
+		//DisplayCurrentWeaponImage();
 	}
 
-    void DisplayCurrentWeaponImage()
+    /*void DisplayCurrentWeaponImage()
     {
         if (currentWeapon == "Foam Gun")
         {
@@ -66,5 +67,5 @@ public class DisplayAmmoUI : MonoBehaviour {
         {
             bomb.enabled = false;
         }        
-    }
+    }*/
 }

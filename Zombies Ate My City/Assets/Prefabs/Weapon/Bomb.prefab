@@ -41,6 +41,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpeed: 3
   isDefault: 0
+  displayImage: {fileID: 11435508, guid: e03afbdca908ae745b344aeae5ceae91, type: 2}
   projectileObject: {fileID: 196044, guid: 067a068d703804446bd03dc571c538bb, type: 2}
   muzzle: {fileID: 0}
   maxAmmo: 0
@@ -57,6 +58,11 @@ Prefab:
       propertyPath: attackSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: displayImage
+      value: 
+      objectReference: {fileID: 11435508, guid: e03afbdca908ae745b344aeae5ceae91,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 155882}

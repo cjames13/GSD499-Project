@@ -72,6 +72,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 		}
 
 		gameController.IncreaseScore (enemyController.scoreValue);
+		gameController.IncreaseKills (1);
 		StartCoroutine (Burning ());
 	}
 

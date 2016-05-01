@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+
 public abstract class Weapon : MonoBehaviour {
 	public float attackSpeed = 0.125f;
 	public bool isDefault = false;
+	public RawImage displayImage;
 
 	protected float attackTime = 0f;
 	protected Transform attackLocation;
