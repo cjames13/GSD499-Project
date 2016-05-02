@@ -78,6 +78,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 			SetAllChildCollidersTrigger (false);
 			anim.enabled = false;
 		} else {
+			rigidBody.useGravity = false;
 			anim.SetBool ("dying", true);
 		}
 		DropItems ();

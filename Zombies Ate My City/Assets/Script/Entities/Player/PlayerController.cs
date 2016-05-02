@@ -63,8 +63,8 @@ public class PlayerController : MonoBehaviour {
 		Vector3 moveDirection = Vector3.zero;
 
 		if(alive) {
-			float h = Input.GetAxis ("Horizontal");
-			float v = Input.GetAxis ("Vertical");
+			float h = Input.GetAxisRaw ("Horizontal");
+			float v = Input.GetAxisRaw ("Vertical");
 
 			// Move
 			moveDirection = (h * right + v * forward);

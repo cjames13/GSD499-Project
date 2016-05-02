@@ -9,7 +9,7 @@ public class Health : MonoBehaviour {
 	public bool alive = true;
 
 	private StateController animController;
-	private float lastHitTime;
+	private float lastHitTime = 0f;
 
     public AudioClip entityHurt;
     public AudioClip entityDeath;

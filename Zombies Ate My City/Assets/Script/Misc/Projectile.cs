@@ -18,7 +18,7 @@ public class Projectile : DamageOnContact {
 	}
 	void OnTriggerEnter(Collider other)
 	{
-		if (speed > 40) {
+		if (spark) {
 			if (other.transform.tag == "Enemy") {
 				Instantiate (spark, transform.position, other.transform.rotation);
 			}
