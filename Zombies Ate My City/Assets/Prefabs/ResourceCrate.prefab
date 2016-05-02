@@ -744,6 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3fb2585f431034cbc4be9e3201db23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthGainClip: {fileID: 8300000, guid: d8fdf0875491bfb44bced17894a4dc80, type: 3}
 --- !u!135 &13589322
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -762,7 +763,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: healthGainClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d8fdf0875491bfb44bced17894a4dc80, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194468}

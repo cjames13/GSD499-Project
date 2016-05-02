@@ -111,11 +111,13 @@ public class PlayerController : MonoBehaviour {
 
     void PlayerLeftFootStep()
     {
-        playerAudio.PlayOneShot(playerLeftStep, 0.8f);
+        if (!playerAudio.isPlaying)
+            playerAudio.PlayOneShot(playerLeftStep, 0.8f);
     }
 
     void PlayerRightFootStep()
     {
-        playerAudio.PlayOneShot(playerRightStep, 0.8f);
+        if (!playerAudio.isPlaying)
+            playerAudio.PlayOneShot(playerRightStep, 0.8f);
     }
 }

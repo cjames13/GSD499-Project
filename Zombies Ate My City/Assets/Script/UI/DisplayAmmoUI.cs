@@ -4,6 +4,7 @@ using System.Collections;
 
 public class DisplayAmmoUI : MonoBehaviour {
 	public Text ammoText;
+    public Text maxAmmoText;
 	public WeaponController player;
     public RawImage gunDisplay;
     /*public RawImage rifle;
@@ -15,8 +16,10 @@ public class DisplayAmmoUI : MonoBehaviour {
 
 	void Update () {
 		int ammo = player.GetCurrentAmmo ();
+        int maxAmmo = player.GetMaxAmmo();
         //currentWeapon = player.GetCurrentWeaponName();
-        ammoText.text = ((ammo >= 0) ? ammo.ToString() : "");
+        ammoText.text = " " + ((ammo >= 0) ? ammo.ToString() : "");
+        maxAmmoText.text = "/  " + maxAmmo;
 		gunDisplay.texture = player.GetCurrentDisplayImage ().texture;
 		//DisplayCurrentWeaponImage();
 	}

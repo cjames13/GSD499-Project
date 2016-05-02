@@ -50,7 +50,13 @@ public class WeaponController : MonoBehaviour {
 		return (currentGun != null) ? currentGun.currentAmmo : -1;
 	}
 
-	public string GetCurrentWeaponName() {
+    public int GetMaxAmmo()
+    {
+        RangedWeapon currentGun = weapons[currentlyEquippedIndex].GetComponent<RangedWeapon>();
+        return (currentGun != null) ? currentGun.maxAmmo : -1;
+    }
+
+    public string GetCurrentWeaponName() {
 		return weapons [currentlyEquippedIndex].name;
 	}
 
