@@ -278,7 +278,7 @@ MonoBehaviour:
   damageEverything: 0
   damageObjectsWithTag:
   - Enemy
-  destroySelfOnContact: 1
+  destroySelfOnContact: 0
 --- !u!135 &13537262
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -3310,7 +3310,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: destroySelfOnContact
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: damageEverything
