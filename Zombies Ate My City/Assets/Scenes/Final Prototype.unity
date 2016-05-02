@@ -11243,6 +11243,10 @@ Prefab:
       propertyPath: m_ConnectedAnchor.z
       value: 0.012937669
       objectReference: {fileID: 0}
+    - target: {fileID: 11432568, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+      propertyPath: entityHeal
+      value: 
+      objectReference: {fileID: 8300000, guid: d8fdf0875491bfb44bced17894a4dc80, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
   m_IsPrefabParent: 0

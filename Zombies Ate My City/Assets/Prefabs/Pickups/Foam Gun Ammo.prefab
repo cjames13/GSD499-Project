@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Foam Gun
-  amount: 20
+  amount: 75
 --- !u!114 &11492858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,7 +128,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: amount
-      value: 20
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

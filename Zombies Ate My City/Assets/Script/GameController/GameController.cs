@@ -8,7 +8,6 @@ public class GameController : MonoBehaviour {
 	public Text resourcesText, scoreText;
 	public ExitController exitDoor;
 	public GameObject levelClearObject;
-	public GameObject radar;
 	public GameObject canvas;
 
 	private int resourcesAvailable, resourcesCollected, score, enemiesKilled;

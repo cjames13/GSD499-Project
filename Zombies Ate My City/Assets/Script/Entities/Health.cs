@@ -3,16 +3,23 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour {
-	public int maxHealth;
-	public int currentHealth;
+	public float maxHealth;
+	public float currentHealth;
 	public float invulnTimeAfterHit = 0f;
 	public bool alive = true;
+
+	public float healTime = 1f;
+	private float healUntil = 0f;
+	private float currentHealTime = 0f;
+	private bool isHealing = false;
 
 	private StateController animController;
 	private float lastHitTime = 0f;
 
     public AudioClip entityHurt;
+	public AudioClip entityHeal;
     public AudioClip entityDeath;
+
     private AudioSource entityAudio;
 
 	// Use this for initialization
@@ -28,6 +35,23 @@ public class Health : MonoBehaviour {
 			alive = false;
 			animController.Die ();
             entityAudio.PlayOneShot(entityDeath);
+		}
+
+		if (isHealing) {
+			currentHealTime = (currentHealTime + Time.deltaTime > healTime) ? healTime : currentHealTime + Time.deltaTime;
+			float p = currentHealTime / healTime;
+			currentHealth = Mathf.Lerp (currentHealth, healUntil, p);
+			if (currentHealth >= healUntil) {
+				isHealing = false;
+			}
+		}
+	}
+
+	public void Heal(float h) {
+		isHealing = true;
+		healUntil = (currentHealth + h > maxHealth) ? maxHealth : currentHealth + h; 
+		if (entityHeal != null) {
+			entityAudio.PlayOneShot (entityHeal);
 		}
 	}
 
