@@ -114,6 +114,12 @@ public class EnemyStates : MonoBehaviour, StateController {
 		
 		yield return new WaitForSeconds (2);
 		rigidBody.useGravity = false;
+		if (ragdollOnDeath) {
+			foreach (Rigidbody rb in rigidBodies) {
+				if (rb != rigidBody)
+					rb.useGravity = false;
+			}
+		}
 		isSinking = true;
 		myCollider.isTrigger = true;
 		SetAllChildCollidersTrigger (true);
