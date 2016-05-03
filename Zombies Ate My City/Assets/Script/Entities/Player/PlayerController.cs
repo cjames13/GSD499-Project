@@ -45,9 +45,22 @@ public class PlayerController : MonoBehaviour {
 
 		currentWeapon.PlayAnimation(playerStates, attacking);
 		// Jumping
-		if ((Input.GetButtonDown ("Jump") || Input.GetAxis("XBox360_Triggers") > 0f) && IsGrounded()) {
+		float h = Input.GetAxisRaw ("Horizontal");
+		if ((Input.GetButtonDown ("Jump") || Input.GetButtonDown("XBox360_A")) && IsGrounded() && h != 1 && h != -1) {
 			rigidBody.velocity = new Vector3(0, jumpSpeed, 0);
             playerAudio.PlayOneShot(playerJump, 1.2f);
+		}
+
+		else if ((Input.GetButtonDown ("Jump") || Input.GetButtonDown("XBox360_B") ) && IsGrounded() && (h == 1)) {
+			rigidBody.AddRelativeForce(new Vector3(jumpSpeed, jumpSpeed/2, 0), ForceMode.VelocityChange);
+			playerAudio.PlayOneShot(playerJump, 1.2f);
+			anim.SetTrigger ("roll");
+		}
+		else if ((Input.GetButtonDown ("Jump")  || Input.GetButtonDown("XBox360_B")) && IsGrounded() && (h == -1)) {
+
+			rigidBody.AddRelativeForce(new Vector3(-jumpSpeed, jumpSpeed/2, 0), ForceMode.VelocityChange);
+			playerAudio.PlayOneShot(playerJump, 1.2f);
+			anim.SetTrigger ("roll");
 		}
 	}
 
