@@ -807,9 +807,9 @@ GameObject:
   - 95: {fileID: 9500356}
   - 114: {fileID: 11444262}
   - 114: {fileID: 11440592}
-  - 64: {fileID: 6482992}
   - 114: {fileID: 11488116}
   - 82: {fileID: 8264748}
+  - 136: {fileID: 13664420}
   m_Layer: 0
   m_Name: Cave Worm
   m_TagString: Enemy
@@ -1254,7 +1254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182086}
   m_LocalRotation: {x: 0, y: -0.9327484, z: 0, w: 0.36052805}
-  m_LocalPosition: {x: 95.83314, y: -51.797123, z: 7.0138016}
+  m_LocalPosition: {x: 92.15012, y: -51.751503, z: 7.5009613}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 476180}
@@ -1942,18 +1942,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &6482992
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182086}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 0}
 --- !u!82 &8201770
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2197,7 +2185,9 @@ MonoBehaviour:
   currentHealth: 0
   invulnTimeAfterHit: 0.1
   alive: 1
+  healTime: 1
   entityHurt: {fileID: 8300000, guid: 3278a9a47de844c4ab0136176a2c4319, type: 3}
+  entityHeal: {fileID: 0}
   entityDeath: {fileID: 8300000, guid: 88f8a5a195583584a9c17e985aaf8165, type: 3}
 --- !u!114 &11413834
 MonoBehaviour:
@@ -2311,8 +2301,21 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Radius: 1.6
+  m_Center: {x: 0, y: 1, z: 0.58}
+--- !u!136 &13664420
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.25
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!137 &13746538
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2388,7 +2391,7 @@ NavMeshAgent:
   m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 2.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
