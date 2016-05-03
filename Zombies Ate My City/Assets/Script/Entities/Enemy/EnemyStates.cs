@@ -81,6 +81,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 			anim.enabled = false;
 		} else {
 			rigidBody.useGravity = false;
+			rigidBody.isKinematic = true;
 			anim.SetBool ("dying", true);
 		}
 		DropItems ();
