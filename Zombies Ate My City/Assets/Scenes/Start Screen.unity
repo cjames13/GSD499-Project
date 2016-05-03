@@ -334,9 +334,9 @@ MonoBehaviour:
   startButton: {fileID: 1093274590}
   creditsText: {fileID: 639262403}
   howToText: {fileID: 160275756}
-  selectionClip: {fileID: 8300000, guid: c3a802dd6b95d48df8f5f79a697d9b98, type: 3}
-  backClip: {fileID: 8300000, guid: c908313dd146345809dc7e6b3f76a31b, type: 3}
-  laughClip: {fileID: 8300000, guid: 5b29632378fa74d419603407e8fdc883, type: 3}
+  selectionClip: {fileID: 8300000, guid: 9665e4f9247cdad4a91e1993f95aa7ca, type: 3}
+  backClip: {fileID: 8300000, guid: 9acf93f6c553d6240b4b9cf39a399e18, type: 3}
+  laughClip: {fileID: 8300000, guid: ce92b583d90886541b24970275e76a1f, type: 3}
 --- !u!82 &238577618
 AudioSource:
   m_ObjectHideFlags: 0
