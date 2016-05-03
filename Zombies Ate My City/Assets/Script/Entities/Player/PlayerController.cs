@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
     public AudioClip playerLeftStep;
     public AudioClip playerRightStep;
     private AudioSource playerAudio;
-
+	private bool isRolling = false;
 	void Awake(){
 		rigidBody = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour {
 		weaponController = GetComponent<WeaponController> ();
         playerAudio = GetComponent<AudioSource>();
 	}
-
 	void Update() {
 		// Attacking
 		bool attacking = Input.GetButton ("Fire1") || Input.GetAxis("XBox360_Triggers") < 0f;
@@ -45,23 +44,27 @@ public class PlayerController : MonoBehaviour {
 
 		currentWeapon.PlayAnimation(playerStates, attacking);
 		// Jumping
+
 		float h = Input.GetAxisRaw ("Horizontal");
-		if ((Input.GetButtonDown ("Jump") || Input.GetButtonDown("XBox360_A")) && IsGrounded() && h != 1 && h != -1) {
-			rigidBody.velocity = new Vector3(0, jumpSpeed, 0);
-            playerAudio.PlayOneShot(playerJump, 1.2f);
+		AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo (0);
+		if (info.IsName ("Roll"))
+			isRolling = true;
+		else {
+			isRolling = false;
 		}
-
-		else if ((Input.GetButtonDown ("Jump") || Input.GetButtonDown("XBox360_B") ) && IsGrounded() && (h == 1)) {
-			rigidBody.AddRelativeForce(new Vector3(jumpSpeed, jumpSpeed/2, 0), ForceMode.VelocityChange);
-			playerAudio.PlayOneShot(playerJump, 1.2f);
+		if ((Input.GetButtonDown ("Jump") || Input.GetButtonDown ("XBox360_A")) && IsGrounded () && h != 1 && h != -1) {
+			rigidBody.velocity = new Vector3 (0, jumpSpeed, 0);
+			playerAudio.PlayOneShot (playerJump, 1.2f);
+		} else if ((Input.GetButtonDown ("Jump") || Input.GetButtonDown ("XBox360_B")) && IsGrounded () && (h == 1) && info.IsName ("Locomotion")) {
+			rigidBody.AddRelativeForce (new Vector3 (jumpSpeed / 1.5f, jumpSpeed / 1.5f, 0), ForceMode.VelocityChange);
+			playerAudio.PlayOneShot (playerJump, 1.2f);
 			anim.SetTrigger ("roll");
-		}
-		else if ((Input.GetButtonDown ("Jump")  || Input.GetButtonDown("XBox360_B")) && IsGrounded() && (h == -1)) {
-
-			rigidBody.AddRelativeForce(new Vector3(-jumpSpeed, jumpSpeed/2, 0), ForceMode.VelocityChange);
-			playerAudio.PlayOneShot(playerJump, 1.2f);
+		} else if ((Input.GetButtonDown ("Jump") || Input.GetButtonDown ("XBox360_B")) && IsGrounded () && (h == -1) && info.IsName ("Locomotion")) {
+			rigidBody.AddRelativeForce (new Vector3 (-jumpSpeed / 1.5f, jumpSpeed / 1.5f, 0), ForceMode.VelocityChange);
+			playerAudio.PlayOneShot (playerJump, 1.2f);
 			anim.SetTrigger ("roll");
-		}
+		} 
+
 	}
 
 	void FixedUpdate() {
@@ -71,8 +74,6 @@ public class PlayerController : MonoBehaviour {
 
 		Vector3 right = new Vector3 (forward.z, 0f, -forward.x).normalized;
 
-
-
 		Vector3 moveDirection = Vector3.zero;
 
 		if(alive) {
@@ -81,11 +82,20 @@ public class PlayerController : MonoBehaviour {
 
 			// Move
 			moveDirection = (h * right + v * forward);
-
 			bool isAerial = !IsGrounded();
 			float finalMoveSpeed = moveSpeed * ((Mathf.Abs (h) > 0 || v < 0) ? horizontalPenality : 1);
 			transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * finalMoveSpeed, finalMoveSpeed);
-			transform.rotation = Quaternion.Euler (0, cam.transform.eulerAngles.y, 0);
+
+
+			if (!isRolling)
+				transform.rotation = Quaternion.Euler (0, cam.transform.eulerAngles.y, 0);
+			else {
+				if(rigidBody.velocity.x > 0)
+				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(right), Time.deltaTime * jumpSpeed);
+				else
+				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(-right), Time.deltaTime * jumpSpeed);
+					
+			}
 			// Animations
 			if (!isAerial) {
 					anim.SetFloat ("HorizontalVelocity", h);
