@@ -4,6 +4,7 @@ using System.Collections;
 
 public class LocationBasedText : MonoBehaviour {
 	public Text text;
+	public bool destroyOnExit = false;
 
     void OnTriggerEnter(Collider other)
     {
@@ -18,6 +19,9 @@ public class LocationBasedText : MonoBehaviour {
         if (other.gameObject.CompareTag("Player"))
         {
             text.enabled = false;
+			if (destroyOnExit) {
+				Destroy (gameObject);
+			}
         }
     }
 }

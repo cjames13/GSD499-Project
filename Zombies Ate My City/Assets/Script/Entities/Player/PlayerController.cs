@@ -5,26 +5,34 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 4f;
 	public float jumpSpeed = 5f;
+	public float rollSpeed = 4f;
 	public float horizontalPenality = 0.5f;
 	public bool alive = true;
 
-	Animator anim;
-	Rigidbody rigidBody;
-	Rigidbody[] rigidBodies;
-	CapsuleCollider myCollider;
-	List<Collider> colliders;
+	// Rolling
+	private bool isRolling = false;
+
+	// Animation
+	private Animator anim;
+	private Rigidbody rigidBody;
+	private Rigidbody[] rigidBodies;
+	private CapsuleCollider myCollider;
+	private List<Collider> colliders;
+
 	private GameObject lightObject;
 	private Light pointLight;
-	Camera cam;
+	private Camera cam;
 
+	// Controllers
 	private StateController playerStates;
 	private WeaponController weaponController;
 
+	// Sounds
     public AudioClip playerJump;
     public AudioClip playerLeftStep;
     public AudioClip playerRightStep;
     private AudioSource playerAudio;
-	private bool isRolling = false;
+
 	void Awake(){
 		rigidBody = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
@@ -46,24 +54,18 @@ public class PlayerController : MonoBehaviour {
 		// Jumping
 
 		float h = Input.GetAxisRaw ("Horizontal");
-		AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo (0);
-		if (info.IsName ("Roll"))
-			isRolling = true;
-		else {
-			isRolling = false;
-		}
-		if ((Input.GetButtonDown ("Jump") || Input.GetButtonDown ("XBox360_A")) && IsGrounded () && h != 1 && h != -1) {
+		float v = Input.GetAxisRaw ("Vertical");
+
+		isRolling = anim.GetCurrentAnimatorStateInfo (0).IsName ("Roll");
+
+		if (Input.GetButtonDown ("Jump")) {
 			rigidBody.velocity = new Vector3 (0, jumpSpeed, 0);
 			playerAudio.PlayOneShot (playerJump, 1.2f);
-		} else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown ("XBox360_B")) && IsGrounded () && (h == 1) && info.IsName ("Locomotion")) {
-			rigidBody.AddRelativeForce (new Vector3 (jumpSpeed / 1.5f, jumpSpeed / 1.5f, 0), ForceMode.VelocityChange);
+		} else if (Input.GetKeyDown(KeyCode.LeftShift) && IsGrounded () && (h != 0 || v != 0) && !isRolling) {
+			rigidBody.AddRelativeForce (new Vector3 (h * rollSpeed, rollSpeed, v * rollSpeed), ForceMode.VelocityChange);
 			playerAudio.PlayOneShot (playerJump, 1.2f);
 			anim.SetTrigger ("roll");
-		} else if ((Input.GetKeyDown (KeyCode.LeftShift) || Input.GetButtonDown ("XBox360_B")) && IsGrounded () && (h == -1) && info.IsName ("Locomotion")) {
-			rigidBody.AddRelativeForce (new Vector3 (-jumpSpeed / 1.5f, jumpSpeed / 1.5f, 0), ForceMode.VelocityChange);
-			playerAudio.PlayOneShot (playerJump, 1.2f);
-			anim.SetTrigger ("roll");
-		} 
+		}
 
 	}
 
@@ -86,8 +88,13 @@ public class PlayerController : MonoBehaviour {
 			float finalMoveSpeed = moveSpeed * ((Mathf.Abs (h) > 0 || v < 0) ? horizontalPenality : 1);
 			transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * finalMoveSpeed, finalMoveSpeed);
 
+			if (isRolling) {
+				transform.rotation = Quaternion.LookRotation (moveDirection);
+			} else {
+				transform.rotation = Quaternion.Euler (0, cam.transform.eulerAngles.y, 0);
+			}
 
-			if (!isRolling)
+			/*if (!isRolling)
 				transform.rotation = Quaternion.Euler (0, cam.transform.eulerAngles.y, 0);
 			else {
 				if(h > 0)
@@ -95,35 +102,15 @@ public class PlayerController : MonoBehaviour {
 				else
 				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(-right), Time.deltaTime * jumpSpeed);
 					
-			}
+			}*/
+
 			// Animations
 			if (!isAerial) {
 					anim.SetFloat ("HorizontalVelocity", h);
 					anim.SetFloat ("VerticalVelocity", v);
-
-
-				/*if (anim.GetBool ("shooting") == false) {
-					transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * moveSpeed, moveSpeed);
-					anim.SetBool ("walking", (h != 0f || v != 0f));
-					anim.SetBool ("running", (Mathf.Abs (h) >= 0.7f || Mathf.Abs (v) >= 0.7f));
-
-				} else {
-					transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * 1.5f, moveSpeed) ;
-					anim.SetFloat ("ForwardBackward", Input.GetAxis ("Horizontal"));
-					anim.SetFloat ("LeftRight", Input.GetAxis ("Vertical"));
-					Debug.Log ("Horizontal" + anim.GetFloat ("LeftRight"));
-					Debug.Log ("Vertical" + anim.GetFloat ("ForwardBackward"));
-				}*/
 			}
 
 			anim.SetBool ("jumping",   isAerial);
-
-			/*if (moveDirection != Vector3.zero) {
-				if (!anim.GetBool ("shooting"))
-					transform.rotation = Quaternion.LookRotation (moveDirection);
-				else
-					transform.rotation = Quaternion.Euler (0, cam.transform.eulerAngles.y, 0);
-			}*/
 		}
 	}
 

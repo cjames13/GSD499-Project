@@ -81,17 +81,9 @@ public class EnemyStates : MonoBehaviour, StateController {
 			rigidBody.useGravity = false;
 			anim.SetBool ("dying", true);
 		}
-		DropItems ();
 		gameController.IncreaseScore (enemyController.scoreValue);
 		gameController.IncreaseKills (1);
 		StartCoroutine (Burning ());
-	}
-
-	void DropItems() {
-		if (enemyController.itemDrops.Length > 0 && Random.Range(0F, 1F) <= enemyController.dropChance) {
-			GameObject item = enemyController.itemDrops [Random.Range (0, enemyController.itemDrops.Length - 1)];
-			Instantiate (item, transform.position, item.transform.rotation);
-		}
 	}
 
 	void StateController.MeleeAttack(bool attacking){
@@ -127,7 +119,15 @@ public class EnemyStates : MonoBehaviour, StateController {
 		transform.Find ("RingOfFire").gameObject.SetActive (true);
 
 		yield return new WaitForSeconds (deathTime);
+		DropItems ();
 		Destroy (gameObject);
+	}
+
+	void DropItems() {
+		if (enemyController.itemDrops.Length > 0 && Random.Range(0F, 1F) <= enemyController.dropChance) {
+			GameObject item = enemyController.itemDrops [Random.Range (0, enemyController.itemDrops.Length - 1)];
+			Instantiate (item, transform.position, item.transform.rotation);
+		}
 	}
 
 	bool StateController.IsAnimationPlaying(string layerName, string animationName) {
