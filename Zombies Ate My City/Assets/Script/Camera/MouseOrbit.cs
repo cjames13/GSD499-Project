@@ -30,7 +30,7 @@ public class MouseOrbit : MonoBehaviour
         if (Target != null)
         {
 			if (Mathf.Abs(Input.GetAxis ("Right Analog X")) > 0.02f) {
-				x += (float)(Input.GetAxis ("Right Analog X") * xSpeed * 0.05f);
+				x += (float)(Input.GetAxis ("Right Analog X") * xSpeed * 0.07f);
 			} else {
 				x += (float)(Input.GetAxis ("Mouse X") * xSpeed * 0.02f);
 			}

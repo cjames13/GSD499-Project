@@ -1876,6 +1876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 149581725}
+  destroyOnExit: 0
 --- !u!65 &333769088
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2837,6 +2838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 149581725}
+  destroyOnExit: 0
 --- !u!65 &541157292
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3310,6 +3312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1426165802}
+  destroyOnExit: 0
 --- !u!65 &617616641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4558,6 +4561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1426165802}
+  destroyOnExit: 0
 --- !u!65 &950030614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5411,6 +5415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 149581725}
+  destroyOnExit: 0
 --- !u!23 &1138679020
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6907,6 +6912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 149581725}
+  destroyOnExit: 0
 --- !u!65 &1403452698
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7028,6 +7034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 565126585}
+  destroyOnExit: 1
 --- !u!4 &1424554572 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 51feafd72baf343faaf44d72cea378ba, type: 2}
@@ -9163,6 +9170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 149581725}
+  destroyOnExit: 0
 --- !u!23 &1787986596
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11891,6 +11899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 149581725}
+  destroyOnExit: 0
 --- !u!23 &2105669515
 MeshRenderer:
   m_ObjectHideFlags: 0
