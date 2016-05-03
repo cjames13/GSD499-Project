@@ -117,12 +117,13 @@ public class EnemyStates : MonoBehaviour, StateController {
 			}
 		}
 		isSinking = true;
+		DropItems ();
 		myCollider.isTrigger = true;
 		SetAllChildCollidersTrigger (true);
 		transform.Find ("RingOfFire").gameObject.SetActive (true);
 
 		yield return new WaitForSeconds (deathTime);
-		DropItems ();
+
 		Destroy (gameObject);
 	}
 
