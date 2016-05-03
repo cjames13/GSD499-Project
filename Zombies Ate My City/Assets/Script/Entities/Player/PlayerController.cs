@@ -55,11 +55,11 @@ public class PlayerController : MonoBehaviour {
 		if ((Input.GetButtonDown ("Jump") || Input.GetButtonDown ("XBox360_A")) && IsGrounded () && h != 1 && h != -1) {
 			rigidBody.velocity = new Vector3 (0, jumpSpeed, 0);
 			playerAudio.PlayOneShot (playerJump, 1.2f);
-		} else if ((Input.GetButtonDown ("Jump") || Input.GetButtonDown ("XBox360_B")) && IsGrounded () && (h == 1) && info.IsName ("Locomotion")) {
+		} else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown ("XBox360_B")) && IsGrounded () && (h == 1) && info.IsName ("Locomotion")) {
 			rigidBody.AddRelativeForce (new Vector3 (jumpSpeed / 1.5f, jumpSpeed / 1.5f, 0), ForceMode.VelocityChange);
 			playerAudio.PlayOneShot (playerJump, 1.2f);
 			anim.SetTrigger ("roll");
-		} else if ((Input.GetButtonDown ("Jump") || Input.GetButtonDown ("XBox360_B")) && IsGrounded () && (h == -1) && info.IsName ("Locomotion")) {
+		} else if ((Input.GetKeyDown (KeyCode.LeftShift) || Input.GetButtonDown ("XBox360_B")) && IsGrounded () && (h == -1) && info.IsName ("Locomotion")) {
 			rigidBody.AddRelativeForce (new Vector3 (-jumpSpeed / 1.5f, jumpSpeed / 1.5f, 0), ForceMode.VelocityChange);
 			playerAudio.PlayOneShot (playerJump, 1.2f);
 			anim.SetTrigger ("roll");
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour {
 			if (!isRolling)
 				transform.rotation = Quaternion.Euler (0, cam.transform.eulerAngles.y, 0);
 			else {
-				if(rigidBody.velocity.x > 0)
+				if(h > 0)
 				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(right), Time.deltaTime * jumpSpeed);
 				else
 				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(-right), Time.deltaTime * jumpSpeed);
