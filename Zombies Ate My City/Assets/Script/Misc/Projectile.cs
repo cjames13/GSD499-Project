@@ -15,12 +15,15 @@ public class Projectile : DamageOnContact {
 		if (Time.time - creationTime > timeToLive) {
 			Destroy (gameObject);
 		}
+
 	}
 	void OnTriggerEnter(Collider other)
 	{
+		GameObject clone;
 		if (spark) {
 			if (other.transform.tag == "Enemy") {
-				Instantiate (spark, transform.position, other.transform.rotation);
+				clone = Instantiate (spark, transform.position, other.transform.rotation) as GameObject;
+				Destroy (clone, 1);
 			}
 		}
 	}

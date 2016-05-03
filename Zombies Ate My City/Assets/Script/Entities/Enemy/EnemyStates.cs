@@ -9,7 +9,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 	private EnemyController enemyController;
 	private GameController gameController;
 	private bool isSinking = false;
-	private const float sinkSpeed = 0.2f;
+	private const float sinkSpeed = 0.5f;
 
 	//Ragdoll
 	private Rigidbody rigidBody;
@@ -60,6 +60,8 @@ public class EnemyStates : MonoBehaviour, StateController {
 
 	void StateController.TakeDamage() {
 		// Damage taken animation here
+
+		if (anim.GetBool("dying") != true)
 		anim.SetTrigger("hurt");
 	}
 
