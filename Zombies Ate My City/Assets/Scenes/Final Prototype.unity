@@ -5792,7 +5792,6 @@ GameObject:
   - 92: {fileID: 1240657100}
   - 124: {fileID: 1240657099}
   - 81: {fileID: 1240657098}
-  - 114: {fileID: 1240657097}
   - 114: {fileID: 1240657096}
   m_Layer: 0
   m_Name: MainCamera
@@ -5818,19 +5817,6 @@ MonoBehaviour:
   ySpeed: 120
   yMinLimit: 20
   yMaxLimit: 20
---- !u!114 &1240657097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1240657095}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf87fb97f8e398042af1d763977b3445, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1197806402}
-  distance: 4
 --- !u!81 &1240657098
 AudioListener:
   m_ObjectHideFlags: 0

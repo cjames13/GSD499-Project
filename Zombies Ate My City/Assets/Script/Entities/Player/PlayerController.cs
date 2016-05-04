@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour {
 	private GameObject lightObject;
 	private Light pointLight;
 	private Camera cam;
+	private ControlContext controls;
 
 	// Controllers
 	private StateController playerStates;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour {
 		playerStates = GetComponent<StateController> ();
 		weaponController = GetComponent<WeaponController> ();
         playerAudio = GetComponent<AudioSource>();
+		controls = new ControlContext (new OverheadControl ());
 	}
 	void Update() {
 		// Attacking
@@ -88,11 +90,14 @@ public class PlayerController : MonoBehaviour {
 			float finalMoveSpeed = moveSpeed * ((Mathf.Abs (h) > 0 || v < 0) ? horizontalPenality : 1);
 			transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * finalMoveSpeed, finalMoveSpeed);
 
-			if (isRolling && moveDirection != Vector3.zero) {
+			transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling);
+
+			/*if (isRolling && moveDirection != Vector3.zero) {
 				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(moveDirection), Time.deltaTime * jumpSpeed);
 			} else {
+				transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling);
 				transform.rotation = Quaternion.Euler (0, cam.transform.eulerAngles.y, 0);
-			}
+			}*/
 				
 			// Animations
 			if (!isAerial) {
