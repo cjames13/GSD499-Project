@@ -6,12 +6,16 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 4f;
 	public float jumpSpeed = 5f;
 	public float rollSpeed = 4f;
-	public float horizontalPenality = 0.5f;
+	public float horizontalPenalty = 0.5f;
 	public bool alive = true;
+
+	// Attacking
+	bool attacking = false;
 
 	// Rolling
 	private bool isRolling = false;
 	private bool isJumping = false;
+
 	// Animation
 	private Animator anim;
 	private Rigidbody rigidBody;
@@ -45,7 +49,7 @@ public class PlayerController : MonoBehaviour {
 	}
 	void Update() {
 		// Attacking
-		bool attacking = Input.GetButton ("Fire1") || Input.GetAxis("XBox360_Triggers") < 0f;
+		attacking = Input.GetButton ("Fire1") || Input.GetAxis("XBox360_Triggers") < 0f;
 		Weapon currentWeapon = weaponController.weapons [weaponController.currentlyEquippedIndex].GetComponent<Weapon> ();
 
 		if (attacking) {
@@ -87,9 +91,8 @@ public class PlayerController : MonoBehaviour {
 			// Move
 			moveDirection = (h * right + v * forward);
 			bool isAerial = !IsGrounded();
-			float finalMoveSpeed = moveSpeed * ((Mathf.Abs (h) > 0 || v < 0) ? horizontalPenality : 1);
-			transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * finalMoveSpeed, finalMoveSpeed);
 
+			transform.position += controls.SetPlayerMovement (h, v, moveDirection, moveSpeed, horizontalPenalty);
 			transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling);
 
 			/*if (isRolling && moveDirection != Vector3.zero) {
@@ -101,8 +104,7 @@ public class PlayerController : MonoBehaviour {
 				
 			// Animations
 			if (!isAerial) {
-					anim.SetFloat ("HorizontalVelocity", h);
-					anim.SetFloat ("VerticalVelocity", v);
+				controls.SetPlayerMovementAnimation (anim, h, v, attacking);
 			}
 
 			anim.SetBool ("jumping",   isAerial);
