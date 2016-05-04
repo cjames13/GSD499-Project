@@ -123,11 +123,8 @@ public class EnemyStates : MonoBehaviour, StateController {
 		transform.Find ("RingOfFire").gameObject.SetActive (true);
 
 		yield return new WaitForSeconds (deathTime);
-<<<<<<< HEAD
-		DropItems ();
-=======
 
->>>>>>> origin/master
+		DropItems ();
 		Destroy (gameObject);
 	}
 
