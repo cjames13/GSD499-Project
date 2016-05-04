@@ -13,7 +13,6 @@ public class PlayerStates : MonoBehaviour, StateController {
 	public const string THROW_ANIM   = "Throwing";
 	public const string MELEE_LAYER  = "Meleeing";
 	public const string MELEE_ANIM   = "Meleeing";
-
 	private PlayerController playerController;
 
 	// Movement state
@@ -90,6 +89,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 		if (!IsAnimationPlaying (MELEE_LAYER, MELEE_ANIM) && attacking) {
 			anim.SetTrigger ("melee");
 		}
+			
 	}
 
 	public void RangedAttack(bool attacking, bool isRifle) {
