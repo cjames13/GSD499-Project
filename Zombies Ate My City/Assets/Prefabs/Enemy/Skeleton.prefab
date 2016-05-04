@@ -1942,7 +1942,9 @@ MonoBehaviour:
   currentHealth: 0
   invulnTimeAfterHit: 0.1
   alive: 1
+  healTime: 1
   entityHurt: {fileID: 8300000, guid: f0431b7cc44936f45b4af7f4b88315bb, type: 3}
+  entityHeal: {fileID: 0}
   entityDeath: {fileID: 8300000, guid: 5f61d989345d1c142bd725d1e3864ab3, type: 3}
 --- !u!114 &11484318
 MonoBehaviour:
@@ -8697,6 +8699,10 @@ Prefab:
       propertyPath: itemDrops.Array.data[4]
       value: 
       objectReference: {fileID: 175000, guid: f0ddba9f6336ea444992b669d00dd97d, type: 2}
+    - target: {fileID: 0}
+      propertyPath: dropChance
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 148076}
