@@ -88,8 +88,8 @@ public class PlayerController : MonoBehaviour {
 			float finalMoveSpeed = moveSpeed * ((Mathf.Abs (h) > 0 || v < 0) ? horizontalPenality : 1);
 			transform.position += Vector3.ClampMagnitude (moveDirection * Time.deltaTime * finalMoveSpeed, finalMoveSpeed);
 
-			if (isRolling) {
-				transform.rotation = Quaternion.LookRotation (moveDirection);
+			if (isRolling && moveDirection != Vector3.zero) {
+				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(moveDirection), Time.deltaTime * jumpSpeed);
 			} else {
 				transform.rotation = Quaternion.Euler (0, cam.transform.eulerAngles.y, 0);
 			}
