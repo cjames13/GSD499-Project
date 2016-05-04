@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class OverheadControl : ControlStrategy {
+	
 	public Quaternion SetPlayerRotation(Camera camera, Vector3 moveDirection, bool isRolling) {
-		return Quaternion.identity;
+		return Quaternion.LookRotation (moveDirection);
 	}
 }
