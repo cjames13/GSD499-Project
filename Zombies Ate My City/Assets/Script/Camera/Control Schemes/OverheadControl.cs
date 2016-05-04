@@ -13,7 +13,6 @@ public class OverheadControl : ControlStrategy {
 
 	// The animation for the player's movement goes here
 	public void SetPlayerMovementAnimation(Animator animator, float horizontalInput, float verticalInput, bool isShooting) {
-		animator.SetFloat ("VerticalVelocity", Mathf.Abs(horizontalInput));
-		animator.SetFloat ("VerticalVelocity", verticalInput);
+		animator.SetFloat ("VerticalVelocity", Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
 	}
 }
