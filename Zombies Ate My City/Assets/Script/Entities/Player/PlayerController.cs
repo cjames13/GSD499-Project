@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Rolling
 	private bool isRolling = false;
-
+	private bool isJumping = false;
 	// Animation
 	private Animator anim;
 	private Rigidbody rigidBody;
@@ -57,11 +57,11 @@ public class PlayerController : MonoBehaviour {
 		float v = Input.GetAxisRaw ("Vertical");
 
 		isRolling = anim.GetCurrentAnimatorStateInfo (0).IsName ("Roll");
-
+		isJumping = anim.GetCurrentAnimatorStateInfo (0).IsName ("Jump");
 		if (Input.GetButtonDown ("Jump") && IsGrounded()) {
 			rigidBody.velocity = new Vector3 (0, jumpSpeed, 0);
 			playerAudio.PlayOneShot (playerJump, 1.2f);
-		} else if (Input.GetButtonDown("Roll") && IsGrounded () && (h != 0 || v != 0) && !isRolling) {
+		} else if (Input.GetButtonDown("Roll") && IsGrounded () && (h != 0 || v != 0) && !isRolling && !isJumping) {
 			rigidBody.AddRelativeForce (new Vector3 (h * rollSpeed, jumpSpeed / 2f, v * rollSpeed), ForceMode.VelocityChange);
 			playerAudio.PlayOneShot (playerJump, 1.2f);
 			anim.SetTrigger ("roll");
@@ -93,17 +93,7 @@ public class PlayerController : MonoBehaviour {
 			} else {
 				transform.rotation = Quaternion.Euler (0, cam.transform.eulerAngles.y, 0);
 			}
-
-			/*if (!isRolling)
-				transform.rotation = Quaternion.Euler (0, cam.transform.eulerAngles.y, 0);
-			else {
-				if(h > 0)
-				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(right), Time.deltaTime * jumpSpeed);
-				else
-				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(-right), Time.deltaTime * jumpSpeed);
-					
-			}*/
-
+				
 			// Animations
 			if (!isAerial) {
 					anim.SetFloat ("HorizontalVelocity", h);
@@ -118,7 +108,6 @@ public class PlayerController : MonoBehaviour {
 	bool IsGrounded(){
 		return Physics.Raycast (transform.position, -Vector3.up, 0.1f);
 	}
-
     void PlayerLeftFootStep()
     {
         if (!playerAudio.isPlaying)
