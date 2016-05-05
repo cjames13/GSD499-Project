@@ -23,4 +23,18 @@ public class ThirdPersonControl : ControlStrategy {
 		animator.SetFloat ("HorizontalVelocity", horizontalInput);
 		animator.SetFloat ("VerticalVelocity", verticalInput);
 	}
+
+	public void PerformRoll(float horizontalInput, float verticalInput, Rigidbody rigidbody, float jumpSpeed, float rollSpeed) {
+		rigidbody.AddRelativeForce (new Vector3 (horizontalInput * rollSpeed, jumpSpeed / 2f, verticalInput * rollSpeed), ForceMode.VelocityChange);
+	}
+
+	public void SetCameraSettings(MouseOrbit camera) {
+		camera.yMinLimit = 20f;
+		camera.yMaxLimit = 20f;
+		camera.Distance = 4f;
+	}
+
+	public bool IsCrosshairEnabled() {
+		return true;
+	}
 }

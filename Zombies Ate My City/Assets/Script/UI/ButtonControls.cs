@@ -6,7 +6,7 @@ using System.Collections;
 public class ButtonControls : MonoBehaviour {
 	public string sceneName = "Final Prototype";
     public RawImage titleBackground, blankBackground, creditImage1, creditImage2;
-    public GameObject backButton, exitButton, creditsButton, howButton, startButton;
+    public GameObject backButton, optionsButton, creditsButton, howButton, startButton, optionsScreen;
     public GameObject creditsText, howToText;
     public AudioClip selectionClip;
     public AudioClip backClip;
@@ -47,17 +47,10 @@ public class ButtonControls : MonoBehaviour {
 
     public void HowToPlay() {
         buttonSound.PlayOneShot(selectionClip);
-
+		SetAllElementsInactive ();
         titleBackground.enabled = false;
         backButton.SetActive(true);
-        exitButton.SetActive(false);
-        creditsButton.SetActive(false);
-        howButton.SetActive(false);
-        startButton.SetActive(false);
 
-        creditImage1.enabled = false;
-        creditImage2.enabled = false;
-        creditsText.SetActive(false);
 
 		howToText.SetActive (true);
     }
@@ -66,12 +59,10 @@ public class ButtonControls : MonoBehaviour {
         buttonSound.PlayOneShot(selectionClip);
 
         titleBackground.enabled = false;
-        backButton.SetActive(true);
-        exitButton.SetActive(false);
-        creditsButton.SetActive(false);
-        howButton.SetActive(false);
-        startButton.SetActive(false);
 
+		SetAllElementsInactive ();
+
+		backButton.SetActive (true);
         crawling = true;
 
         creditImage1.enabled = true;
@@ -79,10 +70,25 @@ public class ButtonControls : MonoBehaviour {
         creditsText.SetActive(true);
     }
 
-	public void ExitGame() {
+	public void Options() {
         buttonSound.PlayOneShot(selectionClip);
+		SetAllElementsInactive ();
+		titleBackground.enabled = false;
+		optionsScreen.SetActive (true);
+		backButton.SetActive (true);
 
         Application.Quit ();
+	}
+
+	public void ChangeCameraControls(int c) {
+		switch (c) {
+		case 0:
+			PlayerSettingsSingleton.Instance.controlContext = new ControlContext (new ThirdPersonControl ());
+			break;
+		case 1:
+			PlayerSettingsSingleton.Instance.controlContext = new ControlContext (new OverheadControl ());
+			break;
+		}
 	}
 
     public void Back() {
@@ -90,10 +96,11 @@ public class ButtonControls : MonoBehaviour {
 
         titleBackground.enabled = true;
         backButton.SetActive(false);
-        exitButton.SetActive(true);
+        optionsButton.SetActive(true);
         creditsButton.SetActive(true);
         howButton.SetActive(true);
         startButton.SetActive(true);
+		optionsScreen.SetActive (false);
 
         creditImage1.enabled = false;
         creditImage2.enabled = false;
@@ -112,18 +119,23 @@ public class ButtonControls : MonoBehaviour {
         buttonSound.PlayOneShot(laughClip);
         titleBackground.enabled = false;
         blankBackground.enabled = false;
-        backButton.SetActive(false);
-        exitButton.SetActive(false);
-        creditsButton.SetActive(false);
-        howButton.SetActive(false);
-        startButton.SetActive(false);
-
-        creditImage1.enabled = false;
-        creditImage2.enabled = false;
-        creditsText.SetActive(false);
+		SetAllElementsInactive ();
 
         yield return new WaitForSeconds(2f);
 
         SceneManager.LoadScene(sceneName);
     }
+
+	void SetAllElementsInactive() {
+		backButton.SetActive(false);
+		optionsButton.SetActive(false);
+		creditsButton.SetActive(false);
+		howButton.SetActive(false);
+		startButton.SetActive(false);
+		optionsScreen.SetActive (false);
+
+		creditImage1.enabled = false;
+		creditImage2.enabled = false;
+		creditsText.SetActive(false);
+	}
 }

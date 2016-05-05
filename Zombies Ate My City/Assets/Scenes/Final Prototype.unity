@@ -628,7 +628,7 @@ GameObject:
   - 114: {fileID: 97454731}
   m_Layer: 5
   m_Name: Crosshair
-  m_TagString: Untagged
+  m_TagString: Crosshair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -788,7 +788,7 @@ GameObject:
   - 114: {fileID: 110193645}
   m_Layer: 5
   m_Name: Crosshair
-  m_TagString: Untagged
+  m_TagString: Crosshair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6076,7 +6076,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1240657095}
   m_LocalRotation: {x: 0.2020114, y: -0.72678995, z: 0.24182601, w: 0.61031795}
-  m_LocalPosition: {x: 103.076454, y: -48.138645, z: 13.674699}
+  m_LocalPosition: {x: 103.076454, y: -51.38, z: 13.674699}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -19,4 +19,15 @@ public class ControlContext {
 		controls.SetPlayerMovementAnimation (animator, horizontalInput, verticalInput, isShooting);
 	}
 
+	public void PerformRoll(float horizontalInput, float verticalInput, Rigidbody rigidbody, float jumpSpeed, float rollSpeed) {
+		controls.PerformRoll (horizontalInput, verticalInput, rigidbody, jumpSpeed, rollSpeed);
+	}
+
+	public void SetCameraSettings(MouseOrbit camera) {
+		controls.SetCameraSettings (camera);
+	}
+
+	public bool IsCrosshairEnabled() {
+		return controls.IsCrosshairEnabled ();
+	}
 }

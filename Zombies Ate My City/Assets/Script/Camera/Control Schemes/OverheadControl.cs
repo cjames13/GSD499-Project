@@ -29,4 +29,18 @@ public class OverheadControl : ControlStrategy {
 				animator.SetFloat ("VerticalVelocity", verticalInput);
 		}
 	}
+
+	public void PerformRoll(float horizontalInput, float verticalInput, Rigidbody rigidbody, float jumpSpeed, float rollSpeed) {
+		rigidbody.AddRelativeForce (new Vector3(0, jumpSpeed / 2, rollSpeed), ForceMode.VelocityChange);
+	}
+
+	public void SetCameraSettings(MouseOrbit camera) {
+		camera.yMinLimit = 35f;
+		camera.yMaxLimit = 35f;
+		camera.Distance = 5.5f;
+	}
+
+	public bool IsCrosshairEnabled() {
+		return false;
+	}
 }

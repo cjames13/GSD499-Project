@@ -27,6 +27,10 @@ public class GameController : MonoBehaviour {
         levelClearImage.color = new Color(0f, 0f, 0f, 0f);
 		exitDoor.Close ();
         gameOverAudio = GetComponent<AudioSource>();
+		PlayerSettingsSingleton.Instance.controlContext.SetCameraSettings (GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<MouseOrbit>());
+		foreach (GameObject ch in GameObject.FindGameObjectsWithTag("Crosshair")) {
+			ch.SetActive (PlayerSettingsSingleton.Instance.controlContext.IsCrosshairEnabled ());
+		}
 	}
 
     // Update is called once per frame
