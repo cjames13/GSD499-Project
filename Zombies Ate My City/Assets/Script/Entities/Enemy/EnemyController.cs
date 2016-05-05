@@ -45,8 +45,10 @@ public class EnemyController : MonoBehaviour {
 				enemyStates.Walk ();
 				agent.SetDestination (target.transform.position);
 			} else {
-				anim.SetBool ("walking", false);
-				agent.speed = 0;
+				if (anim.GetCurrentAnimatorStateInfo (1).IsName ("Damage")) {
+					anim.SetBool ("walking", false);
+					agent.speed = 0;
+				}
 			}
 			Vector3 lookPos = target.transform.position - transform.position;
 			lookPos.y = 0;
