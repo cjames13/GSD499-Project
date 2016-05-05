@@ -12,10 +12,18 @@ public class OverheadControl : ControlStrategy {
 		if (!isShooting && moveDirection != Vector3.zero) {
 			lastMoveDirection = moveDirection;
 			return Quaternion.LookRotation (moveDirection);
-		} 
-		else {
-			return Quaternion.LookRotation(lastMoveDirection);
-		}
+		} else if (lastMoveDirection != Vector3.zero) {
+			return Quaternion.LookRotation (lastMoveDirection);
+		} else
+			return Quaternion.identity;
+//		Quaternion rotation;
+//		if (isRolling && moveDirection != Vector3.zero) {
+//			rotation = Quaternion.LookRotation (moveDirection);
+//		} else {
+//			rotation = Quaternion.Euler (0, camera.transform.eulerAngles.y, 0);
+//		}
+//
+//		return rotation;
 	}
 	// The animation for the player's movement goes here
 	public void SetPlayerMovementAnimation(Animator animator, float horizontalInput, float verticalInput, bool isShooting) {
