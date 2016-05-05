@@ -27,21 +27,21 @@ public class GameController : MonoBehaviour {
 		exitDoor.Close ();
         gameOverAudio = GetComponent<AudioSource>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		resourcesText.text = "Resources: " + resourcesCollected + "/" + resourcesAvailable;
-		scoreText.text = "Score: " + score;
 
-		if (resourcesCollected >= resourcesAvailable && !exitDoor.open) {
-			exitDoor.Open ();
-		}
+    // Update is called once per frame
+    void Update() {
+        resourcesText.text = "Resources: " + resourcesCollected + "/" + resourcesAvailable;
+        scoreText.text = "Score: " + score;
 
-        if (playerAlive.alive == false && !levelClear)
-        {
-            StartCoroutine(ShowClearScreen());
+        if (resourcesCollected >= resourcesAvailable && !exitDoor.open) {
+            exitDoor.Open();
         }
 
+        if (!playerAlive.alive)
+        {
+            LevelOver();
+        }
+    
         if (endGame && Input.GetKey(KeyCode.M))
         {
             SceneManager.LoadScene(sceneName);
@@ -74,8 +74,8 @@ public class GameController : MonoBehaviour {
 	}
 
 	IEnumerator ShowClearScreen() {
-        yield return new WaitForSeconds (2f);
-        levelClearImage.color = Color.Lerp(levelClearImage.color, new Color(0, 0, 0, 225f), Time.deltaTime * 2f);
+        yield return new WaitForSeconds (1f);
+        levelClearImage.color = new Color(1, 1, 1, 1);//Color.Lerp(levelClearImage.color, new Color(0, 0, 0, 225f), Time.deltaTime * 2f);
         yield return new WaitForSeconds(2f);
         DestroyEnemies ();
 		DisableUI ();
@@ -85,29 +85,33 @@ public class GameController : MonoBehaviour {
 
 		player.GetComponent<PlayerController> ().enabled = false;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         gameOverAudio.Play();
         gameOverText.text = "GAME OVER";
+        Debug.Log("Game Over");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         gameOverAudio.Play();
-        if (!playerAlive.alive)
+        if (!levelClear)
         {
             gameStatusText.text = "YOU DIED";
         }
-        else if (playerAlive.alive)
+        else if (levelClear)
         {
             gameStatusText.text = "LEVEL CLEAR";
         }
+        Debug.Log("You Died");
 
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         gameOverAudio.Play();
         resourcesEndText.text = "RESOURCES COLLECTED: " + resourcesCollected;
+        Debug.Log("Resources Collected");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         gameOverAudio.Play();
         scoreEndText.text = "SCORE: " + score;
+        Debug.Log("Final Score");
 
         endGame = true;
         /*levelClearObject.SetActive (true);
