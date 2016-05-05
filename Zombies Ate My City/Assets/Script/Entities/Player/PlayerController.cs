@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour {
 			playerAudio.PlayOneShot (playerJump, 1.2f);
 			anim.SetTrigger ("roll");
 		}
-
 	}
 
 	void FixedUpdate() {

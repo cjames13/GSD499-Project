@@ -9,8 +9,6 @@ public class OverheadControl : ControlStrategy {
 	}
 
 	public Quaternion SetPlayerRotation(Camera camera, Vector3 moveDirection, bool isRolling, bool isShooting) {
-
-
 		if (!isShooting && moveDirection != Vector3.zero) {
 			lastMoveDirection = moveDirection;
 			return Quaternion.LookRotation (moveDirection);
@@ -19,7 +17,6 @@ public class OverheadControl : ControlStrategy {
 			return Quaternion.LookRotation(lastMoveDirection);
 		}
 	}
-
 	// The animation for the player's movement goes here
 	public void SetPlayerMovementAnimation(Animator animator, float horizontalInput, float verticalInput, bool isShooting) {
 		if (!isShooting)
