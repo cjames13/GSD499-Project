@@ -101,11 +101,8 @@ public class PlayerStates : MonoBehaviour, StateController {
 	public void MeleeAttack(bool attacking){
 		if (!IsAnimationPlaying (MELEE_LAYER, MELEE_ANIM) && attacking) {
 			anim.SetTrigger ("melee");
-			gameObject.GetComponent<SphereCollider> ().enabled = false;
-		} else if (IsAnimationPlaying (MELEE_LAYER, MELEE_ANIM))
-			gameObject.GetComponent<SphereCollider> ().enabled = true;
-		else
-			gameObject.GetComponent<SphereCollider> ().enabled = false;
+		}
+			
 	}
 
 	public void RangedAttack(bool attacking, bool isRifle) {
