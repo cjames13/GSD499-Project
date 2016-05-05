@@ -7,7 +7,7 @@ public class ThirdPersonControl : ControlStrategy {
 		return Vector3.ClampMagnitude (moveDirection * Time.deltaTime * finalMoveSpeed, finalMoveSpeed);
 	}
 
-	public Quaternion SetPlayerRotation(Camera camera, Vector3 moveDirection, bool isRolling) {
+	public Quaternion SetPlayerRotation(Camera camera, Vector3 moveDirection, bool isRolling, bool isShooting) {
 		Quaternion rotation;
 
 		if (isRolling && moveDirection != Vector3.zero) {

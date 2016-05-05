@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour {
 			bool isAerial = !IsGrounded();
 
 			transform.position += controls.SetPlayerMovement (h, v, moveDirection, moveSpeed, horizontalPenalty);
-			transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling);
+			transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling, attacking);
 
 			/*if (isRolling && moveDirection != Vector3.zero) {
 				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(moveDirection), Time.deltaTime * jumpSpeed);
