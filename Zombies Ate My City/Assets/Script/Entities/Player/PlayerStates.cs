@@ -75,14 +75,6 @@ public class PlayerStates : MonoBehaviour, StateController {
 		anim.enabled = false;
 
 		playerController.alive = false;
-		StartCoroutine (RestartLevel ());
-	}
-
-
-	IEnumerator RestartLevel()
-	{
-		yield return new WaitForSeconds(4);
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
 	public void MeleeAttack(bool attacking){
