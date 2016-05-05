@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +14,7 @@ public class Health : MonoBehaviour {
 	private float currentHealTime = 0f;
 	private bool isHealing = false;
 
-	private StateController animController;
+    private StateController animController;
 	private float lastHitTime = 0f;
 
     public AudioClip entityHurt;
@@ -28,7 +29,7 @@ public class Health : MonoBehaviour {
 		currentHealth = maxHealth;
 		lastHitTime = Time.time;
         entityAudio = GetComponent<AudioSource>();
-	}
+    }
 
 	void Update() {
 		if (currentHealth <= 0 && alive) {

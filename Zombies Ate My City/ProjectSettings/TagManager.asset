@@ -11,6 +11,9 @@ TagManager:
   - WeaponSlot
   - Exit
   - Prop
+  - Damage
+  - Muzzle
+  - Crosshair
   layers:
   - Default
   - TransparentFX

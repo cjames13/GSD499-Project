@@ -84,6 +84,7 @@ public class EnemyStates : MonoBehaviour, StateController {
 			rigidBody.isKinematic = true;
 			anim.SetBool ("dying", true);
 		}
+
 		gameController.IncreaseScore (enemyController.scoreValue);
 		gameController.IncreaseKills (1);
 		StartCoroutine (Burning ());
