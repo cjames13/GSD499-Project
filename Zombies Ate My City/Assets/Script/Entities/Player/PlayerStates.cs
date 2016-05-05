@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,7 +24,14 @@ public class PlayerStates : MonoBehaviour, StateController {
 	private List<Collider> colliders;
 	private Animator anim;
 
-	void Start() {
+    // Damage Effect
+    private float flashSpeed = 5f;
+    public Color flashColor = new Color(1f, 0f, 0f, 0.1f);
+    public Image damageImage;
+
+    bool damaged;
+
+    void Start() {
 		anim = GetComponent<Animator> ();
 		// All layers need to have their weight set via code for whatever reason
 		anim.SetLayerWeight (1, 1f);
@@ -47,6 +55,18 @@ public class PlayerStates : MonoBehaviour, StateController {
 		SetAllChildCollidersTrigger (true);
 	}
 
+    void Update() {
+        if (damaged)
+        {
+            damageImage.color = flashColor;
+        }
+        else
+        {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+        damaged = false;
+    }
+
 	void SetAllChildCollidersTrigger(bool t) {
 		foreach (Collider c in GetComponentsInChildren<Collider>()) {
 			if (c != myCollider)
@@ -55,6 +75,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 	}
 
 	public void TakeDamage() {
+        damaged = true;
 		StartCoroutine (TimedDamageAnimation ());
 	}
 

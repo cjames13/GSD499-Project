@@ -9,7 +9,8 @@ public class GameController : MonoBehaviour {
 	public ExitController exitDoor;
     //public GameObject levelClearObject;
     public Image levelClearImage;
-	public GameObject canvas;
+    public GameObject canvas;
+    private Color levelClearColor = new Color(0f, 0f, 0f, 1f);
 
 	private int resourcesAvailable, resourcesCollected, score, enemiesKilled;
 	private bool levelClear = false;
@@ -23,7 +24,7 @@ public class GameController : MonoBehaviour {
 		resourcesAvailable = GameObject.FindGameObjectsWithTag ("Resource").Length;
         playerAlive = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         //levelClearObject.SetActive (false);
-        levelClearImage.color = new Color(0, 0, 0, 0);
+        levelClearImage.color = new Color(0f, 0f, 0f, 0f);
 		exitDoor.Close ();
         gameOverAudio = GetComponent<AudioSource>();
 	}
@@ -75,7 +76,7 @@ public class GameController : MonoBehaviour {
 
 	IEnumerator ShowClearScreen() {
         yield return new WaitForSeconds (1f);
-        levelClearImage.color = new Color(1, 1, 1, 1);//Color.Lerp(levelClearImage.color, new Color(0, 0, 0, 225f), Time.deltaTime * 2f);
+        levelClearImage.color = Color.Lerp(levelClearImage.color, levelClearColor, Time.deltaTime * 5f);
         yield return new WaitForSeconds(2f);
         DestroyEnemies ();
 		DisableUI ();
