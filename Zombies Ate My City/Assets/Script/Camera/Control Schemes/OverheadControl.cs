@@ -15,12 +15,9 @@ public class OverheadControl : ControlStrategy {
 			lastMoveDirection = moveDirection;
 			return Quaternion.LookRotation (moveDirection);
 		} 
-		else if (moveDirection == Vector3.zero && lastMoveDirection != Vector3.zero) {
+		else {
 			return Quaternion.LookRotation(lastMoveDirection);
 		}
-			else {
-				return Quaternion.Euler (0, camera.transform.eulerAngles.y, 0);
-			}
 	}
 
 	// The animation for the player's movement goes here
