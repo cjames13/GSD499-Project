@@ -5942,11 +5942,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1672183858}
-  Distance: 4
+  Distance: 5.5
   xSpeed: 300
   ySpeed: 120
-  yMinLimit: 20
-  yMaxLimit: 20
+  yMinLimit: 35
+  yMaxLimit: 35
 --- !u!81 &1240657098
 AudioListener:
   m_ObjectHideFlags: 0

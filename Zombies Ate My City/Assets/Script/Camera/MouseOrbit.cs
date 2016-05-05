@@ -15,6 +15,8 @@ public class MouseOrbit : MonoBehaviour
 
     void Awake()
     {
+		//if 3rd person: xMinLimit = 20, xMaxLimit = 20, distance = 4
+		//if overhead: xminLimit = 35, xMaxLimit = 35 distance = 5.5
         Vector3 angles = transform.eulerAngles;
         x = angles.x;
         y = angles.y;
@@ -39,8 +41,7 @@ public class MouseOrbit : MonoBehaviour
             y = ClampAngle(y, yMinLimit, yMaxLimit);
 
             Quaternion rotation = Quaternion.Euler(y, x, 0);
-            Vector3 position = rotation * (new Vector3(0.0f, 0.0f, -Distance)) + Target.position;
-
+			Vector3 position = rotation * (new Vector3(0.0f, 0.0f, -Distance)) + Target.position;
             transform.rotation = rotation;
             transform.position = position;
         }
