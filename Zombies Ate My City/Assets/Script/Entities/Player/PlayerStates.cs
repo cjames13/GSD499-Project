@@ -32,12 +32,13 @@ public class PlayerStates : MonoBehaviour, StateController {
     bool damaged;
 
     void Start() {
+		gameObject.GetComponent<SphereCollider> ().enabled = false;
 		anim = GetComponent<Animator> ();
 		// All layers need to have their weight set via code for whatever reason
 		anim.SetLayerWeight (1, 1f);
 		anim.SetLayerWeight (2, 1f);
 		anim.SetLayerWeight (3, 1f);
-		anim.SetLayerWeight (4, 1f);
+		anim.SetLayerWeight (4, .8f);
 
 		playerController = GetComponent<PlayerController> ();
 
@@ -99,9 +100,14 @@ public class PlayerStates : MonoBehaviour, StateController {
 	}
 
 	public void MeleeAttack(bool attacking){
+		SphereCollider sphereCollider = gameObject.GetComponent<SphereCollider> ();
 		if (!IsAnimationPlaying (MELEE_LAYER, MELEE_ANIM) && attacking) {
+			gameObject.GetComponent<SphereCollider> ().enabled = false;
 			anim.SetTrigger ("melee");
-		}
+		} else if (IsAnimationPlaying (MELEE_LAYER, MELEE_ANIM)) {
+			sphereCollider.enabled = true;
+		} else
+			sphereCollider.enabled = false;
 			
 	}
 

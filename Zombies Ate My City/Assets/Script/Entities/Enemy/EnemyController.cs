@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour {
 	private StateController enemyStates;
 	private Health health;
 	private float magicAttackTime;
+	private Animator playerAnim;
 
 	void Start () {
 		enemyStates = GetComponent<StateController> ();
@@ -32,13 +33,21 @@ public class EnemyController : MonoBehaviour {
 		if (target == null) {
 			target = GameObject.FindGameObjectWithTag ("Player");
 		}
+		playerAnim = target.GetComponent<Animator> ();
 	}
 	
 
 	void Update () {
 		if (!anim.GetBool ("dying") && health.alive) {
 			float attackDistance = Vector3.Distance (agent.nextPosition, target.transform.position);
-			agent.SetDestination (target.transform.position);
+			if (playerAnim.GetCurrentAnimatorStateInfo (4).IsName ("Not Meleeing")) {
+				agent.speed = 1;
+				enemyStates.Walk ();
+				agent.SetDestination (target.transform.position);
+			} else {
+				anim.SetBool ("walking", false);
+				agent.speed = 0;
+			}
 			Vector3 lookPos = target.transform.position - transform.position;
 			lookPos.y = 0;
 
@@ -46,8 +55,7 @@ public class EnemyController : MonoBehaviour {
 				Quaternion rotation = Quaternion.LookRotation (lookPos);
 				transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotationSpeed);
 			}
-
-			enemyStates.Walk ();
+			//enemyStates.Walk ();
 
 			if (attackDistance < agent.stoppingDistance) {
 				enemyStates.MeleeAttack (true);
