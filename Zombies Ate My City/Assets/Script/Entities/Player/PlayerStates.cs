@@ -13,8 +13,9 @@ public class PlayerStates : MonoBehaviour, StateController {
 	public const string THROW_LAYER  = "Throwing";
 	public const string THROW_ANIM   = "Throwing";
 	public const string MELEE_LAYER  = "Meleeing";
-	public const string MELEE_ANIM1   = "Meleeing 1";
-	public const string MELEE_ANIM2   = "Meleeing 2";
+	public const string MELEE_ANIM1  = "Meleeing 1";
+	public const string MELEE_ANIM2  = "Meleeing 2";
+	public const string IDLE_MELEE_LAYER = "Idle Meleeing";
 
 	private PlayerController playerController;
 	private GameController gameController;

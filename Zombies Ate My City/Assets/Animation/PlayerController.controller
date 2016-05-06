@@ -1122,7 +1122,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Idle Meleeing 1
+  m_Name: Meleeing 1
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1512,7 +1512,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Idle Meleeing 2
+  m_Name: Meleeing 2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
