@@ -13,11 +13,9 @@ public class PlayerStates : MonoBehaviour, StateController {
 	public const string THROW_LAYER  = "Throwing";
 	public const string THROW_ANIM   = "Throwing";
 	public const string MELEE_LAYER  = "Meleeing";
-	public const string MELEE_ANIM   = "Meleeing";
-	public const string IDLE_MELEE_LAYER = "Idle Meleeing";
-	public const string IDLE_MELEE_ANIM_1 = "Melee1";
-	public const string IDLE_MELEE_ANIM_2 = "Melee2";
-	private bool idle = false;
+	public const string MELEE_ANIM1   = "Meleeing 1";
+	public const string MELEE_ANIM2   = "Meleeing 2";
+
 	private PlayerController playerController;
 	private GameController gameController;
 
@@ -45,7 +43,6 @@ public class PlayerStates : MonoBehaviour, StateController {
 		anim.SetLayerWeight (2, 1f);
 		anim.SetLayerWeight (3, 1f);
 		anim.SetLayerWeight (4, .8f);
-		anim.SetLayerWeight (5, 1f);
 		playerController = GetComponent<PlayerController> ();
 
 		rigidBody = GetComponent<Rigidbody>();
@@ -63,13 +60,9 @@ public class PlayerStates : MonoBehaviour, StateController {
 	}
 
     void Update() {
-		damageImage.color = (damaged) ? flashColor : Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
-        damaged = false;
-		if (anim.GetFloat ("VerticalVelocity") < 0.01f && anim.GetFloat ("HorizontalVelocity") < 0.01f)
-			idle = true;
-		else
-			idle = false;
-    }
+		damageImage.color = (damaged) ? flashColor : Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+		damaged = false;
+	}
 
 	void SetAllChildCollidersTrigger(bool t) {
 		foreach (Collider c in GetComponentsInChildren<Collider>()) {
@@ -104,21 +97,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 	}
 
 	public void MeleeAttack(bool attacking){
-		if (!IsAnimationPlaying (MELEE_LAYER, MELEE_ANIM) && attacking && !idle) {
-				anim.SetTrigger ("melee");
-		}
-		else if (!IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && idle == true && attacking) {
-			Debug.Log ("a");
-			anim.SetTrigger ("melee1");
-		} 
-		else if (IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && idle == true && attacking) {
-			Debug.Log ("b");
-			anim.SetTrigger ("melee2");
-		} 
-		if (!IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && !IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_2))
-			playerController.moveSpeed = 4;
-		else
-			playerController.moveSpeed = 1;
+		anim.SetBool ("meleeing", attacking);
 	}
 
 	public void RangedAttack(bool attacking, bool isRifle) {
