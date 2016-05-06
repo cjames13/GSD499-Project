@@ -65,7 +65,7 @@ public class PlayerStates : MonoBehaviour, StateController {
     void Update() {
 		damageImage.color = (damaged) ? flashColor : Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         damaged = false;
-		if (IsAnimationPlaying ("Base Layer", "Locomotion") && (anim.GetFloat ("VerticalVelocity") < 0.01f && anim.GetFloat ("HorizontalVelocity") < 0.01f))
+		if (anim.GetFloat ("VerticalVelocity") < 0.01f && anim.GetFloat ("HorizontalVelocity") < 0.01f)
 			idle = true;
 		else
 			idle = false;
@@ -107,16 +107,18 @@ public class PlayerStates : MonoBehaviour, StateController {
 		if (!IsAnimationPlaying (MELEE_LAYER, MELEE_ANIM) && attacking && !idle) {
 				anim.SetTrigger ("melee");
 		}
-		if (!IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && idle == true && attacking) {
+		else if (!IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && idle == true && attacking) {
+			Debug.Log ("a");
 			anim.SetTrigger ("melee1");
 		} 
-		if (IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && idle == true && attacking) {
+		else if (IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && idle == true && attacking) {
+			Debug.Log ("b");
 			anim.SetTrigger ("melee2");
 		} 
 		if (!IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && !IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_2))
 			playerController.moveSpeed = 4;
 		else
-			playerController.moveSpeed = 0;
+			playerController.moveSpeed = 1;
 	}
 
 	public void RangedAttack(bool attacking, bool isRifle) {
