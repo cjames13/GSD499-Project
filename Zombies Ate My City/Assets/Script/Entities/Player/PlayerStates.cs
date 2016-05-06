@@ -14,7 +14,10 @@ public class PlayerStates : MonoBehaviour, StateController {
 	public const string THROW_ANIM   = "Throwing";
 	public const string MELEE_LAYER  = "Meleeing";
 	public const string MELEE_ANIM   = "Meleeing";
-
+	public const string IDLE_MELEE_LAYER = "Idle Meleeing";
+	public const string IDLE_MELEE_ANIM_1 = "Melee1";
+	public const string IDLE_MELEE_ANIM_2 = "Melee2";
+	private bool idle = false;
 	private PlayerController playerController;
 	private GameController gameController;
 
@@ -42,7 +45,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 		anim.SetLayerWeight (2, 1f);
 		anim.SetLayerWeight (3, 1f);
 		anim.SetLayerWeight (4, .8f);
-
+		anim.SetLayerWeight (5, 1f);
 		playerController = GetComponent<PlayerController> ();
 
 		rigidBody = GetComponent<Rigidbody>();
@@ -62,6 +65,10 @@ public class PlayerStates : MonoBehaviour, StateController {
     void Update() {
 		damageImage.color = (damaged) ? flashColor : Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         damaged = false;
+		if (IsAnimationPlaying ("Base Layer", "Locomotion") && (anim.GetFloat ("VerticalVelocity") < 0.01f && anim.GetFloat ("HorizontalVelocity") < 0.01f))
+			idle = true;
+		else
+			idle = false;
     }
 
 	void SetAllChildCollidersTrigger(bool t) {
@@ -97,10 +104,19 @@ public class PlayerStates : MonoBehaviour, StateController {
 	}
 
 	public void MeleeAttack(bool attacking){
-		if (!IsAnimationPlaying (MELEE_LAYER, MELEE_ANIM) && attacking) {
-			anim.SetTrigger ("melee");
+		if (!IsAnimationPlaying (MELEE_LAYER, MELEE_ANIM) && attacking && !idle) {
+				anim.SetTrigger ("melee");
 		}
-			
+		if (!IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && idle == true && attacking) {
+			anim.SetTrigger ("melee1");
+			playerController.moveSpeed = 0;
+		} 
+		if (IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && idle == true && attacking) {
+			anim.SetTrigger ("melee2");
+			playerController.moveSpeed = 0;
+		} 
+		if (!IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && !IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_2))
+			playerController.moveSpeed = 4;
 	}
 
 	public void RangedAttack(bool attacking, bool isRifle) {

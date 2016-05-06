@@ -80,6 +80,8 @@ namespace Xft {
         public Material MyMaterial;
         #endregion
 
+
+
         #region protected members
         protected float mTrailWidth = 0f;
         protected Element mHeadElem = new Element();
@@ -135,29 +137,29 @@ namespace Xft {
 
         public void Activate() {
 
-				Init ();
-				gameObject.SetActive (true);
+            Init();
 
-				mFadeT = 1f;
-				mIsFading = false;
-				mFadeTime = 1f;
-				mFadeElapsedime = 0f;
-				mElapsedTime = 0f;
+            gameObject.SetActive(true);
 
-				//reset all elemts to head pos.
-				for (int i = 0; i < mSnapshotList.Count; i++) {
-					mSnapshotList [i].PointStart = PointStart.position;
-					mSnapshotList [i].PointEnd = PointEnd.position;
+            mFadeT = 1f;
+            mIsFading = false;
+            mFadeTime = 1f;
+            mFadeElapsedime = 0f;
+            mElapsedTime = 0f;
 
-					mSpline.ControlPoints [i].Position = mSnapshotList [i].Pos;
-					mSpline.ControlPoints [i].Normal = mSnapshotList [i].PointEnd - mSnapshotList [i].PointStart;
-				}
+            //reset all elemts to head pos.
+            for (int i = 0; i < mSnapshotList.Count; i++) {
+                mSnapshotList[i].PointStart = PointStart.position;
+                mSnapshotList[i].PointEnd = PointEnd.position;
 
-				//reset vertex too.
-				RefreshSpline ();
-				UpdateVertex ();
-		}
-   
+                mSpline.ControlPoints[i].Position = mSnapshotList[i].Pos;
+                mSpline.ControlPoints[i].Normal = mSnapshotList[i].PointEnd - mSnapshotList[i].PointStart;
+            }
+
+            //reset vertex too.
+            RefreshSpline();
+            UpdateVertex();
+        }
 
         public void Deactivate() {
             gameObject.SetActive(false);
@@ -359,16 +361,17 @@ namespace Xft {
         }
 
 
-        public void UpdateFade() {
-			
+        void UpdateFade() {
             if (!mIsFading)
                 return;
+
             mFadeElapsedime += Time.deltaTime;
 
             float t = mFadeElapsedime / mFadeTime;
 
             mFadeT = 1f - t;
-            if (mFadeT < 0) {
+
+            if (mFadeT < 0f) {
                 Deactivate();
             }
         }
@@ -392,7 +395,7 @@ namespace Xft {
 
         }
 
-        public void InitOriginalElements() {
+        void InitOriginalElements() {
             mSnapshotList.Clear();
             //at least add 2 original elements
             mSnapshotList.Add(new Element(PointStart.position, PointEnd.position));
@@ -401,7 +404,7 @@ namespace Xft {
 
 
 
-        public void InitMeshObj() {
+        void InitMeshObj() {
             //init vertexpool
             mVertexPool = new VertexPool(MyMaterial, this);
             mVertexSegment = mVertexPool.GetVertices(Granularity * 3, (Granularity - 1) * 12);

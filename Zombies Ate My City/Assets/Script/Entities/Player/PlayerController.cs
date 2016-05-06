@@ -94,13 +94,6 @@ public class PlayerController : MonoBehaviour {
 			transform.position += controls.SetPlayerMovement (h, v, moveDirection, moveSpeed, horizontalPenalty);
 			transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling, attacking);
 
-			/*if (isRolling && moveDirection != Vector3.zero) {
-				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(moveDirection), Time.deltaTime * jumpSpeed);
-			} else {
-				transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling);
-				transform.rotation = Quaternion.Euler (0, cam.transform.eulerAngles.y, 0);
-			}*/
-				
 			// Animations
 			if (!isAerial) {
 				controls.SetPlayerMovementAnimation (anim, h, v, attacking);

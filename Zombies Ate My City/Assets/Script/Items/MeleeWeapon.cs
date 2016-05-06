@@ -18,6 +18,8 @@ public class MeleeWeapon : Weapon {
 		}
 
 		damageCollider.enabled = stateController.IsAnimationPlaying (PlayerStates.MELEE_LAYER, PlayerStates.MELEE_ANIM);
+		damageCollider.enabled = stateController.IsAnimationPlaying (PlayerStates.IDLE_MELEE_LAYER, PlayerStates.IDLE_MELEE_ANIM_1);
+		damageCollider.enabled = stateController.IsAnimationPlaying (PlayerStates.IDLE_MELEE_LAYER, PlayerStates.IDLE_MELEE_ANIM_2);
 	}
 
 }

@@ -1322,6 +1322,27 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.75
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &181751954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 181751950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c2c9828fec98747a1b0680f47bed80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseWith2D: 0
+  SortingLayerName: 
+  SortingOrder: 0
+  PointStart: {fileID: 2046968865}
+  PointEnd: {fileID: 1730264584}
+  MaxFrame: 14
+  Granularity: 60
+  Fps: 60
+  MyColor: {r: 1, g: 1, b: 1, a: 1}
+  MyMaterial: {fileID: 2100000, guid: 6d6c4a8b75078c440b0765fca162bcf8, type: 2}
 --- !u!1 &192428963
 GameObject:
   m_ObjectHideFlags: 0
@@ -9285,6 +9306,10 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1727226281}
+--- !u!4 &1730264584 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 495098, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+  m_PrefabInternal: {fileID: 1963233892}
 --- !u!1001 &1744295798
 Prefab:
   m_ObjectHideFlags: 0
@@ -11648,6 +11673,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 13673838, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+    - {fileID: 11426412, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1968660827
@@ -11994,6 +12020,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9ae5e65f8b9a7540a00c420d75216e7, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &2046968865 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 486922, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+  m_PrefabInternal: {fileID: 1963233892}
 --- !u!1 &2070217970 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100024, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
