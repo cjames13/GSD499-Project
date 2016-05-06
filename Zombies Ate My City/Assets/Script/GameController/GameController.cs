@@ -10,19 +10,17 @@ public class GameController : MonoBehaviour {
     public GameObject levelClearObject;
     public Image levelClearImage;
     public GameObject canvas;
-    private Color levelClearColor = new Color(0f, 0f, 0f, 1f);
+    //private Color levelClearColor = new Color(0f, 0f, 0f, 1f);
 
 	private int resourcesAvailable, resourcesCollected, score, enemiesKilled;
 	private bool levelClear = false;
     private string sceneName = "Start Screen";
     private AudioSource gameOverAudio;
-    private Health playerAlive;
     private bool endGame;
 
 	// Use this for initialization
 	void Start () {
 		resourcesAvailable = GameObject.FindGameObjectsWithTag ("Resource").Length;
-        playerAlive = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         levelClearObject.SetActive (false);
         //levelClearImage.color = new Color(0f, 0f, 0f, 0f);
 		exitDoor.Close ();
