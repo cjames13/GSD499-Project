@@ -17,9 +17,9 @@ public class MeleeWeapon : Weapon {
 			attackTime = attackSpeed;
 		}
 
-		damageCollider.enabled = stateController.IsAnimationPlaying (PlayerStates.MELEE_LAYER, PlayerStates.MELEE_ANIM);
-		damageCollider.enabled = stateController.IsAnimationPlaying (PlayerStates.IDLE_MELEE_LAYER, PlayerStates.IDLE_MELEE_ANIM_1);
-		damageCollider.enabled = stateController.IsAnimationPlaying (PlayerStates.IDLE_MELEE_LAYER, PlayerStates.IDLE_MELEE_ANIM_2);
+		damageCollider.enabled = stateController.IsAnimationPlaying (PlayerStates.MELEE_LAYER, PlayerStates.MELEE_ANIM) || 
+			stateController.IsAnimationPlaying (PlayerStates.IDLE_MELEE_LAYER, PlayerStates.IDLE_MELEE_ANIM_1) || 
+			stateController.IsAnimationPlaying (PlayerStates.IDLE_MELEE_LAYER, PlayerStates.IDLE_MELEE_ANIM_2);
 	}
 
 }

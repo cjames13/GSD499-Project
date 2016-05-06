@@ -109,14 +109,14 @@ public class PlayerStates : MonoBehaviour, StateController {
 		}
 		if (!IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && idle == true && attacking) {
 			anim.SetTrigger ("melee1");
-			playerController.moveSpeed = 0;
 		} 
 		if (IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && idle == true && attacking) {
 			anim.SetTrigger ("melee2");
-			playerController.moveSpeed = 0;
 		} 
 		if (!IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_1) && !IsAnimationPlaying (IDLE_MELEE_LAYER, IDLE_MELEE_ANIM_2))
 			playerController.moveSpeed = 4;
+		else
+			playerController.moveSpeed = 0;
 	}
 
 	public void RangedAttack(bool attacking, bool isRifle) {
