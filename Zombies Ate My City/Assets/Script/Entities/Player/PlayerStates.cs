@@ -14,7 +14,9 @@ public class PlayerStates : MonoBehaviour, StateController {
 	public const string THROW_ANIM   = "Throwing";
 	public const string MELEE_LAYER  = "Meleeing";
 	public const string MELEE_ANIM   = "Meleeing";
+
 	private PlayerController playerController;
+	private GameController gameController;
 
 	// Movement state
 	private Rigidbody rigidBody;
@@ -33,6 +35,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 
     void Start() {
 		gameObject.GetComponent<SphereCollider> ().enabled = false;
+		gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 		anim = GetComponent<Animator> ();
 		// All layers need to have their weight set via code for whatever reason
 		anim.SetLayerWeight (1, 1f);
@@ -57,14 +60,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 	}
 
     void Update() {
-        if (damaged)
-        {
-            damageImage.color = flashColor;
-        }
-        else
-        {
-            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
-        }
+		damageImage.color = (damaged) ? flashColor : Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         damaged = false;
     }
 
@@ -97,17 +93,13 @@ public class PlayerStates : MonoBehaviour, StateController {
 		anim.enabled = false;
 
 		playerController.alive = false;
+		gameController.LevelOver (true);
 	}
 
 	public void MeleeAttack(bool attacking){
-		SphereCollider sphereCollider = gameObject.GetComponent<SphereCollider> ();
 		if (!IsAnimationPlaying (MELEE_LAYER, MELEE_ANIM) && attacking) {
-			gameObject.GetComponent<SphereCollider> ().enabled = false;
 			anim.SetTrigger ("melee");
-		} else if (IsAnimationPlaying (MELEE_LAYER, MELEE_ANIM)) {
-			sphereCollider.enabled = true;
-		} else
-			sphereCollider.enabled = false;
+		}
 			
 	}
 

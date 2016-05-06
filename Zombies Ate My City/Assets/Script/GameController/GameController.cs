@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 	public GameObject player;
-	public Text gameOverText, gameStatusText, resourcesText, resourcesEndText, scoreText, scoreEndText;
+	public Text gameOverText, gameStatusText, resourcesText, resourcesEndText, scoreText, scoreEndText, killCountText;
 	public ExitController exitDoor;
-    //public GameObject levelClearObject;
+    public GameObject levelClearObject;
     public Image levelClearImage;
     public GameObject canvas;
     private Color levelClearColor = new Color(0f, 0f, 0f, 1f);
@@ -23,8 +23,8 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		resourcesAvailable = GameObject.FindGameObjectsWithTag ("Resource").Length;
         playerAlive = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
-        //levelClearObject.SetActive (false);
-        levelClearImage.color = new Color(0f, 0f, 0f, 0f);
+        levelClearObject.SetActive (false);
+        //levelClearImage.color = new Color(0f, 0f, 0f, 0f);
 		exitDoor.Close ();
         gameOverAudio = GetComponent<AudioSource>();
 		PlayerSettingsSingleton.Instance.controlContext.SetCameraSettings (GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<MouseOrbit>());
@@ -42,11 +42,6 @@ public class GameController : MonoBehaviour {
             exitDoor.Open();
         }
 
-        if (!playerAlive.alive)
-        {
-            LevelOver();
-        }
-    
         if (endGame && Input.GetKey(KeyCode.M))
         {
             SceneManager.LoadScene(sceneName);
@@ -65,22 +60,18 @@ public class GameController : MonoBehaviour {
 		enemiesKilled += n;
 	}
 
-	public void LevelOver() {
+	public void LevelOver(bool dead) {
 		if (!levelClear) {
 			levelClear = true;
 			exitDoor.Close ();
-			StartCoroutine (ShowClearScreen ());
+			StartCoroutine (ShowClearScreen (dead));
 		}
-        else if (!levelClear && !playerAlive.alive)
-        {
-            StartCoroutine(ShowClearScreen());
-        }
 
 	}
 
-	IEnumerator ShowClearScreen() {
-        yield return new WaitForSeconds (1f);
-        levelClearImage.color = Color.Lerp(levelClearImage.color, levelClearColor, Time.deltaTime * 5f);
+	IEnumerator ShowClearScreen(bool dead) {
+        //yield return new WaitForSeconds (1f);
+        //levelClearImage.color = Color.Lerp(levelClearImage.color, levelClearColor, Time.deltaTime * 5f);
         yield return new WaitForSeconds(2f);
         DestroyEnemies ();
 		DisableUI ();
@@ -91,27 +82,23 @@ public class GameController : MonoBehaviour {
 		player.GetComponent<PlayerController> ().enabled = false;
 
         yield return new WaitForSeconds(1f);
+		levelClearObject.SetActive (true);
         gameOverAudio.Play();
         gameOverText.text = "GAME OVER";
         Debug.Log("Game Over");
 
         yield return new WaitForSeconds(1f);
         gameOverAudio.Play();
-        if (!levelClear)
-        {
-            gameStatusText.text = "YOU DIED";
-        }
-        else if (levelClear)
-        {
-            gameStatusText.text = "LEVEL CLEAR";
-        }
-        Debug.Log("You Died");
+		gameStatusText.text = (dead) ? "YOU DIED" : "LEVEL CLEAR";
 
+		yield return new WaitForSeconds(1f);
+		gameOverAudio.Play();
+		resourcesEndText.text = "RESOURCES COLLECTED: " + resourcesCollected;
+		Debug.Log("Resources Collected");
 
-        yield return new WaitForSeconds(1f);
-        gameOverAudio.Play();
-        resourcesEndText.text = "RESOURCES COLLECTED: " + resourcesCollected;
-        Debug.Log("Resources Collected");
+		yield return new WaitForSeconds(1f);
+		gameOverAudio.Play();
+		killCountText.text = "KILLS: " + enemiesKilled;
 
         yield return new WaitForSeconds(1f);
         gameOverAudio.Play();
@@ -119,11 +106,6 @@ public class GameController : MonoBehaviour {
         Debug.Log("Final Score");
 
         endGame = true;
-        /*levelClearObject.SetActive (true);
-		levelClearObject.GetComponentInChildren<Text>().text = "You survived.\n\nScore: " + score +
-								"\nResources Collected: " + resourcesCollected +
-								"\nKills: " + enemiesKilled +
-								"\n\nPress 'M' to return to the Main Menu.";/*/
     }
 
 	void DestroyEnemies() {

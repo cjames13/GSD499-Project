@@ -24,7 +24,7 @@ public class ExitController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (open && other.tag == "Player") {
-			gameController.LevelOver();
+			gameController.LevelOver(false);
 		}
 	}
 }
