@@ -574,6 +574,7 @@ ModelImporter:
     7400052: shooting1
     7400054: shooting4
     7400056: shooting2
+    7400058: shooting3
     9500000: //RootNode
     11100000: //RootNode
     13700000: Shorts
@@ -14259,6 +14260,574 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 1
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: MESH
+        weight: 0
+      - path: MESH/MaleBase 1
+        weight: 0
+      - path: MESH/MaleBase 1/Shorts
+        weight: 0
+      - path: MESH/MaleBase 1/Skin
+        weight: 0
+      - path: RIG
+        weight: 1
+      - path: RIG/MainC
+        weight: 1
+      - path: RIG/MainC/DSN_lElbowParentUpG
+        weight: 0
+      - path: RIG/MainC/DSN_lKneeParentUpG
+        weight: 0
+      - path: RIG/MainC/DSN_rElbowParentUpG
+        weight: 0
+      - path: RIG/MainC/DSN_rKneeParentUpG
+        weight: 0
+      - path: RIG/MainC/EyeAimCG
+        weight: 0
+      - path: RIG/MainC/EyeAimCG/EyeAimC
+        weight: 0
+      - path: RIG/MainC/EyeAimCG/EyeAimC/lEyeAimC
+        weight: 0
+      - path: RIG/MainC/EyeAimCG/EyeAimC/rEyeAimC
+        weight: 0
+      - path: RIG/MainC/HeadCG
+        weight: 0
+      - path: RIG/MainC/HeadCG/HeadC
+        weight: 0
+      - path: RIG/MainC/JawCG
+        weight: 0
+      - path: RIG/MainC/JawCG/JawC
+        weight: 0
+      - path: RIG/MainC/lAnkleFKCG
+        weight: 0
+      - path: RIG/MainC/lAnkleFKCG/lAnkleFKC
+        weight: 0
+      - path: RIG/MainC/lArmIKFKG
+        weight: 0
+      - path: RIG/MainC/lArmIKFKG/lShoulderJFK
+        weight: 0
+      - path: RIG/MainC/lArmIKFKG/lShoulderJFK/lElbowJFK
+        weight: 0
+      - path: RIG/MainC/lArmIKFKG/lShoulderJFK/lElbowJFK/lWristJFK
+        weight: 0
+      - path: RIG/MainC/lArmIKFKG/lShoulderJIK
+        weight: 0
+      - path: RIG/MainC/lArmIKFKG/lShoulderJIK/lElbowJIK
+        weight: 0
+      - path: RIG/MainC/lArmIKFKG/lShoulderJIK/lElbowJIK/lWristJIK
+        weight: 0
+      - path: RIG/MainC/lArmIKHandle
+        weight: 0
+      - path: RIG/MainC/lArmSwitchCG
+        weight: 0
+      - path: RIG/MainC/lArmSwitchCG/lArmSwitchC
+        weight: 0
+      - path: RIG/MainC/lBallFKCG
+        weight: 0
+      - path: RIG/MainC/lBallFKCG/lBallFKC
+        weight: 0
+      - path: RIG/MainC/lClavicleCG
+        weight: 0
+      - path: RIG/MainC/lClavicleCG/lClavicleC
+        weight: 0
+      - path: RIG/MainC/lElbowFKCG
+        weight: 0
+      - path: RIG/MainC/lElbowFKCG/lElbowFKC
+        weight: 0
+      - path: RIG/MainC/lElbowIKCG
+        weight: 0
+      - path: RIG/MainC/lElbowIKCG/lElbowIKC
+        weight: 0
+      - path: RIG/MainC/lFootIKCG
+        weight: 0
+      - path: RIG/MainC/lFootIKCG/lFootIKC
+        weight: 0
+      - path: RIG/MainC/lFootIKCG/lFootIKC/lFootBallPivot
+        weight: 0
+      - path: RIG/MainC/lFootIKCG/lFootIKC/lFootBallPivot/lBallIKHandle
+        weight: 0
+      - path: RIG/MainC/lFootIKCG/lFootIKC/lFootBallPivot/lLegIKHandle
+        weight: 0
+      - path: RIG/MainC/lFootIKCG/lFootIKC/lFootToePivot
+        weight: 0
+      - path: RIG/MainC/lFootIKCG/lFootIKC/lFootToePivot/lToeIKHandle
+        weight: 0
+      - path: RIG/MainC/lHipFKCG
+        weight: 0
+      - path: RIG/MainC/lHipFKCG/lHipFKC
+        weight: 0
+      - path: RIG/MainC/lIndex1CG
+        weight: 0
+      - path: RIG/MainC/lIndex1CG/lIndex1C
+        weight: 0
+      - path: RIG/MainC/lIndex2CG
+        weight: 0
+      - path: RIG/MainC/lIndex2CG/lIndex2C
+        weight: 0
+      - path: RIG/MainC/lIndex3CG
+        weight: 0
+      - path: RIG/MainC/lIndex3CG/lIndex3C
+        weight: 0
+      - path: RIG/MainC/lKneeFKCG
+        weight: 0
+      - path: RIG/MainC/lKneeFKCG/lKneeFKC
+        weight: 0
+      - path: RIG/MainC/lKneeIKCG
+        weight: 0
+      - path: RIG/MainC/lKneeIKCG/lKneeIKC
+        weight: 0
+      - path: RIG/MainC/lLegIKFKG
+        weight: 0
+      - path: RIG/MainC/lLegIKFKG/lHipJFK
+        weight: 0
+      - path: RIG/MainC/lLegIKFKG/lHipJFK/lKneeJFK
+        weight: 0
+      - path: RIG/MainC/lLegIKFKG/lHipJFK/lKneeJFK/lAnkleJFK
+        weight: 0
+      - path: RIG/MainC/lLegIKFKG/lHipJFK/lKneeJFK/lAnkleJFK/lBallJFK
+        weight: 0
+      - path: RIG/MainC/lLegIKFKG/lHipJFK/lKneeJFK/lAnkleJFK/lBallJFK/lToeJFK
+        weight: 0
+      - path: RIG/MainC/lLegIKFKG/lHipJIK
+        weight: 0
+      - path: RIG/MainC/lLegIKFKG/lHipJIK/lKneeJIK
+        weight: 0
+      - path: RIG/MainC/lLegIKFKG/lHipJIK/lKneeJIK/lAnkleJIK
+        weight: 0
+      - path: RIG/MainC/lLegIKFKG/lHipJIK/lKneeJIK/lAnkleJIK/lBallJIK
+        weight: 0
+      - path: RIG/MainC/lLegIKFKG/lHipJIK/lKneeJIK/lAnkleJIK/lBallJIK/lToeJIK
+        weight: 0
+      - path: RIG/MainC/lLegSwitchCG
+        weight: 0
+      - path: RIG/MainC/lLegSwitchCG/lLegSwitchC
+        weight: 0
+      - path: RIG/MainC/lMiddle1CG
+        weight: 0
+      - path: RIG/MainC/lMiddle1CG/lMiddle1C
+        weight: 0
+      - path: RIG/MainC/lMiddle2CG
+        weight: 0
+      - path: RIG/MainC/lMiddle2CG/lMiddle2C
+        weight: 0
+      - path: RIG/MainC/lMiddle3CG
+        weight: 0
+      - path: RIG/MainC/lMiddle3CG/lMiddle3C
+        weight: 0
+      - path: RIG/MainC/lPinkie1CG
+        weight: 0
+      - path: RIG/MainC/lPinkie1CG/lPinkie1C
+        weight: 0
+      - path: RIG/MainC/lPinkie2CG
+        weight: 0
+      - path: RIG/MainC/lPinkie2CG/lPinkie2C
+        weight: 0
+      - path: RIG/MainC/lPinkie3CG
+        weight: 0
+      - path: RIG/MainC/lPinkie3CG/lPinkie3C
+        weight: 0
+      - path: RIG/MainC/lRing1CG
+        weight: 0
+      - path: RIG/MainC/lRing1CG/lRing1C
+        weight: 0
+      - path: RIG/MainC/lRing2CG
+        weight: 0
+      - path: RIG/MainC/lRing2CG/lRing2C
+        weight: 0
+      - path: RIG/MainC/lRing3CG
+        weight: 0
+      - path: RIG/MainC/lRing3CG/lRing3C
+        weight: 0
+      - path: RIG/MainC/lShoulderFKCG
+        weight: 0
+      - path: RIG/MainC/lShoulderFKCG/lShoulderFKC
+        weight: 0
+      - path: RIG/MainC/lThumb1CG
+        weight: 0
+      - path: RIG/MainC/lThumb1CG/lThumb1C
+        weight: 0
+      - path: RIG/MainC/lThumb2CG
+        weight: 0
+      - path: RIG/MainC/lThumb2CG/lThumb2C
+        weight: 0
+      - path: RIG/MainC/lThumb3CG
+        weight: 0
+      - path: RIG/MainC/lThumb3CG/lThumb3C
+        weight: 0
+      - path: RIG/MainC/lWristFKCG
+        weight: 0
+      - path: RIG/MainC/lWristFKCG/lWristFKC
+        weight: 0
+      - path: RIG/MainC/lWristIKCG
+        weight: 0
+      - path: RIG/MainC/lWristIKCG/lWristIKC
+        weight: 0
+      - path: RIG/MainC/MainHipCG
+        weight: 0
+      - path: RIG/MainC/MainHipCG/MainHipC
+        weight: 0
+      - path: RIG/MainC/NeckCG
+        weight: 0
+      - path: RIG/MainC/NeckCG/NeckC
+        weight: 0
+      - path: RIG/MainC/rAnkleFKCG
+        weight: 0
+      - path: RIG/MainC/rAnkleFKCG/rAnkleFKC
+        weight: 0
+      - path: RIG/MainC/rArmIKFKG
+        weight: 0
+      - path: RIG/MainC/rArmIKFKG/rShoulderJFK
+        weight: 0
+      - path: RIG/MainC/rArmIKFKG/rShoulderJFK/rElbowJFK
+        weight: 0
+      - path: RIG/MainC/rArmIKFKG/rShoulderJFK/rElbowJFK/rWristJFK
+        weight: 0
+      - path: RIG/MainC/rArmIKFKG/rShoulderJIK
+        weight: 0
+      - path: RIG/MainC/rArmIKFKG/rShoulderJIK/rElbowJIK
+        weight: 0
+      - path: RIG/MainC/rArmIKFKG/rShoulderJIK/rElbowJIK/rWristJIK
+        weight: 0
+      - path: RIG/MainC/rArmIKHandle
+        weight: 0
+      - path: RIG/MainC/rArmSwitchCG
+        weight: 0
+      - path: RIG/MainC/rArmSwitchCG/rArmSwitchC
+        weight: 0
+      - path: RIG/MainC/rBallFKCG
+        weight: 0
+      - path: RIG/MainC/rBallFKCG/rBallFKC
+        weight: 0
+      - path: RIG/MainC/rClavicleCG
+        weight: 0
+      - path: RIG/MainC/rClavicleCG/rClavicleC
+        weight: 0
+      - path: RIG/MainC/rElbowFKCG
+        weight: 0
+      - path: RIG/MainC/rElbowFKCG/rElbowFKC
+        weight: 0
+      - path: RIG/MainC/rElbowIKCG
+        weight: 0
+      - path: RIG/MainC/rElbowIKCG/rElbowIKC
+        weight: 0
+      - path: RIG/MainC/rFootIKCG
+        weight: 0
+      - path: RIG/MainC/rFootIKCG/rFootIKC
+        weight: 0
+      - path: RIG/MainC/rFootIKCG/rFootIKC/rFootBallPivot
+        weight: 0
+      - path: RIG/MainC/rFootIKCG/rFootIKC/rFootBallPivot/rBallIKHandle
+        weight: 0
+      - path: RIG/MainC/rFootIKCG/rFootIKC/rFootBallPivot/rLegIKHandle
+        weight: 0
+      - path: RIG/MainC/rFootIKCG/rFootIKC/rFootToePivot
+        weight: 0
+      - path: RIG/MainC/rFootIKCG/rFootIKC/rFootToePivot/rToeIKHandle
+        weight: 0
+      - path: RIG/MainC/rHipFKCG
+        weight: 0
+      - path: RIG/MainC/rHipFKCG/rHipFKC
+        weight: 0
+      - path: RIG/MainC/rIndex1CG
+        weight: 0
+      - path: RIG/MainC/rIndex1CG/rIndex1C
+        weight: 0
+      - path: RIG/MainC/rIndex2CG
+        weight: 0
+      - path: RIG/MainC/rIndex2CG/rIndex2C
+        weight: 0
+      - path: RIG/MainC/rIndex3CG
+        weight: 0
+      - path: RIG/MainC/rIndex3CG/rIndex3C
+        weight: 0
+      - path: RIG/MainC/rKneeFKCG
+        weight: 0
+      - path: RIG/MainC/rKneeFKCG/rKneeFKC
+        weight: 0
+      - path: RIG/MainC/rKneeIKCG
+        weight: 0
+      - path: RIG/MainC/rKneeIKCG/rKneeIKC
+        weight: 0
+      - path: RIG/MainC/rLegIKFKG
+        weight: 0
+      - path: RIG/MainC/rLegIKFKG/rHipJFK
+        weight: 0
+      - path: RIG/MainC/rLegIKFKG/rHipJFK/rKneeJFK
+        weight: 0
+      - path: RIG/MainC/rLegIKFKG/rHipJFK/rKneeJFK/rAnkleJFK
+        weight: 0
+      - path: RIG/MainC/rLegIKFKG/rHipJFK/rKneeJFK/rAnkleJFK/rBallJFK
+        weight: 0
+      - path: RIG/MainC/rLegIKFKG/rHipJFK/rKneeJFK/rAnkleJFK/rBallJFK/rToeJFK
+        weight: 0
+      - path: RIG/MainC/rLegIKFKG/rHipJIK
+        weight: 0
+      - path: RIG/MainC/rLegIKFKG/rHipJIK/rKneeJIK
+        weight: 0
+      - path: RIG/MainC/rLegIKFKG/rHipJIK/rKneeJIK/rAnkleJIK
+        weight: 0
+      - path: RIG/MainC/rLegIKFKG/rHipJIK/rKneeJIK/rAnkleJIK/rBallJIK
+        weight: 0
+      - path: RIG/MainC/rLegIKFKG/rHipJIK/rKneeJIK/rAnkleJIK/rBallJIK/rToeJIK
+        weight: 0
+      - path: RIG/MainC/rLegSwitchCG
+        weight: 0
+      - path: RIG/MainC/rLegSwitchCG/rLegSwitchC
+        weight: 0
+      - path: RIG/MainC/rMiddle1CG
+        weight: 0
+      - path: RIG/MainC/rMiddle1CG/rMiddle1C
+        weight: 0
+      - path: RIG/MainC/rMiddle2CG
+        weight: 0
+      - path: RIG/MainC/rMiddle2CG/rMiddle2C
+        weight: 0
+      - path: RIG/MainC/rMiddle3CG
+        weight: 0
+      - path: RIG/MainC/rMiddle3CG/rMiddle3C
+        weight: 0
+      - path: RIG/MainC/ROOTFKCG
+        weight: 0
+      - path: RIG/MainC/ROOTFKCG/ROOTFKC
+        weight: 0
+      - path: RIG/MainC/ROOTJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/MainHipJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/MainHipJ/lHipJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/MainHipJ/lHipJ/lKneeJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/MainHipJ/lHipJ/lKneeJ/lAnkleJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/MainHipJ/lHipJ/lKneeJ/lAnkleJ/lBallJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/MainHipJ/lHipJ/lKneeJ/lAnkleJ/lBallJ/lToeJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/MainHipJ/rHipJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/MainHipJ/rHipJ/rKneeJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/MainHipJ/rHipJ/rKneeJ/rAnkleJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/MainHipJ/rHipJ/rKneeJ/rAnkleJ/rBallJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/MainHipJ/rHipJ/rKneeJ/rAnkleJ/rBallJ/rToeJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lForearmJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lIndex1J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lIndex1J/lIndex2J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lIndex1J/lIndex2J/lIndex3J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lIndex1J/lIndex2J/lIndex3J/lIndexTipJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lMiddle1J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lMiddle1J/lMiddle2J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lMiddle1J/lMiddle2J/lMiddle3J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lMiddle1J/lMiddle2J/lMiddle3J/lMiddleTipJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lPinkie1J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lPinkie1J/lPinkie2J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lPinkie1J/lPinkie2J/lPinkie3J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lPinkie1J/lPinkie2J/lPinkie3J/lPinkieTipJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lRing1J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lRing1J/lRing2J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lRing1J/lRing2J/lRing3J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lRing1J/lRing2J/lRing3J/lRingTipJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lThumb1J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lThumb1J/lThumb2J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lThumb1J/lThumb2J/lThumb3J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/lClavicleJ/lShoulderJ/lElbowJ/lWristJ/lThumb1J/lThumb2J/lThumb3J/lThumbTipJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/NeckJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/NeckJ/HeadJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/NeckJ/HeadJ/HeadTipJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/NeckJ/HeadJ/JawJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/NeckJ/HeadJ/JawJ/JawTipJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/NeckJ/HeadJ/lEyeJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/NeckJ/HeadJ/rEyeJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rForearmJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rIndex1J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rIndex1J/rIndex2J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rIndex1J/rIndex2J/rIndex3J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rIndex1J/rIndex2J/rIndex3J/rIndexTipJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rMiddle1J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rMiddle1J/rMiddle2J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rMiddle1J/rMiddle2J/rMiddle3J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rMiddle1J/rMiddle2J/rMiddle3J/rMiddleTipJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rPinkie1J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rPinkie1J/rPinkie2J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rPinkie1J/rPinkie2J/rPinkie3J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rPinkie1J/rPinkie2J/rPinkie3J/rPinkieTipJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rRing1J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rRing1J/rRing2J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rRing1J/rRing2J/rRing3J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rRing1J/rRing2J/rRing3J/rRingTipJ
+        weight: 0
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rThumb1J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rThumb1J/rThumb2J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rThumb1J/rThumb2J/rThumb3J
+        weight: 1
+      - path: RIG/MainC/ROOTJ/Spine01J/Spine02J/Spine03J/Spine04J/rClavicleJ/rShoulderJ/rElbowJ/rWristJ/rThumb1J/rThumb2J/rThumb3J/rThumbTipJ
+        weight: 0
+      - path: RIG/MainC/rPinkie1CG
+        weight: 0
+      - path: RIG/MainC/rPinkie1CG/rPinkie1C
+        weight: 0
+      - path: RIG/MainC/rPinkie2CG
+        weight: 0
+      - path: RIG/MainC/rPinkie2CG/rPinkie2C
+        weight: 0
+      - path: RIG/MainC/rPinkie3CG
+        weight: 0
+      - path: RIG/MainC/rPinkie3CG/rPinkie3C
+        weight: 0
+      - path: RIG/MainC/rRing1CG
+        weight: 0
+      - path: RIG/MainC/rRing1CG/rRing1C
+        weight: 0
+      - path: RIG/MainC/rRing2CG
+        weight: 0
+      - path: RIG/MainC/rRing2CG/rRing2C
+        weight: 0
+      - path: RIG/MainC/rRing3CG
+        weight: 0
+      - path: RIG/MainC/rRing3CG/rRing3C
+        weight: 0
+      - path: RIG/MainC/rShoulderFKCG
+        weight: 0
+      - path: RIG/MainC/rShoulderFKCG/rShoulderFKC
+        weight: 0
+      - path: RIG/MainC/rThumb1CG
+        weight: 0
+      - path: RIG/MainC/rThumb1CG/rThumb1C
+        weight: 0
+      - path: RIG/MainC/rThumb2CG
+        weight: 0
+      - path: RIG/MainC/rThumb2CG/rThumb2C
+        weight: 0
+      - path: RIG/MainC/rThumb3CG
+        weight: 0
+      - path: RIG/MainC/rThumb3CG/rThumb3C
+        weight: 0
+      - path: RIG/MainC/rWristFKCG
+        weight: 0
+      - path: RIG/MainC/rWristFKCG/rWristFKC
+        weight: 0
+      - path: RIG/MainC/rWristIKCG
+        weight: 0
+      - path: RIG/MainC/rWristIKCG/rWristIKC
+        weight: 0
+      - path: RIG/MainC/Spine01FKCG
+        weight: 0
+      - path: RIG/MainC/Spine01FKCG/Spine01FKC
+        weight: 0
+      - path: RIG/MainC/Spine02FKCG
+        weight: 0
+      - path: RIG/MainC/Spine02FKCG/Spine02FKC
+        weight: 0
+      - path: RIG/MainC/Spine03FKCG
+        weight: 0
+      - path: RIG/MainC/Spine03FKCG/Spine03FKC
+        weight: 0
+      - path: RIG/MainC/Spine04FKCG
+        weight: 0
+      - path: RIG/MainC/Spine04FKCG/Spine04FKC
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: shooting3
+      takeName: Take 001
+      firstFrame: 273
+      lastFrame: 274
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
