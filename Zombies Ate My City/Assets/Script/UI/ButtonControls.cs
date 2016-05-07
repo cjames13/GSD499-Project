@@ -6,7 +6,7 @@ using System.Collections;
 public class ButtonControls : MonoBehaviour {
 	public string sceneName = "Final Prototype";
     public RawImage titleBackground, blankBackground, creditImage1, creditImage2;
-    public GameObject backButton, optionsButton, creditsButton, howButton, startButton, optionsScreen;
+    public GameObject backButton, optionsButton, creditsButton, howButton, startButton, optionsScreen, exitButton;
     public GameObject creditsText, howToText;
     public AudioClip selectionClip;
     public AudioClip backClip;
@@ -77,7 +77,7 @@ public class ButtonControls : MonoBehaviour {
 		optionsScreen.SetActive (true);
 		backButton.SetActive (true);
 
-        Application.Quit ();
+
 	}
 
 	public void ChangeCameraControls(int c) {
@@ -100,6 +100,7 @@ public class ButtonControls : MonoBehaviour {
         creditsButton.SetActive(true);
         howButton.SetActive(true);
         startButton.SetActive(true);
+        exitButton.SetActive(true);
 		optionsScreen.SetActive (false);
 
         creditImage1.enabled = false;
@@ -113,6 +114,10 @@ public class ButtonControls : MonoBehaviour {
             crawling = false;
             creditsText.transform.position = new Vector3(creditImage1.transform.position.x, creditImage1.transform.position.y + 50, 0);
         }
+    }
+
+    public void Exit() {
+        Application.Quit();
     }
 
     IEnumerator PlayLaugh() {
@@ -133,6 +138,7 @@ public class ButtonControls : MonoBehaviour {
 		howButton.SetActive(false);
 		startButton.SetActive(false);
 		optionsScreen.SetActive (false);
+        exitButton.SetActive(false);
 
 		creditImage1.enabled = false;
 		creditImage2.enabled = false;

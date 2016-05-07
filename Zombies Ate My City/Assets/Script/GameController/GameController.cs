@@ -5,16 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 	public GameObject player;
-	public Text gameOverText, gameStatusText, resourcesText, resourcesEndText, scoreText, scoreEndText, killCountText;
+    public Text gameOverText, gameStatusText, resourcesText, resourcesEndText, scoreText, scoreEndText, killCountText, continueText;
 	public ExitController exitDoor;
     public GameObject levelClearObject;
     public Image levelClearImage;
     public GameObject canvas;
-    //private Color levelClearColor = new Color(0f, 0f, 0f, 1f);
 
 	private int resourcesAvailable, resourcesCollected, score, enemiesKilled;
 	private bool levelClear = false;
-    private string sceneName = "Start Screen";
+    private string startScreen = "Start Screen";
+    private string restart = "Final Prototype";
     private AudioSource gameOverAudio;
     private bool endGame;
 
@@ -22,7 +22,6 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		resourcesAvailable = GameObject.FindGameObjectsWithTag ("Resource").Length;
         levelClearObject.SetActive (false);
-        //levelClearImage.color = new Color(0f, 0f, 0f, 0f);
 		exitDoor.Close ();
         gameOverAudio = GetComponent<AudioSource>();
 		PlayerSettingsSingleton.Instance.controlContext.SetCameraSettings (GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<MouseOrbit>());
@@ -40,9 +39,16 @@ public class GameController : MonoBehaviour {
             exitDoor.Open();
         }
 
-        if (endGame && Input.GetKey(KeyCode.M))
+        if (endGame)
         {
-            SceneManager.LoadScene(sceneName);
+            if (Input.GetKey(KeyCode.M))
+            {
+                SceneManager.LoadScene(startScreen);
+            }
+            else if (Input.GetKey(KeyCode.R))
+            {
+                SceneManager.LoadScene(restart);
+            }
         }
 	}
 
@@ -68,9 +74,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	IEnumerator ShowClearScreen(bool dead) {
-        //yield return new WaitForSeconds (1f);
-        //levelClearImage.color = Color.Lerp(levelClearImage.color, levelClearColor, Time.deltaTime * 5f);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         DestroyEnemies ();
 		DisableUI ();
 		CursorController cc = GetComponent<CursorController> ();
@@ -79,11 +83,9 @@ public class GameController : MonoBehaviour {
 
 		player.GetComponent<PlayerController> ().enabled = false;
 
-        yield return new WaitForSeconds(1f);
 		levelClearObject.SetActive (true);
         gameOverAudio.Play();
         gameOverText.text = "GAME OVER";
-        Debug.Log("Game Over");
 
         yield return new WaitForSeconds(1f);
         gameOverAudio.Play();
@@ -91,17 +93,18 @@ public class GameController : MonoBehaviour {
 
 		yield return new WaitForSeconds(1f);
 		gameOverAudio.Play();
-		resourcesEndText.text = "RESOURCES COLLECTED: " + resourcesCollected;
-		Debug.Log("Resources Collected");
-
-		yield return new WaitForSeconds(1f);
-		gameOverAudio.Play();
-		killCountText.text = "KILLS: " + enemiesKilled;
+        resourcesEndText.text = "RESOURCES COLLECTED: " + resourcesCollected + "/" + resourcesAvailable;
 
         yield return new WaitForSeconds(1f);
         gameOverAudio.Play();
         scoreEndText.text = "SCORE: " + score;
-        Debug.Log("Final Score");
+
+        yield return new WaitForSeconds(1f);
+        gameOverAudio.Play();
+        killCountText.text = "KILLS: " + enemiesKilled;
+
+        yield return new WaitForSeconds(1f);
+        continueText.text = "Press 'R' to Restart the level." + "\nPress 'M' to return to the Main Menu.";
 
         endGame = true;
     }

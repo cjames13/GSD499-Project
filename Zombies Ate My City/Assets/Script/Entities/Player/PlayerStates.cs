@@ -32,7 +32,6 @@ public class PlayerStates : MonoBehaviour, StateController {
     private float flashSpeed = 5f;
     public Color flashColor = new Color(1f, 0f, 0f, 0.1f);
     public Image damageImage;
-
     bool damaged;
 
     void Start() {
@@ -44,6 +43,9 @@ public class PlayerStates : MonoBehaviour, StateController {
 		anim.SetLayerWeight (2, 1f);
 		anim.SetLayerWeight (3, 1f);
 		anim.SetLayerWeight (4, .8f);
+		anim.SetLayerWeight (5, 1f);
+		anim.SetLayerWeight (6, .8f);
+
 		playerController = GetComponent<PlayerController> ();
 
 		rigidBody = GetComponent<Rigidbody>();
@@ -63,6 +65,9 @@ public class PlayerStates : MonoBehaviour, StateController {
     void Update() {
 		damageImage.color = (damaged) ? flashColor : Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
 		damaged = false;
+		anim.SetBool ("idle", (anim.GetFloat ("HorizontalVelocity") > -0.1f && anim.GetFloat ("HorizontalVelocity") < 0.1f &&
+						anim.GetFloat ("VerticalVelocity") > -0.1f && anim.GetFloat ("VerticalVelocity") < 0.1f));
+
 	}
 
 	void SetAllChildCollidersTrigger(bool t) {
