@@ -52,7 +52,7 @@ public class Health : MonoBehaviour {
 		isHealing = true;
 		healUntil = (currentHealth + h > maxHealth) ? maxHealth : currentHealth + h; 
 		if (entityHeal != null) {
-			entityAudio.PlayOneShot (entityHeal, .2f);
+			entityAudio.PlayOneShot (entityHeal, .5f);
 		}
 	}
 
@@ -61,7 +61,7 @@ public class Health : MonoBehaviour {
             currentHealth -= d;
             animController.TakeDamage();
             lastHitTime = Time.time;
-            if (!entityAudio.isPlaying)
+            if (!entityAudio.isPlaying && alive)
             {
                 entityAudio.PlayOneShot(entityHurt);
             }
