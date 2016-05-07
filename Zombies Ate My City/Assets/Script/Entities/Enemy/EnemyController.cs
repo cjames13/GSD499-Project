@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour {
 	
 
 	void Update () {
-		if (!anim.GetBool ("dying") && health.alive) {
+		if (health.alive) {
 			float attackDistance = Vector3.Distance (agent.nextPosition, target.transform.position);
 			if (playerAnim.GetCurrentAnimatorStateInfo (4).IsName ("Not Meleeing")) {
 				agent.speed = 1;
