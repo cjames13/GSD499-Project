@@ -39,6 +39,7 @@ public class WeaponController : MonoBehaviour {
 
 	// Direction is either -1 or 1. -1 is left, 1 is right.
 	void SwitchWeapon(int direction) {
+		weapons [currentlyEquippedIndex].GetComponent<Weapon> ().PlayAnimation (GetComponent<StateController> (), false);
 		weapons [currentlyEquippedIndex].SetActive (false);
 		currentlyEquippedIndex = (currentlyEquippedIndex + direction + weapons.Length) % weapons.Length;
 		weapons [currentlyEquippedIndex].SetActive (true);
