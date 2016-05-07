@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour {
     public AudioClip playerLeftStep;
     public AudioClip playerRightStep;
     private AudioSource playerAudio;
+	private GameObject leftFoot;
+	private GameObject rightFoot;
 
 	void Awake(){
 		rigidBody = GetComponent<Rigidbody>();
@@ -46,8 +48,12 @@ public class PlayerController : MonoBehaviour {
 		weaponController = GetComponent<WeaponController> ();
         playerAudio = GetComponent<AudioSource>();
 		controls = PlayerSettingsSingleton.Instance.controlContext;
+		leftFoot = GameObject.Find ("LeftFootLocation");
+		rightFoot = GameObject.Find ("RightFootLocation");
+
 	}
 	void Update() {
+
 		// Attacking
 		attacking = Input.GetButton ("Fire1") || Input.GetAxis("XBox360_Triggers") < 0f;
 		Weapon currentWeapon = weaponController.weapons [weaponController.currentlyEquippedIndex].GetComponent<Weapon> ();
@@ -75,6 +81,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+
+
 		// Movement direction
 		Vector3 forward = cam.transform.TransformDirection (Vector3.forward).normalized;
 		forward.y = 0f;
@@ -105,7 +113,11 @@ public class PlayerController : MonoBehaviour {
 
 	// Is the player airborne?
 	bool IsGrounded(){
-		return Physics.Raycast (transform.position, -Vector3.up, 0.1f);
+		if (Physics.Raycast (leftFoot.transform.position, -Vector3.up, 0.1f) == true ||
+		    Physics.Raycast (rightFoot.transform.position, -Vector3.up, 0.1f) == true)
+			return true;
+		else
+			return false;
 	}
     void PlayerLeftFootStep()
     {
