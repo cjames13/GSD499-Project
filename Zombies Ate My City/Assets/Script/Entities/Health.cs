@@ -52,7 +52,7 @@ public class Health : MonoBehaviour {
 		isHealing = true;
 		healUntil = (currentHealth + h > maxHealth) ? maxHealth : currentHealth + h; 
 		if (entityHeal != null) {
-			entityAudio.PlayOneShot (entityHeal);
+			entityAudio.PlayOneShot (entityHeal, .2f);
 		}
 	}
 

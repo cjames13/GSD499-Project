@@ -22,7 +22,10 @@ public class ResourceCrate : MonoBehaviour {
             anim.Play();
             crateOpen.Play();
             isCollected = true;
-			playerHealth.Heal (healAmount);
+            if (playerHealth.currentHealth < playerHealth.maxHealth)
+            {
+                playerHealth.Heal(healAmount);
+            }
 			gameController.ResourceCollected ();
 			gameObject.tag = "Untagged";
 		}
