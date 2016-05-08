@@ -11,14 +11,12 @@ public class RangedWeapon : Weapon {
 	private ParticleSystem muzzleFlash;
 	private AudioSource muzzleSound;
 	private Animator muzzleLight;
-
 	void Start() {
 		if (muzzle != null) {
 			muzzleFlash = muzzle.GetComponent<ParticleSystem> ();
 			muzzleSound = muzzle.GetComponent<AudioSource> ();
 			muzzleLight = muzzle.GetComponent<Animator> ();
 		}
-
 		attackLocation = GameObject.FindGameObjectWithTag ("AttackLocation").transform;
 		currentAmmo = maxAmmo;
 	}

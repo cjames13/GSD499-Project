@@ -44,7 +44,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 		anim.SetLayerWeight (3, 1f);
 		anim.SetLayerWeight (4, .8f);
 		anim.SetLayerWeight (5, 1f);
-		anim.SetLayerWeight (6, .8f);
+		anim.SetLayerWeight (6, .7f);
 
 		playerController = GetComponent<PlayerController> ();
 
@@ -67,7 +67,6 @@ public class PlayerStates : MonoBehaviour, StateController {
 		damaged = false;
 		anim.SetBool ("idle", (anim.GetFloat ("HorizontalVelocity") > -0.1f && anim.GetFloat ("HorizontalVelocity") < 0.1f &&
 						anim.GetFloat ("VerticalVelocity") > -0.1f && anim.GetFloat ("VerticalVelocity") < 0.1f));
-
 	}
 
 	void SetAllChildCollidersTrigger(bool t) {
