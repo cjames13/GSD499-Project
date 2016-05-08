@@ -2358,9 +2358,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   searchDistance: 31
-  blipColor: {r: 1, g: 0, b: 0, a: 1}
+  blipColor: {r: 1, g: 1, b: 0, a: 1}
   blipSize: 8
-  findTag: Enemy
+  findTag: Resource
   centerAround: {fileID: 1197806402}
   mapScale: 2.2
 --- !u!114 &426720317

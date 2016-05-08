@@ -65,8 +65,8 @@ public class PlayerStates : MonoBehaviour, StateController {
     void Update() {
 		damageImage.color = (damaged) ? flashColor : Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
 		damaged = false;
-		anim.SetBool ("idle", (anim.GetFloat ("HorizontalVelocity") > -0.1f && anim.GetFloat ("HorizontalVelocity") < 0.1f &&
-						anim.GetFloat ("VerticalVelocity") > -0.1f && anim.GetFloat ("VerticalVelocity") < 0.1f));
+		anim.SetBool ("idle", Mathf.Abs(anim.GetFloat("HorizontalVelocity")) < 0.1f &&
+			Mathf.Abs(anim.GetFloat("VerticalVelocity")) < 0.1f);
 	}
 
 	void SetAllChildCollidersTrigger(bool t) {

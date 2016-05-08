@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour {
 
 	// Rolling
 	private bool isRolling = false;
-	private bool isJumping = false;
 
 	// Animation
 	private Animator anim;
@@ -68,8 +67,10 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		currentWeapon.PlayAnimation(playerStates, attacking);
+
 		isRolling = anim.GetCurrentAnimatorStateInfo (0).IsName ("Roll");
-		isJumping = anim.GetCurrentAnimatorStateInfo (0).IsName ("Jump");
+		bool isJumping = anim.GetCurrentAnimatorStateInfo (0).IsName ("Jump");
+
 		if (Input.GetButtonDown ("Jump") && IsGrounded()) {
 			rigidBody.velocity = new Vector3 (0, jumpSpeed, 0);
 			playerAudio.PlayOneShot (playerJump, 1.2f);
