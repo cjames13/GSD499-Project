@@ -90,16 +90,19 @@ public class PlayerController : MonoBehaviour {
 		Vector3 right = new Vector3 (forward.z, 0f, -forward.x).normalized;
 
 		Vector3 moveDirection = Vector3.zero;
-
+		Vector3 normalMoveDirection = Vector3.zero;
 		if(alive) {
+			float hNormal = Input.GetAxisRaw ("Horizontal");
+			float vNormal = Input.GetAxisRaw ("Vertical");
 			float h = Input.GetAxisRaw ("Horizontal");
 			float v = Input.GetAxisRaw ("Vertical");
 
 			// Move
 			moveDirection = (h * right + v * forward);
+			normalMoveDirection = (hNormal * transform.right + vNormal * transform.forward);
 			bool isAerial = !IsGrounded();
 
-			transform.position += controls.SetPlayerMovement (h, v, moveDirection, moveSpeed, horizontalPenalty);
+			transform.position += controls.SetPlayerMovement (h, v, moveDirection, normalMoveDirection, moveSpeed, horizontalPenalty, attacking);
 			transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling, attacking);
 
 			// Animations
@@ -107,7 +110,7 @@ public class PlayerController : MonoBehaviour {
 				controls.SetPlayerMovementAnimation (anim, h, v, attacking);
 			}
 
-			anim.SetBool ("jumping",   isAerial);
+			anim.SetBool ("jumping",isAerial);
 		}
 	}
 

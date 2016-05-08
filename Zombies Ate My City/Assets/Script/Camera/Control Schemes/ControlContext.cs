@@ -7,8 +7,10 @@ public class ControlContext {
 		controls = strategy;
 	}
 
-	public Vector3 SetPlayerMovement(float horizontalInput, float verticalInput, Vector3 moveDirection, float moveSpeed, float movementPenalty) {
-		return controls.SetPlayerMovement (horizontalInput, verticalInput, moveDirection, moveSpeed, movementPenalty);
+	public Vector3 SetPlayerMovement(float horizontalInput, float verticalInput, Vector3 moveDirection,
+		Vector3 normalMoveDirection, float moveSpeed, float movementPenalty, bool isShooting) {
+		return controls.SetPlayerMovement (horizontalInput, verticalInput, moveDirection, normalMoveDirection,
+			moveSpeed, movementPenalty, isShooting);
 	}
 
 	public Quaternion SetPlayerRotation(Camera camera, Vector3 moveDirection, bool isRolling, bool isShooting) {
