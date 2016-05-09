@@ -34,6 +34,7 @@ public class OverheadControl : ControlStrategy {
 		camera.yMinLimit = 35f;
 		camera.yMaxLimit = 35f;
 		camera.Distance = 5.5f;
+		camera.gameObject.GetComponent<Camera> ().orthographic = true;
 	}
 
 	public bool IsCrosshairEnabled() {
