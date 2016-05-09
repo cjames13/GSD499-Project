@@ -43,13 +43,12 @@ public class PlayerStates : MonoBehaviour, StateController {
 		gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 		anim = GetComponent<Animator> ();
         playerAudio = GetComponent<AudioSource>();
-		// All layers need to have their weight set via code for whatever reason
+
+		// All override layers need to have their weight set via code for whatever reason
 		anim.SetLayerWeight (1, 1f);
 		anim.SetLayerWeight (2, 1f);
 		anim.SetLayerWeight (3, 1f);
 		anim.SetLayerWeight (4, .8f);
-		anim.SetLayerWeight (5, .9f);
-		anim.SetLayerWeight (6, .7f);
 
 		playerController = GetComponent<PlayerController> ();
 

@@ -4,9 +4,6 @@ using System.Collections;
 public class ThirdPersonControl : ControlStrategy {
 	public Vector3 SetPlayerMovement(float horizontalInput, float verticalInput, Vector3 moveDirection, 
 		 float moveSpeed, float movementPenalty, bool isShooting) {
-		//----------old code 
-		//float finalMoveSpeed = moveSpeed * ((Mathf.Abs (horizontalInput) > 0f || verticalInput < 0f) ? movementPenalty : 1);
-		//----------new code
 		float finalMoveSpeed = moveSpeed * ((Mathf.Abs (horizontalInput) > 0.1f || verticalInput < 0.1f) ? movementPenalty : 1);
 		return Vector3.ClampMagnitude (moveDirection * Time.deltaTime * finalMoveSpeed, finalMoveSpeed);
 	}

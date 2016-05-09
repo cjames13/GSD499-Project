@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 5f;
-	public float camTurnSpeed = 10f;
 	public float jumpSpeed = 5f;
 	public float rollSpeed = 4f;
 	public float horizontalPenalty = 0.5f;
@@ -61,7 +60,6 @@ public class PlayerController : MonoBehaviour {
 
 
 		// Jumping
-
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
 		if (attacking) {
@@ -114,16 +112,7 @@ public class PlayerController : MonoBehaviour {
 			bool isAerial = !IsGrounded();
 
 			transform.position += controls.SetPlayerMovement (h, v, moveDirection, moveSpeed, horizontalPenalty, attacking);
-
-			//----------new code
-			if (controls.IsCrosshairEnabled ()) {
-				transform.rotation = Quaternion.Lerp (transform.rotation, controls.SetPlayerRotation (cam, moveDirection, isRolling), 
-					moveSpeed * Time.deltaTime);
-			}
-			else
-				transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling);
-			//----------old code
-			//transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling);
+			transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling);
 
 			// Animations
 			if (!isAerial) {
