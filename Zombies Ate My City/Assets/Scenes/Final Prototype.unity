@@ -10983,6 +10983,34 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 0.6139867
       objectReference: {fileID: 0}
+    - target: {fileID: 11474106, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+      propertyPath: MyColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 185048, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474106, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+      propertyPath: MyMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: adfae623f346cce40a46be777a34c1e3, type: 2}
+    - target: {fileID: 11474106, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+      propertyPath: MyColor.r
+      value: 0.53676474
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474106, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+      propertyPath: MyColor.g
+      value: 0.53676474
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474106, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+      propertyPath: MyColor.b
+      value: 0.53676474
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474106, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
+      propertyPath: MaxFrame
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
   m_IsPrefabParent: 0
