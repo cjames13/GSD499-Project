@@ -34,10 +34,15 @@ public class PlayerStates : MonoBehaviour, StateController {
     public Image damageImage;
     bool damaged;
 
+    // Sword Sound
+    private AudioSource playerAudio;
+    public AudioClip swordAudio;
+
     void Start() {
 		gameObject.GetComponent<SphereCollider> ().enabled = false;
 		gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 		anim = GetComponent<Animator> ();
+        playerAudio = GetComponent<AudioSource>();
 		// All layers need to have their weight set via code for whatever reason
 		anim.SetLayerWeight (1, 1f);
 		anim.SetLayerWeight (2, 1f);
@@ -103,6 +108,10 @@ public class PlayerStates : MonoBehaviour, StateController {
 
 	public void MeleeAttack(bool attacking){
 		anim.SetBool ("meleeing", attacking);
+        if (attacking && !playerAudio.isPlaying)
+        {
+            playerAudio.PlayOneShot(swordAudio, 0.5f);
+        }
 	}
 
 	public void RangedAttack(bool attacking, bool isRifle) {

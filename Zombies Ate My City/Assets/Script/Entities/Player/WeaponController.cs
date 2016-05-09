@@ -8,6 +8,8 @@ public class WeaponController : MonoBehaviour {
 	private GameObject weaponSlot;
 
     public AudioClip weaponChange;
+    public AudioClip swordEquip;
+    public AudioClip bombEquip;
     private AudioSource weaponAudio;
 
 	void Awake () {
@@ -43,7 +45,19 @@ public class WeaponController : MonoBehaviour {
 		weapons [currentlyEquippedIndex].SetActive (false);
 		currentlyEquippedIndex = (currentlyEquippedIndex + direction + weapons.Length) % weapons.Length;
 		weapons [currentlyEquippedIndex].SetActive (true);
-        weaponAudio.PlayOneShot(weaponChange);
+
+        if (GetCurrentWeaponName() == "Sword")
+        {
+            weaponAudio.PlayOneShot(swordEquip, 0.6f);
+        }
+        else if (GetCurrentWeaponName() == "Bomb")
+        {
+            weaponAudio.PlayOneShot(bombEquip, 0.6f);
+        }
+        else
+        {
+            weaponAudio.PlayOneShot(weaponChange, 0.8f);
+        }
 	}
 
 	public int GetCurrentAmmo() {
