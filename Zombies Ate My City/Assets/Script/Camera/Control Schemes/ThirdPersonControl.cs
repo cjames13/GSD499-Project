@@ -5,7 +5,7 @@ public class ThirdPersonControl : ControlStrategy {
 	public Vector3 SetPlayerMovement(float horizontalInput, float verticalInput, Vector3 moveDirection, 
 		 float moveSpeed, float movementPenalty, bool isShooting) {
 		float finalMoveSpeed = moveSpeed * ((Mathf.Abs (horizontalInput) > 0.1f || verticalInput < 0.1f) ? movementPenalty : 1);
-		return Vector3.ClampMagnitude (moveDirection * Time.deltaTime * finalMoveSpeed, finalMoveSpeed);
+		return Vector3.ClampMagnitude (moveDirection * Time.deltaTime * finalMoveSpeed, finalMoveSpeed).normalized;
 	}
 
 	public Quaternion SetPlayerRotation(Camera camera, Vector3 moveDirection, bool isRolling) {

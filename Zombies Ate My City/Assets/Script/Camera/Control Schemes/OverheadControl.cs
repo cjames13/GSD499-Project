@@ -6,7 +6,7 @@ public class OverheadControl : ControlStrategy {
 	// This sets the player's movement. Whatever value is returned from this function will be added to the player's current position
 	public Vector3 SetPlayerMovement(float horizontalInput, float verticalInput, Vector3 moveDirection, 
 		float moveSpeed, float movementPenalty, bool isShooting) {
-		return Vector3.ClampMagnitude (moveDirection, moveSpeed) * Time.deltaTime * moveSpeed;
+		return Vector3.ClampMagnitude (moveDirection, moveSpeed).normalized * Time.deltaTime * moveSpeed;
 	}
 
 	public Quaternion SetPlayerRotation(Camera camera, Vector3 moveDirection, bool isRolling) {
