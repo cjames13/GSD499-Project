@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
-	public float moveSpeed = 4f;
+	public float moveSpeed = 5f;
+	public float camTurnSpeed = 10f;
 	public float jumpSpeed = 5f;
 	public float rollSpeed = 4f;
 	public float horizontalPenalty = 0.5f;
@@ -76,9 +77,21 @@ public class PlayerController : MonoBehaviour {
 			rigidBody.velocity = new Vector3 (0, jumpSpeed, 0);
 			playerAudio.PlayOneShot (playerJump, 1.2f);
 		} else if (Input.GetButtonDown("Roll") && IsGrounded () && (h != 0 || v != 0) && !isRolling && !isJumping) {
-			controls.PerformRoll (h, v, rigidBody, jumpSpeed, rollSpeed);
-			playerAudio.PlayOneShot (playerJump, 1.2f);
-			anim.SetTrigger ("roll");
+			//----------new code
+			float rotationDifference = Mathf.DeltaAngle (cam.transform.eulerAngles.y, transform.eulerAngles.y);
+			if (controls.IsCrosshairEnabled () && rotationDifference < 10 && rotationDifference > -10) {
+				controls.PerformRoll (h, v, rigidBody, jumpSpeed, rollSpeed);
+				playerAudio.PlayOneShot (playerJump, 1.2f);
+				anim.SetTrigger ("roll");
+			} else if (!controls.IsCrosshairEnabled ()) {
+				controls.PerformRoll (h, v, rigidBody, jumpSpeed, rollSpeed);
+				playerAudio.PlayOneShot (playerJump, 1.2f);
+				anim.SetTrigger ("roll");
+			}
+			//----------old code
+//			controls.PerformRoll (h, v, rigidBody, jumpSpeed, rollSpeed);
+//			playerAudio.PlayOneShot (playerJump, 1.2f);
+//			anim.SetTrigger ("roll");
 		}
 	}
 
@@ -101,7 +114,16 @@ public class PlayerController : MonoBehaviour {
 			bool isAerial = !IsGrounded();
 
 			transform.position += controls.SetPlayerMovement (h, v, moveDirection, moveSpeed, horizontalPenalty, attacking);
-			transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling);
+
+			//----------new code
+			if (controls.IsCrosshairEnabled ()) {
+				transform.rotation = Quaternion.Lerp (transform.rotation, controls.SetPlayerRotation (cam, moveDirection, isRolling), 
+					moveSpeed * Time.deltaTime);
+			}
+			else
+				transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling);
+			//----------old code
+			//transform.rotation = controls.SetPlayerRotation (cam, moveDirection, isRolling);
 
 			// Animations
 			if (!isAerial) {
