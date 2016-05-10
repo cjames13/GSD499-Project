@@ -66,6 +66,11 @@ public class EnemyStates : MonoBehaviour, StateController {
 	}
 
 	void StateController.Die() {
+		DamageOnContact[] hitboxes = GetComponents<DamageOnContact> ();
+		foreach (DamageOnContact hb in hitboxes) {
+			hb.enabled = false;
+		}
+
 		if (sphereCollider) {
 			sphereCollider.enabled = false;
 		}
@@ -108,7 +113,6 @@ public class EnemyStates : MonoBehaviour, StateController {
 
 	IEnumerator Burning()
 	{
-		
 		yield return new WaitForSeconds (2);
 		rigidBody.useGravity = false;
 		if (ragdollOnDeath) {
