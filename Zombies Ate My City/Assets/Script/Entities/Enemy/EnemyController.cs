@@ -71,7 +71,7 @@ public class EnemyController : MonoBehaviour {
 				enemyStates.RangedAttack (true, false);
 				Instantiate (projectileObject,
 					new Vector3 (transform.position.x, transform.position.y + 0.5f,
-						transform.position.z - 1), transform.rotation);
+						transform.position.z + 1), transform.rotation);
 			}
 		} else {
 			agent.velocity = Vector3.zero;
