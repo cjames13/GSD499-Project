@@ -111,10 +111,10 @@ public class PlayerStates : MonoBehaviour, StateController {
 		AnimatorStateInfo info2 = anim.GetCurrentAnimatorStateInfo (5);
 		if (attacking && !playerAudio.isPlaying)
         {
-			if (anim.GetBool ("idle") == true && info2.normalizedTime % 1 > 0.9f) {
+			if (anim.GetBool ("idle") == true && info2.normalizedTime % 1 < 0.2f) {
 				playerAudio.PlayOneShot (swordAudio, 0.5f);
 			}
-			else if (info1.normalizedTime % 1 > 0.9f)
+			else if (info1.normalizedTime % 1 < 0.2f)
 				playerAudio.PlayOneShot(swordAudio, 0.5f);
         }
 	}
