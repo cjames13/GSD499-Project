@@ -36,6 +36,7 @@ public class OverheadControl : ControlStrategy {
 		camera.Distance = 5.5f;
 		camera.gameObject.GetComponent<Camera> ().orthographic = true;
 		camera.gameObject.GetComponent<Camera> ().orthographicSize = 3.8f;
+		camera.gameObject.GetComponent<Camera> ().nearClipPlane = -35;
 	}
 
 	public bool IsCrosshairEnabled() {
