@@ -161,7 +161,7 @@ BlendTree:
   m_Name: Forward
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 1cecad91414660b47b845b7d22e54659, type: 3}
+    m_Motion: {fileID: 7400000, guid: 8f3613ec32bbf1b4ead3dcd63486ce90, type: 2}
     m_Threshold: 0.0015699554
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -169,7 +169,7 @@ BlendTree:
     m_DirectBlendParameter: ForwardBackward
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400008, guid: 27e3c549033357241839f93f716e98b3, type: 3}
+    m_Motion: {fileID: 7400000, guid: 06248f09184df1144ab12de7f66e043a, type: 2}
     m_Threshold: 0.0038243027
     m_Position: {x: 0, y: 0}
     m_TimeScale: 2
@@ -199,7 +199,7 @@ BlendTree:
     m_DirectBlendParameter: ForwardBackward
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: bd1f0b6e06696ac46bee45b56f43ee57, type: 3}
+    m_Motion: {fileID: 7400000, guid: 4bfa0e65bbf0c4c4aace37d173d5b44e, type: 2}
     m_Threshold: 0.25
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1
@@ -207,7 +207,7 @@ BlendTree:
     m_DirectBlendParameter: ForwardBackward
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 07c91fea04c762546b5bcd3c7a553ac8, type: 3}
+    m_Motion: {fileID: 7400000, guid: c28d18692125abd4aa372f254cacbf5c, type: 2}
     m_Threshold: 0.5
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -215,7 +215,7 @@ BlendTree:
     m_DirectBlendParameter: ForwardBackward
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 0af264ba3b65aed48a3dad02d4be27c2, type: 3}
+    m_Motion: {fileID: 7400000, guid: adf1320a1fee3014c991c0fbdcddaaa7, type: 2}
     m_Threshold: 0.75
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -223,7 +223,7 @@ BlendTree:
     m_DirectBlendParameter: ForwardBackward
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 5c45eec126eaa874facb2c2637bfb1c3, type: 3}
+    m_Motion: {fileID: 7400000, guid: 8cdba43729c02ed419131e3c99441313, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1

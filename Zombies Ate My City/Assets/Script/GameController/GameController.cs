@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
     public GameObject levelClearObject;
     public Image levelClearImage;
     public GameObject canvas;
+    public bool allResourcesCollected;
 
 	private int resourcesAvailable, resourcesCollected, score, enemiesKilled;
 	private bool levelClear = false;
@@ -37,6 +38,7 @@ public class GameController : MonoBehaviour {
 
         if (resourcesCollected >= resourcesAvailable && !exitDoor.open) {
             exitDoor.Open();
+            allResourcesCollected = true;
         }
 
         if (endGame)

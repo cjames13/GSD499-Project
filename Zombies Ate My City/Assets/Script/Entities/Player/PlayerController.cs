@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour {
     public AudioClip playerJump;
     public AudioClip playerLeftStep;
     public AudioClip playerRightStep;
-    public AudioClip playerBreathe;
     private AudioSource playerAudio;
 	private GameObject leftFoot;
 	private GameObject rightFoot;
@@ -141,11 +140,5 @@ public class PlayerController : MonoBehaviour {
     {
         if (!playerAudio.isPlaying)
             playerAudio.PlayOneShot(playerRightStep, 0.2f);
-    }
-
-    void PlayerBreathe()
-    {
-        if (!playerAudio.isPlaying)
-            playerAudio.PlayOneShot(playerBreathe, 0.1f);
     }
 }
