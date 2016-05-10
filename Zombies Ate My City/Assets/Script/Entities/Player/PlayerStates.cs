@@ -107,9 +107,15 @@ public class PlayerStates : MonoBehaviour, StateController {
 
 	public void MeleeAttack(bool attacking){
 		anim.SetBool ("meleeing", attacking);
+		AnimatorStateInfo info1 = anim.GetCurrentAnimatorStateInfo (4);
+		AnimatorStateInfo info2 = anim.GetCurrentAnimatorStateInfo (5);
 		if (attacking && !playerAudio.isPlaying)
         {
-            playerAudio.PlayOneShot(swordAudio, 0.5f);
+			if (anim.GetBool ("idle") == true && info2.normalizedTime % 1 > 0.9f) {
+				playerAudio.PlayOneShot (swordAudio, 0.5f);
+			}
+			else if (info1.normalizedTime % 1 > 0.9f)
+				playerAudio.PlayOneShot(swordAudio, 0.5f);
         }
 	}
 
