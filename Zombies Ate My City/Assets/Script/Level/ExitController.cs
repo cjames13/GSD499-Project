@@ -20,9 +20,9 @@ public class ExitController : MonoBehaviour {
 	}
 
 	public void Close() {
-        open = false;
 		anim.SetBool ("Open", false);
-	}
+        open = false;
+    }
 
 	void OnTriggerEnter(Collider other) {
 		if (open && other.tag == "Player") {

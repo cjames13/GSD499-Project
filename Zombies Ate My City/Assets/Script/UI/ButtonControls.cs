@@ -14,7 +14,7 @@ public class ButtonControls : MonoBehaviour {
 
     AudioSource buttonSound;
 
-    float speed = 10.0f;
+    float speed = 25.0f;
     bool crawling = false;
     Vector2 creditsStartPos;
 
@@ -126,7 +126,7 @@ public class ButtonControls : MonoBehaviour {
         blankBackground.enabled = false;
 		SetAllElementsInactive ();
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         SceneManager.LoadScene(sceneName);
     }
