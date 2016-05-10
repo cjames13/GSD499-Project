@@ -12423,19 +12423,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485370, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.47389248
+      value: 0.671326
       objectReference: {fileID: 0}
     - target: {fileID: 485370, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.5986574
+      value: 0.68646204
       objectReference: {fileID: 0}
     - target: {fileID: 485370, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.48893592
+      value: -0.22443065
       objectReference: {fileID: 0}
     - target: {fileID: 485370, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.42187312
+      value: 0.16650012
       objectReference: {fileID: 0}
     - target: {fileID: 11474106, guid: 8264ead1f0d7e2945a6f5cc7615ec523, type: 2}
       propertyPath: MyColor.a
