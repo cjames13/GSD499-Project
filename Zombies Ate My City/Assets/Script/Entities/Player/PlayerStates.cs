@@ -48,7 +48,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 		anim.SetLayerWeight (1, 1f);
 		anim.SetLayerWeight (2, 1f);
 		anim.SetLayerWeight (3, 1f);
-		anim.SetLayerWeight (4, .8f);
+		anim.SetLayerWeight (4, 0.8f);
 
 		playerController = GetComponent<PlayerController> ();
 
@@ -107,7 +107,7 @@ public class PlayerStates : MonoBehaviour, StateController {
 
 	public void MeleeAttack(bool attacking){
 		anim.SetBool ("meleeing", attacking);
-        if (attacking && !playerAudio.isPlaying)
+		if (attacking && !playerAudio.isPlaying)
         {
             playerAudio.PlayOneShot(swordAudio, 0.5f);
         }
