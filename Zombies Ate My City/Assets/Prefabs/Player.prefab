@@ -830,7 +830,6 @@ GameObject:
   - 4: {fileID: 442546}
   - 114: {fileID: 11462652}
   - 114: {fileID: 11493652}
-  - 114: {fileID: 11476658}
   - 135: {fileID: 13586270}
   - 114: {fileID: 11474106}
   m_Layer: 0
@@ -2753,7 +2752,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
-  camTurnSpeed: 10
   jumpSpeed: 5
   rollSpeed: 4
   horizontalPenalty: 0.5
@@ -2762,7 +2760,6 @@ MonoBehaviour:
   playerJump: {fileID: 8300000, guid: 8528013d7feb9da4ab180147428bc00e, type: 3}
   playerLeftStep: {fileID: 8300000, guid: 1152cd663f083b84dbf989356ab96a57, type: 3}
   playerRightStep: {fileID: 8300000, guid: 95ca59419dd055e4cac80cc7b6570fde, type: 3}
-  playerBreathe: {fileID: 8300000, guid: dc8314b49192e3843a30a0304229fec9, type: 3}
 --- !u!114 &11439080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2837,17 +2834,6 @@ MonoBehaviour:
   Fps: 60
   MyColor: {r: 0.53676474, g: 0.53676474, b: 0.53676474, a: 1}
   MyMaterial: {fileID: 2100000, guid: adfae623f346cce40a46be777a34c1e3, type: 2}
---- !u!114 &11476658
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 185048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbd123e6023e55f4e89d077fb3fe2abb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11478456
 MonoBehaviour:
   m_ObjectHideFlags: 1

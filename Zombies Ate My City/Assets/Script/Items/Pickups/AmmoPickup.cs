@@ -12,7 +12,7 @@ public class AmmoPickup : MonoBehaviour {
 		if(other.tag == "Player") {
 			other.GetComponent<WeaponController>().IncreaseAmmo (gunName, amount);
             ammoAudio.Play();
-			Destroy (gameObject);
+			//Destroy (gameObject);
 		}
 	}
 }

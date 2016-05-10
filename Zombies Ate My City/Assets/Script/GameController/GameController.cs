@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour {
         resourcesText.text = "Resources: " + resourcesCollected + "/" + resourcesAvailable;
         scoreText.text = "Score: " + score;
 
-        if (resourcesCollected >= resourcesAvailable && !exitDoor.open) {
+        if (resourcesCollected >= resourcesAvailable && !exitDoor.open && !levelClear) {
             exitDoor.Open();
             allResourcesCollected = true;
         }
