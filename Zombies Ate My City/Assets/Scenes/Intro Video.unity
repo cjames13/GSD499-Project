@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoSkipText: {fileID: 767955587}
-  movie: {fileID: 15200000, guid: d20826a41e3a7e2488fb25433eba1718, type: 3}
+  movie: {fileID: 15200000, guid: de88a6aa0ede07945bc4374f6eb08d7a, type: 3}
 --- !u!82 &132780818
 AudioSource:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 390c9d1ecf580a641afbb365e41d2d84, type: 3}
+  m_audioClip: {fileID: 8300000, guid: de88a6aa0ede07945bc4374f6eb08d7a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9264706, g: 0.9264706, b: 0.9264706, a: 1}
+  m_Color: {r: 0.9264706, g: 0.9264706, b: 0.9264706, a: 0.88235295}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -536,7 +536,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
