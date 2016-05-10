@@ -74,8 +74,7 @@ public class PlayerController : MonoBehaviour {
 			rigidBody.velocity = new Vector3 (0, jumpSpeed, 0);
 			playerAudio.PlayOneShot (playerJump, 1.2f);
 		} else if (Input.GetButtonDown("Roll") && IsGrounded () && (h != 0 || v != 0) && !isRolling && !isJumping) {
-			//----------new code
-			float rotationDifference = Mathf.DeltaAngle (cam.transform.eulerAngles.y, transform.eulerAngles.y);
+			/*float rotationDifference = Mathf.DeltaAngle (cam.transform.eulerAngles.y, transform.eulerAngles.y);
 			if (controls.IsCrosshairEnabled () && rotationDifference < 10 && rotationDifference > -10) {
 				controls.PerformRoll (h, v, rigidBody, jumpSpeed, rollSpeed);
 				playerAudio.PlayOneShot (playerJump, 1.2f);
@@ -84,11 +83,10 @@ public class PlayerController : MonoBehaviour {
 				controls.PerformRoll (h, v, rigidBody, jumpSpeed, rollSpeed);
 				playerAudio.PlayOneShot (playerJump, 1.2f);
 				anim.SetTrigger ("roll");
-			}
-			//----------old code
-//			controls.PerformRoll (h, v, rigidBody, jumpSpeed, rollSpeed);
-//			playerAudio.PlayOneShot (playerJump, 1.2f);
-//			anim.SetTrigger ("roll");
+			}*/
+			controls.PerformRoll (h, v, rigidBody, jumpSpeed, rollSpeed);
+			playerAudio.PlayOneShot (playerJump, 1.2f);
+			anim.SetTrigger ("roll");
 		}
 	}
 
