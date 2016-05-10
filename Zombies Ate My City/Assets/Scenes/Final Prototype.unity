@@ -10660,7 +10660,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 449292, guid: e9ae5e65f8b9a7540a00c420d75216e7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -10.96
+      value: -11.314
       objectReference: {fileID: 0}
     - target: {fileID: 449292, guid: e9ae5e65f8b9a7540a00c420d75216e7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11553,7 +11553,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300012, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
       propertyPath: m_Enabled
@@ -11761,7 +11761,7 @@ MeshCollider:
   m_GameObject: {fileID: 1920795478}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300026, guid: 313eda13f7c5ca0418baa6dfde31d7a6, type: 3}
