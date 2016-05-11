@@ -126,7 +126,7 @@ public class ButtonControls : MonoBehaviour {
         blankBackground.enabled = false;
 		SetAllElementsInactive ();
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
 
         SceneManager.LoadScene(sceneName);
     }

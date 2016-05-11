@@ -378,7 +378,7 @@ MonoBehaviour:
 
     Q and E: Switch Weapon
 
-    Shift + Movement: Roll'
+    Right Click + Movement: Roll'
 --- !u!222 &160275759
 CanvasRenderer:
   m_ObjectHideFlags: 0

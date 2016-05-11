@@ -128,15 +128,4 @@ public class PlayerController : MonoBehaviour {
 		else
 			return false;
 	}
-    void PlayerLeftFootStep()
-    {
-        if (!playerAudio.isPlaying)
-            playerAudio.PlayOneShot(playerLeftStep, 0.2f);
-    }
-
-    void PlayerRightFootStep()
-    {
-        if (!playerAudio.isPlaying)
-            playerAudio.PlayOneShot(playerRightStep, 0.2f);
-    }
 }
